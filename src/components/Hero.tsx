@@ -69,8 +69,12 @@ export function Hero() {
               >
                 {group.map((company) => (
                   <li key={company.name} className="flex">
-                    <Image src={company.logo} alt={company.name} unoptimized />
-                    quality={100}
+                    <Image
+                      src={company.logo}
+                      alt={company.name}
+                      unoptimized
+                      quality={100}
+                    />
                   </li>
                 ))}
               </ul>
