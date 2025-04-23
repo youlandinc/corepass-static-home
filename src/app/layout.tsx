@@ -7,7 +7,7 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s | Corepass',
-    default: 'Loan Origination Platform | Corepass',
+    default: 'Loan Origination Platform for Private Lenders | Corepass',
   },
   description:
     'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
