@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import { Inter, Lexend } from 'next/font/google'
+import localFont from 'next/font/local'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
@@ -13,16 +13,23 @@ export const metadata: Metadata = {
     'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
 }
 
-const inter = Inter({
-  subsets: ['latin'],
+const adell = localFont({
+  src: [
+    {
+      path: '../fonts/adelle_400.otf',
+      weight: '400',
+    },
+    {
+      path: '../fonts/adelle_500.otf',
+      weight: '500',
+    },
+    {
+      path: '../fonts/adelle_600.otf',
+      weight: '600',
+    },
+  ],
   display: 'swap',
-  variable: '--font-inter',
-})
-
-const lexend = Lexend({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-lexend',
+  variable: '--font-adelle',
 })
 
 export default function RootLayout({
@@ -35,8 +42,7 @@ export default function RootLayout({
       lang="en"
       className={clsx(
         'h-full scroll-smooth bg-white antialiased',
-        inter.variable,
-        lexend.variable,
+        adell.variable,
       )}
     >
       <body className="flex h-full flex-col">{children}</body>
