@@ -76,7 +76,8 @@ function MobileNavigation() {
         <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
         <MobileNavLink href="#pricing">Pricing</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
-        <MobileNavLink href="/login">Sign in</MobileNavLink>
+        {/*TODO : sign in*/}
+        <MobileNavLink href="/">Sign in</MobileNavLink>
       </PopoverPanel>
     </Popover>
   )
@@ -89,7 +90,7 @@ export function Header() {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="#" aria-label="Home">
-              <Logo className="h-8 w-auto xs:h-6 " />
+              <Logo className="h-8 w-auto xs:h-6" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="#features">Features</NavLink>
@@ -99,9 +100,11 @@ export function Header() {
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
+              {/*TODO : sign in*/}
+              <NavLink href="/">Sign in</NavLink>
             </div>
-            <Button href="/register" color="blue">
+            {/*TODO : start*/}
+            <Button href="/" color="blue">
               <span>
                 Get started <span className="hidden lg:inline">today</span>
               </span>
