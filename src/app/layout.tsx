@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Corepass - All-in-one origination platform for private lenders',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
+    'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
 }
 
 const inter = Inter({

@@ -28,7 +28,8 @@ export function CallToAction() {
             system that gives your team visibility, accountability, and speed at
             every stage of the loan lifecycle.
           </p>
-          <Button href="/register" color="white" className="mt-10">
+          {/*TODO : Book a demo*/}
+          <Button href="/" color="white" className="mt-10">
             Book a demo
           </Button>
         </div>

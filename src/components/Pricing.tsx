@@ -143,7 +143,8 @@ export function Pricing() {
           <Plan
             name="Doc Generation"
             description="Works with any system. Simply upload your loan data, generate the docs, and download everything—no manual edits needed"
-            href="/register"
+            // TODO : Contact sales
+            href="/"
             features={[
               'Generate full loan packages: Note, Deed of Trust, Disclosures, Payoff, and more',
               'Auto-fill fields from the loan file',
@@ -155,7 +156,8 @@ export function Pricing() {
             featured
             name="Standard"
             description="For small to mid-sized lending teams that need an efficient, end-to-end loan origination system"
-            href="/register"
+            // TODO : Contact sales
+            href="/"
             featuresTitle={
               <>
                 Unlimited <b>Document Generation</b>, plus:
@@ -178,7 +180,8 @@ export function Pricing() {
                 Everything in <b>Origination</b>, plus:
               </>
             }
-            href="/register"
+            // TODO : Contact sales
+            href="/"
             features={[
               'AI-assisted document analysis for parsing uploads, detecting missing items, and flagging inconsistencies',
               'Automated follow-ups and reminders',
