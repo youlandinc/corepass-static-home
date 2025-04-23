@@ -19,9 +19,9 @@ import BRAND_6 from '@/images/brands/brand-6.svg'
 export function Hero() {
   return (
     <Container className="pt-20 pb-16 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-normal tracking-tight text-slate-900 sm:text-6xl">
+      <h1 className="mx-auto max-w-4xl font-display text-3xl font-normal tracking-tight text-slate-900  xsm:text-4xl sm:text-6xl">
         All-in-one{' '}
-        <span className="relative whitespace-nowrap text-blue-600">
+        <span className="relative whitespace-nowrap text-blue-600 text-3xl xsm:text-4xl sm:text-6xl">
           <svg
             aria-hidden="true"
             viewBox="0 0 418 42"
@@ -40,12 +40,12 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/register">Book a demo</Button>
-        <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          variant="outline"
-        >
-          Learn more
-        </Button>
+        {/*<Button*/}
+        {/*  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"*/}
+        {/*  variant="outline"*/}
+        {/*>*/}
+        {/*  Learn more*/}
+        {/*</Button>*/}
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">

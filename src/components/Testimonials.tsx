@@ -1,11 +1,13 @@
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
-import avatarImage1 from '@/images/avatars/avatar-1.png'
-import avatarImage2 from '@/images/avatars/avatar-2.png'
-import avatarImage3 from '@/images/avatars/avatar-3.png'
-import avatarImage4 from '@/images/avatars/avatar-4.png'
-import avatarImage5 from '@/images/avatars/avatar-5.png'
+
+import AVATAR_1_1 from '@/images/avatars/1-1.png'
+import AVATAR_1_2 from '@/images/avatars/1-2.png'
+import AVATAR_2_1 from '@/images/avatars/2-1.png'
+import AVATAR_2_2 from '@/images/avatars/2-2.png'
+import AVATAR_3_1 from '@/images/avatars/3-1.png'
+import AVATAR_3_2 from '@/images/avatars/3-2.png'
 
 const testimonials = [
   [
@@ -15,7 +17,7 @@ const testimonials = [
       author: {
         name: 'Richard Jia',
         role: 'CEO, YouLand Inc.',
-        image: avatarImage1,
+        image: AVATAR_1_1,
       },
     },
     {
@@ -24,7 +26,7 @@ const testimonials = [
       author: {
         name: 'Amy Hahn',
         role: 'Managing Director, Atlas Private Lending',
-        image: avatarImage3,
+        image: AVATAR_1_2,
       },
     },
   ],
@@ -35,16 +37,16 @@ const testimonials = [
       author: {
         name: 'Peter Pedram',
         role: 'CEO, Private Money Lenders, LLC.',
-        image: avatarImage4,
+        image: AVATAR_2_1,
       },
     },
     {
       content:
         'The broker portal changed everything for us. Submissions are cleaner, documents are complete, and we’re funding faster.',
       author: {
-        name: 'Erin Powlowski',
+        name: 'Ethan Brown',
         role: 'VP of Lending, BridgeCap',
-        image: avatarImage2,
+        image: AVATAR_2_2,
       },
     },
   ],
@@ -55,17 +57,16 @@ const testimonials = [
       author: {
         name: 'Stephanie Renolds',
         role: 'Loan Processor, Westside Capital',
-        image: avatarImage5,
+        image: AVATAR_3_1,
       },
     },
-
     {
       content:
         'Corepass helped me stop being the bottleneck. Everyone can see what’s missing, who’s assigned, and what’s next. I finally have time to focus on strategy.',
       author: {
-        name: 'Amy Hahn',
+        name: 'James Williams',
         role: 'Director, North Creek Lending',
-        image: avatarImage4,
+        image: AVATAR_3_2,
       },
     },
   ],

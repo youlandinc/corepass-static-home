@@ -3,6 +3,10 @@
 @plugin '@tailwindcss/forms';
 
 @theme {
+  --breakpoint-xs: 23.4375rem;
+  --breakpoint-xsm: 25.875rem;
+  
+  
   --text-*: initial;
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
