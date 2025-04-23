@@ -6,44 +6,43 @@ import backgroundImage from '@/images/background-faqs.jpg'
 const faqs = [
   [
     {
-      question: "What is Corepass's loan management platform?",
+      question: 'What is Corepass?',
       answer:
-        'Corepass offers a comprehensive loan management solution that includes borrower and broker portals, automated document generation, loan pipeline tracking, and a dynamic pricing engine, all aimed at enhancing operational efficiency and transparency in the lending process.',
+        'Corepass is a modern loan operating system for private lenders. We help you manage your entire pipeline — from borrower intake to document generation to pricing — all in one place. No more spreadsheets. No more chaos.',
     },
     {
       question: 'How do I get started with Corepass?',
       answer:
-        'You can begin by requesting a demo or contacting our sales team through our website. We will assess your specific needs and provide a tailored onboarding experience, including training and support.',
+        'Just book a demo or message our team. We’ll understand your workflow, customize onboarding, and get your team live in days — not months.',
     },
     {
       question: "How does Corepass's pricing engine work?",
       answer:
-        'Our pricing engine allows you to adjust loan terms based on factors like loan type, loan-to-value (LTV) ratio, credit score, and more, without the need for complex spreadsheets, streamlining the pricing process.',
+        'Our dynamic pricing engine lets you set terms by loan type, LTV, credit score, and more, without needing formulas or Excel.',
     },
   ],
   [
     {
-      question:
-        'Is Corepass compliant with data security and regulatory standards?',
+      question: 'Is Corepass secure and compliant?',
       answer:
-        'Absolutely. Corepass employs advanced encryption, role-based access controls, and regular audits to ensure data security and compliance with industry regulations, safeguarding both lender and borrower information.',
+        'Yes. Corepass uses bank-level encryption, role-based permissions, and regular audits to meet lending compliance standards and protect borrower data.',
     },
     {
       question: 'Is Corepass accessible on mobile devices?',
       answer:
-        "Yes, Corepass's platform is mobile-responsive, allowing users to manage loan processes and access information from anywhere, ensuring flexibility and convenience.",
+        'Yes. Corepass is fully mobile-responsive, so your team can check statuses, approve deals, or upload docs on the go.',
     },
     {
       question: 'What customer support does Corepass provide?',
       answer:
-        'Corepass offers 24/7 customer support through various channels, including an online help center, email, and phone support, along with regular system updates and training sessions.',
+        'Corepass offers 24/7 customer support through various channels, including an online help center, email, and phone support, along with regular system updates and training sessions.​',
     },
   ],
   [
     {
       question: 'Does Corepass support multiple loan types?',
       answer:
-        'Yes, The platform is configurable to meet the requirements of different lending products.',
+        'Yes. The platform is fully configurable to handle bridge loans, fix-and-flips, DSCRs, and any other product you offer.',
     },
     {
       question: 'Can Corepass integrate with other software systems?',

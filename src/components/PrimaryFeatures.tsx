@@ -18,7 +18,7 @@ const features = [
   {
     title: 'Borrower & Broker Portal',
     description:
-      'Give borrowers and brokers one place to submit deals, upload documents, and track progress—everything in one place.',
+      'A single place for borrowers and brokers to submit deals, upload docs, and track progress in real time.',
     image: TAB_1,
   },
   {
@@ -30,7 +30,7 @@ const features = [
   {
     title: 'Pipeline Management',
     description:
-      'Track every deal from scenario to funded. Know exactly who’s working on what—and where things get stuck.',
+      "Track every deal from scenario to funding. Know exactly where deals stand—and what's blocking them.",
     image: TAB_3,
   },
   {
@@ -78,11 +78,11 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="mx-auto max-w-[800px] font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your lending operation.
+            Run your entire lending operation from one streamlined platform
           </h2>
           <p className="mx-auto mt-6 max-w-[700px] text-lg tracking-tight text-blue-100">
-            All the tools you need to originate, process, and close loans—built
-            specifically for private and hard money lenders.
+            Corepass replaces spreadsheets, endless email chains, and manual doc
+            prep with a fast, modern system built for private lenders.
           </p>
         </div>
         <TabGroup

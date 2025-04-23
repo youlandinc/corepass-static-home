@@ -22,9 +22,9 @@ interface Feature {
 const features: Array<Feature> = [
   {
     name: 'Document Tracking',
-    summary: 'Ensure every file is submitted, reviewed, and ready for closing.',
+    summary: 'Never chase paperwork again',
     description:
-      'Automatically track required documents for each loan type. See what’s missing, expired, or incomplete at a glance.',
+      'Automatically track every required doc by loan type. Instantly spot what’s missing, expired, or incomplete—before it slows down your closing.',
     image: BANNER_1,
     icon: function ReportingIcon() {
       let id = useId()
@@ -56,9 +56,9 @@ const features: Array<Feature> = [
   },
   {
     name: 'Team Management',
-    summary: 'Assign deals by role—account executive, processor, underwriter.',
+    summary: 'Everyone knows what to do—and when.',
     description:
-      'Scale operations without adding friction—assign roles and manage workloads with ease.',
+      'Assign roles across processors, underwriters, and AEs. Keep workflows clean and scalable without extra overhead.',
     image: BANNER_2,
     icon: function InventoryIcon() {
       return (
@@ -83,10 +83,9 @@ const features: Array<Feature> = [
   },
   {
     name: 'Analytics',
-    summary:
-      'Track team output, loan pipeline, and deal performance with built-in analytics.',
+    summary: 'See what’s working. Fix what’s not.',
     description:
-      'View market comps, census data, conversion rates, and bottlenecks across channels.',
+      'Track loan pipeline, team output, and deal performance with built-in reporting. Spot conversion drops, bottlenecks, and market trends in real time.',
     image: BANNER_3,
     icon: function ContactsIcon() {
       return (
@@ -235,7 +234,7 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Purpose-built for how private lenders actually operate.
+            Built for how private lenders really get deals done.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Our platform respects the high-touch, fast-turn nature of private

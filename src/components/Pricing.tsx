@@ -141,7 +141,7 @@ export function Pricing() {
 
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
-            name="Document Generation"
+            name="Doc Generation"
             description="Works with any system. Simply upload your loan data, generate the docs, and download everything—no manual edits needed"
             href="/register"
             features={[
@@ -153,7 +153,7 @@ export function Pricing() {
           />
           <Plan
             featured
-            name="Origination"
+            name="Standard"
             description="For small to mid-sized lending teams that need an efficient, end-to-end loan origination system"
             href="/register"
             featuresTitle={
@@ -171,7 +171,7 @@ export function Pricing() {
             ]}
           />
           <Plan
-            name="Automation"
+            name="Enterprise"
             description="For high-volume lenders who want to fully streamline internal ops and eliminate manual steps across the entire pipeline."
             featuresTitle={
               <>
