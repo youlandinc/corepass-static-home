@@ -70,6 +70,7 @@ export function Faqs() {
         alt=""
         width={1558}
         height={946}
+        quality={100}
         unoptimized
       />
       <Container className="relative">

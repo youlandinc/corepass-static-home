@@ -16,6 +16,7 @@ export function CallToAction() {
         alt=""
         width={2347}
         height={1244}
+        quality={100}
         unoptimized
       />
       <Container className="relative">

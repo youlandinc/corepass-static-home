@@ -129,6 +129,7 @@ export function Testimonials() {
                             unoptimized
                             alt=""
                             width={56}
+                            quality={100}
                             height={56}
                           />
                         </div>

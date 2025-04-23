@@ -158,6 +158,7 @@ function FeaturesMobile() {
                 className="w-full"
                 src={feature.image}
                 alt=""
+                quality={100}
                 sizes="52.75rem"
                 unoptimized
               />
@@ -211,6 +212,7 @@ function FeaturesDesktop() {
                       src={feature.image}
                       unoptimized
                       alt=""
+                      quality={100}
                       sizes="52.75rem"
                     />
                   </div>

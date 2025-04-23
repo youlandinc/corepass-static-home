@@ -73,6 +73,7 @@ export function PrimaryFeatures() {
         alt=""
         width={2245}
         height={1636}
+        quality={100}
         unoptimized
       />
       <Container className="relative">
@@ -145,6 +146,7 @@ export function PrimaryFeatures() {
                         src={feature.image}
                         alt=""
                         priority
+                        quality={100}
                         unoptimized
                         sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
                       />
