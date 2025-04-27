@@ -397,7 +397,7 @@ export default function Home() {
               protection. We also review and update our security practices as
               new technology and standards emerge.
             </p>
-            <p>
+            <p className={'mt-3'}>
               However, please understand that no method of transmission or
               storage is perfectly secure. While we strive to protect your
               information, we cannot guarantee the absolute security of your

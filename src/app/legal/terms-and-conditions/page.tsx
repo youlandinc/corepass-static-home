@@ -205,7 +205,7 @@ export default function Home() {
 
           <div className={'mt-6'}>
             <h2 className={'mt-8 text-2xl font-medium'}>5. Use Restrictions</h2>
-            <p>
+            <p className={'mt-3'}>
               You agree that You will not, and will not allow any Authorized
               User to:
             </p>
