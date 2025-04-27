@@ -72,9 +72,9 @@ function MobileNavigation() {
         transition
         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
       >
-        <MobileNavLink href="#features">Features</MobileNavLink>
-        <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-        <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+        <MobileNavLink href="/#features">Features</MobileNavLink>
+        <MobileNavLink href="/#testimonials">Testimonials</MobileNavLink>
+        <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
         {/*TODO : sign in*/}
         <MobileNavLink href="/">Sign in</MobileNavLink>
@@ -83,9 +83,9 @@ function MobileNavigation() {
   )
 }
 
-export function Header() {
+export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
   return (
-    <header className="py-10">
+    <header className={clsx('py-10', props.className)}>
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
@@ -93,9 +93,9 @@ export function Header() {
               <Logo className="h-8 w-auto xs:h-6" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
+              <NavLink href="/#features">Features</NavLink>
+              <NavLink href="/#testimonials">Testimonials</NavLink>
+              <NavLink href="/#pricing">Pricing</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">

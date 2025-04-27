@@ -12,13 +12,13 @@ export function Footer() {
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
+              <NavLink href="/#features">Features</NavLink>
+              <NavLink href="/#testimonials">Testimonials</NavLink>
+              <NavLink href="/#pricing">Pricing</NavLink>
             </div>
           </nav>
         </div>
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-5 sm:flex-row-reverse md:py-10 sm:justify-center">
+        <div className="flex items-center border-t border-slate-400/10 py-5 xs:flex-col xs:justify-center xs:gap-3 md:py-10 lg:flex-row lg:gap-6">
           {/*<div className="flex gap-x-6">*/}
           {/*<Link href="#" className="group" aria-label="TaxPal on X">*/}
           {/*  <svg*/}
@@ -43,6 +43,18 @@ export function Footer() {
             Copyright &copy; {new Date().getFullYear()} Corepass. All rights
             reserved.
           </p>
+          <Link
+            className="mt-0 cursor-pointer text-sm text-slate-500 hover:text-blue-400 md:mt-6"
+            href={'/legal/privacy-policy'}
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            className="mt-0 cursor-pointer text-sm text-slate-500 hover:text-blue-400 md:mt-6"
+            href={'/legal/terms-and-conditions'}
+          >
+            Terms & Conditions
+          </Link>
         </div>
       </Container>
     </footer>
