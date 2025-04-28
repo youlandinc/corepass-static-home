@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { ReactNode } from 'react'
+import { BookDemo } from '@/components/BookDemoForm'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -104,15 +105,16 @@ function Plan({
           </li>
         ))}
       </ul>
-      <Button
-        href={href}
-        variant={featured ? 'solid' : 'outline'}
-        color="white"
-        className="mt-8"
-        aria-label={`Get started with the ${name} plan for ${price}`}
-      >
-        Contact Sales
-      </Button>
+
+      <BookDemo
+        className={clsx(
+          'mt-8 cursor-pointer',
+          featured
+            ? 'bg-white text-sm font-normal text-slate-900 hover:bg-blue-50 hover:text-slate-900 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-blue-200 active:text-slate-900'
+            : 'rounded-full bg-transparent text-sm font-normal text-white ring-1 ring-slate-700 hover:bg-transparent hover:ring-slate-500 focus:outline-hidden focus-visible:outline-white active:bg-transparent active:text-slate-400 active:ring-slate-700',
+        )}
+        label={<>Contact Sales</>}
+      />
     </section>
   )
 }
