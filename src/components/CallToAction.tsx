@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-call-to-action.jpg'
+import { BookDemo } from '@/components/BookDemoForm'
 
 export function CallToAction() {
   return (
@@ -29,10 +30,11 @@ export function CallToAction() {
             system that gives your team visibility, accountability, and speed at
             every stage of the loan lifecycle.
           </p>
-          {/*TODO : Book a demo*/}
-          <Button href="/" color="white" className="mt-10">
-            Book a demo
-          </Button>
+          <BookDemo
+            className={
+              'mt-10 cursor-pointer bg-white text-primary hover:bg-amber-50 hover:text-primary focus:outline-hidden focus-visible:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-amber-50 active:text-primary'
+            }
+          />
         </div>
       </Container>
     </section>

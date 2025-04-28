@@ -9,10 +9,12 @@ import {
 } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
+
+import { BookDemo } from '@/components/BookDemoForm'
+import { useState } from 'react'
 
 function MobileNavLink({
   href,
@@ -84,12 +86,14 @@ function MobileNavigation() {
 }
 
 export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
+  const [value, setValue] = useState('')
+
   return (
     <header className={clsx('py-10', props.className)}>
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
+            <Link href="/" aria-label="Home">
               <Logo className="h-8 w-auto xs:h-6" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
@@ -104,11 +108,14 @@ export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
               <NavLink href="/">Sign in</NavLink>
             </div>
             {/*TODO : start*/}
-            <Button href="/" color="blue">
-              <span>
-                Get started <span className="hidden lg:inline">today</span>
-              </span>
-            </Button>
+            <BookDemo
+              label={
+                <span>
+                  Get started <span className="hidden lg:inline">today</span>
+                </span>
+              }
+            />
+
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>

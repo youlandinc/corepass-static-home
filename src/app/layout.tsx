@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
+import { Toaster } from '@/components/ui/sonner'
 
 import '@/styles/tailwind.css'
 
@@ -45,7 +46,10 @@ export default function RootLayout({
         adell.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col">
+        {children}
+        <Toaster position="top-right" />
+      </body>
     </html>
   )
 }

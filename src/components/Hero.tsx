@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 
 import { Button } from '@/components/Button'
@@ -9,6 +10,7 @@ import BRAND_3 from '@/images/brands/brand-3.svg'
 import BRAND_4 from '@/images/brands/brand-4.svg'
 import BRAND_5 from '@/images/brands/brand-5.svg'
 import BRAND_6 from '@/images/brands/brand-6.svg'
+import { BookDemo } from '@/components/BookDemoForm'
 
 export function Hero() {
   return (
@@ -34,13 +36,11 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         {/*TODO : Book a demo*/}
-        <Button href="/">Book a demo</Button>
-        {/*<Button*/}
-        {/*  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"*/}
-        {/*  variant="outline"*/}
-        {/*>*/}
-        {/*  Learn more*/}
-        {/*</Button>*/}
+        <BookDemo
+          className={
+            'mt-10 cursor-pointer bg-black text-white hover:bg-black/80 hover:text-white focus:outline-hidden focus-visible:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-black/80 active:text-white'
+          }
+        />
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
