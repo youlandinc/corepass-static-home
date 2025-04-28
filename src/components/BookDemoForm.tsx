@@ -100,9 +100,9 @@ export function BookDemo({ label = <>Book a demo</>, className = '' }) {
     setLoading(true)
     try {
       await _askForDemo(postData)
-      toast('Submitted successfully!')
+      toast('Submitted successfully')
     } catch (e) {
-      toast('Oops! There was a problem submitting your form.')
+      toast('There was a problem submitting your form.')
     } finally {
       setLoading(false)
       setOpen(false)
