@@ -15,6 +15,7 @@ import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
 import { useState } from 'react'
+import { LOGIN_URL } from '@/constant'
 
 function MobileNavLink({
   href,
@@ -78,9 +79,7 @@ function MobileNavigation() {
         <MobileNavLink href="/#testimonials">Testimonials</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
-        <MobileNavLink href="https://app.corepass.com/auth/login">
-          Login
-        </MobileNavLink>
+        <MobileNavLink href={LOGIN_URL}>Login</MobileNavLink>
       </PopoverPanel>
     </Popover>
   )
@@ -105,9 +104,7 @@ export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
-              <NavLink href="https://app.corepass.com/auth/login">
-                Login
-              </NavLink>
+              <NavLink href={LOGIN_URL}>Login</NavLink>
             </div>
             <BookDemo
               label={
