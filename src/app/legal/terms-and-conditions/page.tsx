@@ -1,6 +1,16 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Banner } from '@/components/Banner'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Corepass',
+    default: 'Terms of Use | Corepass',
+  },
+  description:
+    'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
+}
 
 export default function Home() {
   return (
@@ -25,9 +35,9 @@ export default function Home() {
             <h2 className={'mt-8 text-2xl font-medium'}>1. Definitions</h2>
             <ul className={'mt-3 list-disc pl-6'}>
               <li>
-                “Corepass” or “Company” means Corepass, Inc., the provider of
-                the Corepass cloud-based digital identity and access management
-                services.
+                “Corepass” or “Company” means Corepass, Inc., a software
+                development company focused on delivering an integrated
+                origination platform for lenders.
               </li>
               <li>
                 “Service” or “Platform” refers to the Corepass online

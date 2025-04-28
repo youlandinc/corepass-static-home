@@ -1,6 +1,4 @@
 import clsx from 'clsx'
-
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { ReactNode } from 'react'
 import { BookDemo } from '@/components/BookDemoForm'
@@ -57,7 +55,6 @@ function Plan({
   price,
   priceTail,
   description,
-  href,
   features,
   featuresTitle,
   featured = false,
@@ -66,7 +63,6 @@ function Plan({
   price?: string
   priceTail?: string
   description: string
-  href: string
   featuresTitle?: ReactNode
   features: Array<string>
   featured?: boolean
@@ -110,8 +106,8 @@ function Plan({
         className={clsx(
           'mt-8 cursor-pointer',
           featured
-            ? 'bg-white text-sm font-normal text-slate-900 hover:bg-blue-50 hover:text-slate-900 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-blue-200 active:text-slate-900'
-            : 'rounded-full bg-transparent text-sm font-normal text-white ring-1 ring-slate-700 hover:bg-transparent hover:ring-slate-500 focus:outline-hidden focus-visible:outline-white active:bg-transparent active:text-slate-400 active:ring-slate-700',
+            ? 'bg-white text-sm text-slate-900 hover:bg-blue-50 hover:text-slate-900 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:bg-blue-200 active:text-slate-900'
+            : 'rounded-full bg-transparent text-sm text-white ring-1 ring-slate-700 hover:bg-transparent hover:ring-slate-500 focus:outline-hidden focus-visible:outline-white active:bg-transparent active:text-white active:ring-slate-700',
         )}
         label={<>Contact Sales</>}
       />
@@ -145,8 +141,6 @@ export function Pricing() {
           <Plan
             name="Doc Generation"
             description="Works with any system. Simply upload your loan data, generate the docs, and download everything—no manual edits needed"
-            // TODO : Contact sales
-            href="/"
             features={[
               'Generate full loan packages: Note, Deed of Trust, Disclosures, Payoff, and more',
               'Auto-fill fields from the loan file',
@@ -158,8 +152,6 @@ export function Pricing() {
             featured
             name="Standard"
             description="For small to mid-sized lending teams that need an efficient, end-to-end loan origination system"
-            // TODO : Contact sales
-            href="/"
             featuresTitle={
               <>
                 Unlimited <b>Document Generation</b>, plus:
@@ -182,8 +174,6 @@ export function Pricing() {
                 Everything in <b>Origination</b>, plus:
               </>
             }
-            // TODO : Contact sales
-            href="/"
             features={[
               'AI-assisted document analysis for parsing uploads, detecting missing items, and flagging inconsistencies',
               'Automated follow-ups and reminders',

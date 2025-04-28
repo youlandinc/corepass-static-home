@@ -1,6 +1,16 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Banner } from '@/components/Banner'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Corepass',
+    default: 'Privacy Policy | Corepass',
+  },
+  description:
+    'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
+}
 
 export default function Home() {
   return (

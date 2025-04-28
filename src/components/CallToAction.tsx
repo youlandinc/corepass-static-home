@@ -22,7 +22,7 @@ export function CallToAction() {
       />
       <Container className="relative">
         <div className="mx-auto max-w-[1000px] text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">
             Get started today
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">

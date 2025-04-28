@@ -27,6 +27,7 @@ import { _askForDemo } from '@/request'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
@@ -131,7 +132,7 @@ export function BookDemo({ label = <>Book a demo</>, className = '' }) {
         <DialogHeader>
           <DialogTitle>Book a demo</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
+            Tell us a bit about you and we’ll schedule a quick walkthrough
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-6 py-3">
@@ -239,6 +240,7 @@ export function BookDemo({ label = <>Book a demo</>, className = '' }) {
                   >
                     <FormControl>
                       <Checkbox
+                        className={'cursor-pointer'}
                         checked={field.value}
                         onCheckedChange={field.onChange}
                       />
@@ -254,12 +256,16 @@ export function BookDemo({ label = <>Book a demo</>, className = '' }) {
               />
 
               <div className={'text-[12px] text-[#9095A3]'}>
-                We&apos;re committed to your privacy. Corepass uses the
-                information you provide to us to contact you about our relevant
-                content, products, and services. You may unsubscribe from these
-                communications at any time. Msg & data rates may apply. Message
-                frequency varies. Text STOP to cancel SMS communication. For
-                more information, check out our Privacy Policy.
+                We respect your privacy. We’ll use your info to share relevant
+                content and schedule your demo. Opt out whenever you like. See
+                our{' '}
+                <Link
+                  href={'/legal/privacy-policy'}
+                  className={'text-[12px] font-bold hover:underline'}
+                >
+                  Privacy Policy
+                </Link>{' '}
+                for details.
               </div>
 
               <Button

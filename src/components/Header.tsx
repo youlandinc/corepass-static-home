@@ -78,8 +78,9 @@ function MobileNavigation() {
         <MobileNavLink href="/#testimonials">Testimonials</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
-        {/*TODO : sign in*/}
-        <MobileNavLink href="/">Sign in</MobileNavLink>
+        <MobileNavLink href="https://app.corepass.com/auth/login">
+          Login
+        </MobileNavLink>
       </PopoverPanel>
     </Popover>
   )
@@ -104,10 +105,10 @@ export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
-              {/*TODO : sign in*/}
-              <NavLink href="/">Sign in</NavLink>
+              <NavLink href="https://app.corepass.com/auth/login">
+                Login
+              </NavLink>
             </div>
-            {/*TODO : start*/}
             <BookDemo
               label={
                 <span>
