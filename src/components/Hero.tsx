@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
 
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { BookDemo } from '@/components/BookDemoForm'
 
 import BRAND_1 from '@/images/brands/brand-1.svg'
 import BRAND_2 from '@/images/brands/brand-2.svg'
@@ -10,7 +10,6 @@ import BRAND_3 from '@/images/brands/brand-3.svg'
 import BRAND_4 from '@/images/brands/brand-4.svg'
 import BRAND_5 from '@/images/brands/brand-5.svg'
 import BRAND_6 from '@/images/brands/brand-6.svg'
-import { BookDemo } from '@/components/BookDemoForm'
 
 export function Hero() {
   return (
