@@ -47,14 +47,6 @@ export default function RootLayout({
         adell.variable,
       )}
     >
-      <head>
-        <link
-          rel="icon"
-          href="/src/app/favicon.svg"
-          type="image/svg+xml"
-          sizes="any"
-        />
-      </head>
       <body className="flex h-full flex-col">
         {children}
         <Toaster position="top-right" />
