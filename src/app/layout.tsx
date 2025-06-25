@@ -47,6 +47,9 @@ export default function RootLayout({
         adell.variable,
       )}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="flex h-full flex-col">
         {children}
         <Toaster position="top-right" />
