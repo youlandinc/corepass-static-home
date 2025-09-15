@@ -1,8 +1,11 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { BookDemo } from '@/components/BookDemoForm'
+
+import { LOGIN_URL } from '@/constant'
 
 import BRAND_1 from '@/images/brands/brand-1.svg'
 import BRAND_2 from '@/images/brands/brand-2.svg'
@@ -30,14 +33,14 @@ export function Hero() {
         for private lenders.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Corepass gives lenders the tools to close more deals, cut overhead, and
-        compete at scale—without hiring a bigger team.
+      From sales outreach to loan origination to enterprise knowledge — Corepass replaces manual, operational busywork with AI-driven automation so your team can focus on growth, not grunt work.
       </p>
-      <div className="mt-10 flex justify-center gap-x-6">
+      <div className="mt-8 flex justify-center gap-x-6">
+        <Link className="rounded-full bg-blue-600 text-white font-semibold px-4 leading-10" href={LOGIN_URL}>Try Corepass for free</Link>
         {/*TODO : Book a demo*/}
         <BookDemo
           className={
-            'mt-10 cursor-pointer bg-black text-white hover:bg-black/80 hover:text-white focus:outline-hidden focus-visible:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-black/80 active:text-white'
+            ' cursor-pointer bg-black text-white hover:bg-black/80 hover:text-white focus:outline-hidden focus-visible:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-black/80 active:text-white'
           }
         />
       </div>
