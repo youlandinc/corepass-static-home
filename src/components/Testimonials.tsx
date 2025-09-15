@@ -10,58 +10,6 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 
-import AVATAR_1_1 from '@/images/avatars/1-1.png'
-import AVATAR_1_2 from '@/images/avatars/1-2.png'
-import AVATAR_2_1 from '@/images/avatars/2-1.png'
-import AVATAR_2_2 from '@/images/avatars/2-2.png'
-import AVATAR_3_1 from '@/images/avatars/3-1.png'
-import AVATAR_3_2 from '@/images/avatars/3-2.png'
-
-const testimonials = [
-  {
-    content:
-      'We went from managing everything in Google Sheets to tracking 60+ deals a month in Corepass. Game changer...',
-    name: 'Richard Jia',
-    role: 'CEO, YouLand Inc.',
-    image: AVATAR_1_1,
-  },
-  {
-    content:
-      'What stood out to me was how fast my team picked it up. No long onboarding. Just immediate improvements in how we track and close deals.',
-    name: 'Amy Hahn',
-    role: 'Managing Director, Atlas Private Lending',
-    image: AVATAR_1_2,
-  },
-  {
-    content:
-      'We brought Corepass in during a period of rapid growth. It gave us the structure we needed to handle double the loan volume without burning out our team,',
-    name: 'Peter Pedram',
-    role: 'CEO, Private Money Lenders, LLC.',
-    image: AVATAR_2_1,
-  },
-  {
-    content:
-      'The broker portal changed everything for us. Submissions are cleaner, documents are complete, and we’re funding faster.',
-    name: 'Ethan Brown',
-    role: 'VP of Lending, BridgeCap',
-    image: AVATAR_2_2,
-  },
-  {
-    content:
-      'I used to spend half my day following up on missing docs and wondering if deals were stuck. Now I just open Corepass and know exactly where things stand.',
-    name: 'Stephanie Renolds',
-    role: 'Loan Processor, Westside Capital',
-    image: AVATAR_3_1,
-  },
-  {
-    content:
-      'Corepass helped me stop being the bottleneck. Everyone can see what’s missing, who’s assigned, and what’s next. I finally have time to focus on strategy.',
-    name: 'James Williams',
-    role: 'Director, North Creek Lending',
-    image: AVATAR_3_2,
-  },
-]
-
 function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg aria-hidden="true" width={105} height={78} {...props}>
@@ -71,17 +19,21 @@ function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 interface TestimonialsProps {
-  title?: string
-  subtitle?: string
-  testimonials?: {
+  title: string
+  subtitle: string
+  testimonials: {
     content: string
-    name: string
-    role: string
-    image: StaticImageData
+    auth: string
+    title: string
+    avatar: StaticImageData
   }[]
 }
 
-export const Testimonials: FC<TestimonialsProps> = () => {
+export const Testimonials: FC<TestimonialsProps> = ({
+  title,
+  subtitle,
+  testimonials,
+}) => {
   return (
     <section
       id="testimonials"
@@ -91,11 +43,10 @@ export const Testimonials: FC<TestimonialsProps> = () => {
       <Container>
         <div className="mx-auto max-w-[1280px] md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Trusted by Top Lenders Across the Country
+            {title}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            From fast-growing originators to established lending firms, Corepass
-            gives teams the tools they need to scale cleanly and close faster.
+            {subtitle}
           </p>
         </div>
 
@@ -134,16 +85,16 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                     <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6 transition-colors duration-300 group-hover:border-slate-200">
                       <div>
                         <div className="font-display text-base text-slate-900 transition-colors duration-300 group-hover:text-slate-800">
-                          {testimonial.name}
+                          {testimonial.auth}
                         </div>
                         <div className="mt-1 text-sm text-slate-500 transition-colors duration-300 group-hover:text-slate-600">
-                          {testimonial.role}
+                          {testimonial.title}
                         </div>
                       </div>
                       <div className="overflow-hidden rounded-full bg-slate-50 transition-all duration-300 group-hover:bg-white">
                         <Image
                           className="h-14 w-14 object-cover"
-                          src={testimonial.image}
+                          src={testimonial.avatar}
                           unoptimized
                           alt=""
                           width={56}

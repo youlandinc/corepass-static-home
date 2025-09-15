@@ -1,9 +1,15 @@
-import AVATAR_1_1 from '@/images/avatars/1-1.png'
-import AVATAR_1_2 from '@/images/avatars/1-2.png'
-import AVATAR_2_1 from '@/images/avatars/2-1.png'
-import AVATAR_2_2 from '@/images/avatars/2-2.png'
-import AVATAR_3_1 from '@/images/avatars/3-1.png'
-import AVATAR_3_2 from '@/images/avatars/3-2.png'
+export const LENDERS_CALL = {
+  title: 'AI for Your Entire Operation',
+  subtitle:
+    'Stop wasting human time on repetitive tasks. Let LendingOS automate the work so your team can focus on strategy and growth.',
+}
+
+import LENDER_AVATAR_1 from '@/images/lender/testimonials/lender-1.png'
+import LENDER_AVATAR_2 from '@/images/lender/testimonials/lender-2.png'
+import LENDER_AVATAR_3 from '@/images/lender/testimonials/lender-3.png'
+import LENDER_AVATAR_4 from '@/images/lender/testimonials/lender-4.png'
+import LENDER_AVATAR_5 from '@/images/lender/testimonials/lender-5.png'
+import LENDER_AVATAR_6 from '@/images/lender/testimonials/lender-6.png'
 
 export const LENDERS_TESTIMONIALS = {
   title: 'Trusted by Top Lenders Across the Country',
@@ -15,42 +21,42 @@ export const LENDERS_TESTIMONIALS = {
         'We went from managing everything in Google Sheets to tracking 60+ deals a month in Corepass. Game changer...',
       auth: 'Richard Jia',
       title: 'CEO, YouLand Inc.',
-      avatar: AVATAR_3_2,
+      avatar: LENDER_AVATAR_1,
     },
     {
       content:
         'We brought Corepass in during a period of rapid growth. It gave us the structure we needed to handle double the loan volume without burning out our team.',
       auth: 'Peter Pedram',
       title: 'CEO, Private Money Lenders, LLC.',
-      avatar: '',
+      avatar: LENDER_AVATAR_2,
     },
     {
       content:
         'I used to spend half my day following up on missing docs and wondering if deals were stuck. Now I just open Corepass and know exactly where things stand.',
       auth: 'Stephanie Renolds',
       title: 'Loan Processor, Westside Capital',
-      avatar: '',
+      avatar: LENDER_AVATAR_3,
     },
     {
       content:
         'What stood out to me was how fast my team picked it up. No long onboarding. Just immediate improvements in how we track and close deals.',
       auth: 'Amy Hahn',
       title: 'Managing Director, Atlas Private Lending',
-      avatar: '',
+      avatar: LENDER_AVATAR_4,
     },
     {
       content:
         'Before Corepass, we constantly missed follow-ups and lost deals in the shuffle. Now every deal is tracked automatically, and nothing slips through the cracks.',
       auth: 'Lauren Kim',
       title: 'VP of Lending, BrightPath Financial',
-      avatar: '',
+      avatar: LENDER_AVATAR_5,
     },
     {
       content:
         'Our average closing time dropped from 45 days to 28 days. Corepass keeps everyone on the same page so we can move faster without sacrificing quality.',
       auth: 'James Ortega',
       title: 'COO, Metro Capital',
-      avatar: '',
+      avatar: LENDER_AVATAR_6,
     },
   ],
 }
