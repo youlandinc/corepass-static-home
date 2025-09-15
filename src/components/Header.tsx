@@ -75,8 +75,8 @@ function MobileNavigation() {
         transition
         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in [&>*]:text-sm"
       >
-        <MobileNavLink href="/#features">For Sales</MobileNavLink>
-        <MobileNavLink href="/#testimonials">For Lending</MobileNavLink>
+        <MobileNavLink href="/lenders">For Lenders</MobileNavLink>
+        <MobileNavLink href="/sales">For Sales</MobileNavLink>
         <MobileNavLink href="/#pricing">For Knowledge Base</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
         <MobileNavLink href="/#pricing">FAQ</MobileNavLink>
@@ -104,8 +104,8 @@ export function Header(props: HeaderProps) {
               {props.logo || <Logo className="h-8 w-auto xs:h-6" />}
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
-              <Link href="/#features">For Sales</Link>
-              <Link href="/#testimonials">For Lending</Link>
+              <Link href="/sales">For Sales</Link>
+              <Link href="/lenders">For Lenders</Link>
               <Link href="/#pricing">For Knowledge Base</Link>
               <Link href="/#pricing">Pricing</Link>
               <Link href="/#pricing">FAQ</Link>
