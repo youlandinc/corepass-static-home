@@ -9,8 +9,8 @@ import { LOGIN_URL } from '@/constant'
 export function Footer() {
   return (
     <footer className="bg-slate-50">
-      <Container className="rounded-tl-[60px] rounded-tr-[60px] border border-[red] bg-blue-500 py-40">
-        <div className="flex flex-col gap-3 text-center">
+      <Container className="rounded-tl-[60px] rounded-tr-[60px] bg-blue-500 py-40">
+        <div className="flex flex-col gap-3 text-center [&>*]:text-white">
           <h2 className="text-5xl leading-[1.2]">
             Run your operations with AI
           </h2>
@@ -86,7 +86,7 @@ export function Footer() {
             />
           </svg>
           <nav className="mt-10 text-sm" aria-label="quick links">
-            <div className="-my-1 flex justify-center gap-x-6 [&>*]:text-sm">
+            <div className="-my-1 flex justify-center gap-x-6 [&>*]:text-sm [&>*]:text-white">
               <Link href="/sales">For Sales</Link>
               <Link href="/lenders">For Lenders</Link>
               <Link href="/#pricing">For Knowledge Base</Link>
