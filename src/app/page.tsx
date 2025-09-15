@@ -5,6 +5,8 @@ import { PowerfulSolutions } from '@/components/PowerfulSolutions'
 import { Pricing } from '@/components/Pricing'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { HomeHero } from '@/components/HomeHero'
+import { CorepassWay } from '@/components/CorepassWay'
+import { Testimonials } from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -13,11 +15,13 @@ export default function Home() {
       <main>
         <HomeHero />
         <PowerfulSolutions />
-        <SecondaryFeatures />
+        <CorepassWay />
+        {/*<SecondaryFeatures />*/}
         <CallToAction />
         {/*<Testimonials />*/}
-        <Pricing />
+        {/*<Pricing />*/}
         {/*<Faqs />*/}
+        <Testimonials />
       </main>
       <Footer />
     </>

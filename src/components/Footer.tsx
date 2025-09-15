@@ -9,7 +9,7 @@ import { LOGIN_URL } from '@/constant'
 export function Footer() {
   return (
     <footer className="bg-slate-50">
-      <Container className="rounded-tl-[60px] rounded-tr-[60px] bg-blue-500 py-40">
+      <Container className="max-w-full rounded-tl-[60px] rounded-tr-[60px] bg-blue-500 py-40">
         <div className="flex flex-col gap-3 text-center [&>*]:text-white">
           <h2 className="text-5xl leading-[1.2]">
             Run your operations with AI
@@ -96,18 +96,18 @@ export function Footer() {
           </nav>
         </div>
         <div className="flex items-center pt-9 pb-15 xs:flex-col xs:justify-center xs:gap-3 lg:flex-row lg:gap-6">
-          <p className="text-[rgba(255,255,255,0.70)] mt-0 text-sm md:mt-6">
+          <p className="mt-0 text-sm text-[rgba(255,255,255,0.70)] md:mt-6">
             Copyright &copy; {new Date().getFullYear()} Corepass. All rights
             reserved.
           </p>
           <Link
-            className="text-[rgba(255,255,255,0.70)] mt-0 cursor-pointer text-sm hover:text-blue-400 md:mt-6"
+            className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400 md:mt-6"
             href={'/legal/privacy-policy'}
           >
             Privacy Policy
           </Link>
           <Link
-            className="text-[rgba(255,255,255,0.70)] mt-0 cursor-pointer text-sm hover:text-blue-400 md:mt-6"
+            className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400 md:mt-6"
             href={'/legal/terms-and-conditions'}
           >
             Terms & Conditions
