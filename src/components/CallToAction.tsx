@@ -20,10 +20,10 @@ export const CallToAction: FC<CallToActionProps> = ({
   return (
     <section
       id="get-started-today"
-      className="relative overflow-hidden bg-blue-600 py-32"
+      className="relative mx-20 overflow-hidden rounded-[48px] py-32"
     >
       <Image
-        className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
         src={backgroundImage}
         alt=""
         width={2347}
@@ -37,11 +37,12 @@ export const CallToAction: FC<CallToActionProps> = ({
             {title}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">{subtitle}</p>
-          <div>
+
+          <div className={'mt-10 flex flex-row justify-center gap-6'}>
             {action}
             <BookDemo
               className={
-                'mt-10 cursor-pointer bg-white text-primary hover:bg-amber-50 hover:text-primary focus:outline-hidden focus-visible:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-amber-50 active:text-primary'
+                'cursor-pointer bg-white text-[#202939] hover:bg-amber-50 hover:text-[#202939] focus:outline-hidden focus-visible:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-amber-50 active:text-[#202939]'
               }
             />
           </div>

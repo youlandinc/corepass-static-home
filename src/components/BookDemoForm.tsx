@@ -1,8 +1,17 @@
 'use client'
+import { useState } from 'react'
+import Link from 'next/link'
 
-import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import { toast } from 'sonner'
+
+import { cn } from '@/lib/utils'
+import { _askForDemo } from '@/request'
+
+import { PatternFormat } from 'react-number-format'
 
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -22,12 +31,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { PatternFormat } from 'react-number-format'
-import { _askForDemo } from '@/request'
-import { useState } from 'react'
-import { toast } from 'sonner'
-import { cn } from '@/lib/utils'
-import Link from 'next/link'
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,

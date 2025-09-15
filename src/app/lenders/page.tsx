@@ -21,7 +21,11 @@ export default function Lenders() {
         <CallToAction
           title={LENDERS_CALL.title}
           subtitle={LENDERS_CALL.subtitle}
-          action={<Button>123</Button>}
+          action={
+            <Button color={'blue'} variant={'solid'}>
+              Try Corepass for free
+            </Button>
+          }
         />
         <Testimonials
           title={LENDERS_TESTIMONIALS.title}
