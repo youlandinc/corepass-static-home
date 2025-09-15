@@ -4,7 +4,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 
-//import { LENDERS_FAQ } from '@/constant/Lenders'
+import { SALES_FAQ, SALES_TESTIMONIALS } from '@/constant/Sales'
 
 export default function Sales() {
   return (
@@ -12,8 +12,12 @@ export default function Sales() {
       <Header />
       <main>
         <Hero />
-        <Testimonials />
-        {/*<Faqs subtitle={LENDERS_FAQ.subtitle} faqList={LENDERS_FAQ.list} />*/}
+        <Testimonials
+          title={SALES_TESTIMONIALS.title}
+          subtitle={SALES_TESTIMONIALS.subtitle}
+          testimonials={SALES_TESTIMONIALS.list}
+        />
+        <Faqs subtitle={SALES_FAQ.subtitle} faqList={SALES_FAQ.list} />
       </main>
       <Footer />
     </>

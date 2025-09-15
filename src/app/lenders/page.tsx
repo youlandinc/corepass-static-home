@@ -1,6 +1,7 @@
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
+import { CallToAction } from '@/components/CallToAction'
 import { Testimonials } from '@/components/Testimonials'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
@@ -10,7 +11,6 @@ import {
   LENDERS_FAQ,
   LENDERS_TESTIMONIALS,
 } from '@/constant/Lenders'
-import { CallToAction } from '@/components/CallToAction'
 
 export default function Lenders() {
   return (
