@@ -12,8 +12,8 @@ export function Footer() {
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6 [&>*]:text-sm">
-              <Link href="/#features">For Sales</Link>
-              <Link href="/#testimonials">For Lending</Link>
+              <Link href="/sales">For Sales</Link>
+              <Link href="/lenders">For Lenders</Link>
               <Link href="/#pricing">For Knowledge Base</Link>
               <Link href="/#pricing">Pricing</Link>
               <Link href="/#pricing">FAQ</Link>
