@@ -14,7 +14,7 @@ import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
-import { useState } from 'react'
+import { ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
 import { LOGIN_URL } from '@/constant'
 
 function MobileNavLink({
@@ -73,19 +73,26 @@ function MobileNavigation() {
       />
       <PopoverPanel
         transition
-        className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in"
+        className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in [&>*]:text-sm"
       >
-        <MobileNavLink href="/#features">Features</MobileNavLink>
-        <MobileNavLink href="/#testimonials">Testimonials</MobileNavLink>
+        <MobileNavLink href="/#features">For Sales</MobileNavLink>
+        <MobileNavLink href="/#testimonials">For Lending</MobileNavLink>
+        <MobileNavLink href="/#pricing">For Knowledge Base</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
+        <MobileNavLink href="/#pricing">FAQ</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
-        <MobileNavLink href={LOGIN_URL}>Login</MobileNavLink>
+        <MobileNavLink href={LOGIN_URL}>Sign in</MobileNavLink>
       </PopoverPanel>
     </Popover>
   )
 }
 
-export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
+type HeaderProps = ComponentPropsWithoutRef<'header'> & {
+  logo?: ReactNode
+  btnClassName?: string
+}
+
+export function Header(props: HeaderProps) {
   const [value, setValue] = useState('')
 
   return (
@@ -94,17 +101,19 @@ export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
-              <Logo className="h-8 w-auto xs:h-6" />
+              {props.logo || <Logo className="h-8 w-auto xs:h-6" />}
             </Link>
-            <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/#features">Features</NavLink>
-              <NavLink href="/#testimonials">Testimonials</NavLink>
-              <NavLink href="/#pricing">Pricing</NavLink>
+            <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
+              <Link href="/#features">For Sales</Link>
+              <Link href="/#testimonials">For Lending</Link>
+              <Link href="/#pricing">For Knowledge Base</Link>
+              <Link href="/#pricing">Pricing</Link>
+              <Link href="/#pricing">FAQ</Link>
             </div>
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
-              <NavLink href={LOGIN_URL}>Login</NavLink>
+          <div className="flex items-center gap-x-5 lg:gap-x-8">
+            <div className="[& dev]:text-sm hidden lg:block">
+              <NavLink href={LOGIN_URL}>Sign in</NavLink>
             </div>
             <BookDemo
               label={
@@ -112,9 +121,10 @@ export function Header(props: React.ComponentPropsWithoutRef<'header'>) {
                   Get started <span className="hidden lg:inline">today</span>
                 </span>
               }
+              className={props.btnClassName}
             />
 
-            <div className="-mr-1 md:hidden">
+            <div className="-mr-1 lg:hidden">
               <MobileNavigation />
             </div>
           </div>
