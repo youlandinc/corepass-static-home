@@ -103,62 +103,68 @@ const list = [
 
 export const SalePrimaryFeatures = () => {
   return (
-    <Container className={'py-40'}>
-      <div className={'max-w-[1280px] text-center'}>
-        <h2 className={'text-5xl leading-[1.2] font-medium'}>
-          Run your entire sales outreach workflow in one place
-        </h2>
-        <p className={'mt-6'}>
-          SalesOS replaces manual prospecting, disconnected data enrichment
-          tools, and fragmented outreach software with a single AI-driven
-          platform.
-        </p>
-      </div>
+    <section className={'w-full overflow-x-hidden'}>
+      <Container className={'py-40'}>
+        <div className={'max-w-[1280px] text-center'}>
+          <h2 className={'text-5xl leading-[1.2] font-medium'}>
+            Run your entire sales outreach workflow in one place
+          </h2>
+          <p className={'mt-6'}>
+            SalesOS replaces manual prospecting, disconnected data enrichment
+            tools, and fragmented outreach software with a single AI-driven
+            platform.
+          </p>
+        </div>
 
-      <ul className={'mt-40 flex flex-col gap-y-[160px]'}>
-        {list.map((section, index) => (
-          <li
-            key={`${section.title}-${index}`}
-            className={'flex flex-col gap-y-[160px]'}
-          >
-            <div className={'flex flex-row items-center gap-x-[60px]'}>
-              <div
-                className={clsx(
-                  index % 2 === 0 ? 'order-first' : 'order-last',
-                  'relative',
-                )}
-              >
-                <Image src={section.image} alt={''} />
-              </div>
-              <div
-                className={clsx(
-                  index % 2 === 0 ? 'order-last' : 'order-first',
-                  'w-[680px] shrink-0',
-                )}
-              >
-                <h3 className={'text-[40px] leading-[1.2] font-medium'}>
-                  {section.title}
-                </h3>
-                <p className={'mt-6 text-[20px]'}>{section.subtitle}</p>
+        <ul className={'relative mt-40 flex w-full flex-col gap-y-[160px]'}>
+          {list.map((section, index) => (
+            <li
+              key={`${section.title}-${index}`}
+              className={'relative z-[10] flex flex-col gap-y-[160px]'}
+            >
+              <div className={'flex flex-row items-center gap-x-[60px]'}>
+                <div
+                  className={clsx(
+                    index % 2 === 0 ? 'order-first' : 'order-last',
+                    'relative w-[40.625%] shrink-0',
+                  )}
+                >
+                  <Image src={section.image} alt={''} />
+                </div>
+                <div
+                  className={clsx(
+                    index % 2 === 0 ? 'order-last' : 'order-first',
+                    'w-[53.125%] shrink-0',
+                  )}
+                >
+                  <h3 className={'text-[40px] leading-[1.2] font-medium'}>
+                    {section.title}
+                  </h3>
+                  <p className={'mt-6 text-[20px]'}>{section.subtitle}</p>
 
-                <ul className={'mt-3 flex list-disc flex-col gap-y-3 pl-4'}>
-                  {section.desc.map((intro, introIndex) => (
-                    <li key={`${intro.title}-${introIndex}`}>
-                      <p className={'text-[18px]'}>{intro.title}</p>
-                      <p className={'text-[18px] text-[#636A7C]'}>
-                        {intro.content}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className={'mt-3 flex list-disc flex-col gap-y-3 pl-4'}>
+                    {section.desc.map((intro, introIndex) => (
+                      <li key={`${intro.title}-${introIndex}`}>
+                        <p className={'text-[18px]'}>{intro.title}</p>
+                        <p className={'text-[18px] text-[#636A7C]'}>
+                          {intro.content}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-            {index < list.length - 1 && (
-              <div className="h-[2px] bg-gradient-to-r from-[#F2F0FF] via-[#E2DDFE] to-[#F6F5FD]" />
-            )}
-          </li>
-        ))}
-      </ul>
-    </Container>
+              {index < list.length - 1 && (
+                <div className="h-[2px] bg-gradient-to-r from-[#F2F0FF] via-[#E2DDFE] to-[#F6F5FD]" />
+              )}
+            </li>
+          ))}
+
+          <div className="absolute top-[50%] right-[-36vw] h-[40vw] w-[40vw] rounded-[50%] bg-[linear-gradient(48deg,rgba(252,178,255,0.08)_24.95%,rgba(133,86,240,0.11)_96.76%)] blur-[50px]" />
+
+          <div className="absolute top-[200px] left-[-20vw] h-[40vw] w-[40vw] rounded-[50%] bg-[linear-gradient(48deg,rgba(252,178,255,0.08)_24.95%,rgba(133,86,240,0.11)_96.76%)] blur-[50px]" />
+        </ul>
+      </Container>
+    </section>
   )
 }

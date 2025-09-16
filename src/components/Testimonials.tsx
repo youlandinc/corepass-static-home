@@ -40,7 +40,7 @@ export const Testimonials: FC<TestimonialsProps> = ({
       aria-label="What our customers are saying"
       className="bg-slate-50 py-40"
     >
-      <Container>
+      <Container className={'relative z-[10]'}>
         <div className="max-w-[1280px] text-center">
           <h2 className="font-display text-3xl leading-[1.2] tracking-tight text-slate-900 sm:text-4xl">
             {title}
