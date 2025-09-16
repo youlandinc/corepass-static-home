@@ -71,7 +71,7 @@ export const CorepassWay: FC = () => {
           </div>
           <div
             className={
-              'flex w-1/2 flex-col gap-10 overflow-hidden xs:w-full lg:w-1/2'
+              'flex flex-col gap-10 overflow-hidden xs:w-full md:w-1/2'
             }
           >
             <div

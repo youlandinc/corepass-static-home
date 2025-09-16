@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useMemo } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -18,6 +18,7 @@ import LENDING_IMAGE from '@/images/home/powerfullSolution/lending-OS.png'
 import KNOWLEDGE_IMAGE from '@/images/home/powerfullSolution/knowledge-OS.png'
 
 import { Container } from '@/components/Container'
+import clsx from 'clsx'
 
 type SectionHeaderProps = {
   category?: string
@@ -106,6 +107,7 @@ type SwipeCardProps = {
   description: ReactNode
   indicator?: ReactNode
   className?: string
+  type: 'sales' | 'lending' | 'knowledge'
 }
 
 const SwipeCard: FC<SwipeCardProps> = ({
@@ -114,21 +116,35 @@ const SwipeCard: FC<SwipeCardProps> = ({
   description,
   indicator,
   className,
+  type,
 }) => {
+  const computedBgcolor = useMemo(() => {
+    switch (type) {
+      case 'sales':
+        return '#6D4FFB'
+      case 'lending':
+        return '#2563EB'
+      case 'knowledge':
+        return '#1DAFCD'
+    }
+  }, [type])
   return (
     <div
-      className={`group border-color-[#D2D6E1] bg-[linear-gradient(to left, red 50%, blue 50%) right] flex min-h-[964px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border bg-size-[100%_100%] bg-position-[left] xs:w-full lg:max-w-[600px] ${className}`}
+      className={`group border-color-[#D2D6E1] relative flex min-h-[964px] cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border xs:w-full lg:w-[500px]`}
     >
       <div
         className={'relative mx-2 mt-2 overflow-hidden rounded-[48px] bg-white'}
       >
         <Image src={image} alt="" quality={100} unoptimized />
       </div>
-      <div className="flex flex-col px-12 pb-18">
+      <div className="flex flex-col px-12 pb-12">
         {indicator}
         {title}
         {description}
       </div>
+      <span
+        className={`transition-[transform .5s cubic-bezier(.65,0,.35,1)] absolute inset-x-0 top-[-40%] bottom-0 z-[-1] box-content scale-[0] rounded-[48px] duration-300 group-hover:scale-[1] bg-[${computedBgcolor}]`}
+      />
     </div>
   )
 }
@@ -146,6 +162,7 @@ const SalesOsCard = () => {
         />
       }
       image={SALES_IMAGE}
+      type={'sales'}
       title={
         <div className="flex flex-col group-hover:text-white">
           <h3 className="text-[32px]">Book More Meetings,</h3>
@@ -164,7 +181,6 @@ const SalesOsCard = () => {
           </p>
         </div>
       }
-      className="hover:bg-[#6D4FFB]"
     />
   )
 }
@@ -172,6 +188,7 @@ const SalesOsCard = () => {
 const LendingOsCard = () => {
   return (
     <SwipeCard
+      type={'lending'}
       indicator={
         <ProductIndicator
           label={'Lending OS'}
@@ -203,7 +220,6 @@ const LendingOsCard = () => {
           </li>
         </ul>
       }
-      className="hover:bg-[#2563EB]"
     />
   )
 }
@@ -211,6 +227,7 @@ const LendingOsCard = () => {
 const KnowledgeOsCard = () => {
   return (
     <SwipeCard
+      type={'knowledge'}
       indicator={
         <ProductIndicator
           label={'Knowledge OS'}
@@ -223,8 +240,7 @@ const KnowledgeOsCard = () => {
       image={KNOWLEDGE_IMAGE}
       title={
         <div className="flex flex-col group-hover:text-white">
-          <h3 className="text-[32px]">Book More Meetings,</h3>
-          <h3 className="text-[32px]">With Less Manual Work</h3>
+          <h3 className="text-[32px]">Your AI-Powered Company Brain</h3>
         </div>
       }
       description={
@@ -239,7 +255,6 @@ const KnowledgeOsCard = () => {
           </p>
         </div>
       }
-      className="hover:bg-[#1DAFCD]"
     />
   )
 }
@@ -267,13 +282,13 @@ export function PowerfulSolutions() {
             navigation={true}
             modules={[Navigation, A11y, Pagination]}
           >
-            <SwiperSlide className={'max-w-[500px]'}>
+            <SwiperSlide className={'!w-auto'}>
               <SalesOsCard />
             </SwiperSlide>
-            <SwiperSlide className={'max-w-[500px]'}>
+            <SwiperSlide className={'!w-auto'}>
               <LendingOsCard />
             </SwiperSlide>
-            <SwiperSlide className={'max-w-[500px]'}>
+            <SwiperSlide className={'!w-auto'}>
               <KnowledgeOsCard />
             </SwiperSlide>
           </Swiper>

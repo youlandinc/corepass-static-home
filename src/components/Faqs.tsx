@@ -13,7 +13,7 @@ interface FaqsProps {
 export const Faqs: FC<FaqsProps> = ({ subtitle, faqList = [] }) => {
   return (
     <section id="faq" aria-labelledby="faq-title" className="bg-slate-50 py-32">
-      <Container>
+      <Container className={'!py-0'}>
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
             id="faq-title"

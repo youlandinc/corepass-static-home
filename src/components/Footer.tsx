@@ -43,11 +43,7 @@ export function Footer({ className }: FooterProps) {
           />
         </div>
         <div className="pt-16">
-          <Logo
-            fillColor={'white'}
-            color={'red'}
-            style={{ margin: '0 auto' }}
-          />
+          <Logo color={'white'} style={{ margin: '0 auto' }} />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6 [&>*]:text-sm [&>*]:text-white">
               <Link href="/lenders">For Lenders</Link>

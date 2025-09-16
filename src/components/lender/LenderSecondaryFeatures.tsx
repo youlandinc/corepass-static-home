@@ -249,7 +249,7 @@ export function LenderSecondaryFeatures() {
       aria-label="Features for simplifying everyday business tasks"
       className="py-32"
     >
-      <Container className={'relative z-[10]'}>
+      <Container className={'relative z-[10] !py-0'}>
         <h2 className="max-w-[1280px] text-center font-display text-3xl leading-[1.2] tracking-tight text-slate-900 lg:text-[48px]">
           Lendingos Respects The High-Touch, Fast-Turn Nature Of Lending Teams.
         </h2>

@@ -76,7 +76,7 @@ export function LenderPrimaryFeatures() {
         quality={100}
         unoptimized
       />
-      <Container className="relative">
+      <Container className="relative !py-0">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="mx-auto max-w-[800px] font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
             Run Your Entire Lending Operation From One Streamlined Platform

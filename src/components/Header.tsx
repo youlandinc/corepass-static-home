@@ -100,7 +100,10 @@ export function Header(props: HeaderProps) {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
-              <Logo className="h-8 w-auto xs:h-6" fillColor={props.fillColor} />
+              <Logo
+                className="h-8 w-auto xs:h-6"
+                color={props.fillColor || '#2563EB'}
+              />
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
               <Link href="/lenders">For Lenders</Link>

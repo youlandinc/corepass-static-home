@@ -31,7 +31,7 @@ export const CallToAction: FC<CallToActionProps> = ({
         quality={100}
         unoptimized
       />
-      <Container className="relative">
+      <Container className="relative !py-0">
         <div className="mx-auto max-w-[1000px] text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl">
             {title}
