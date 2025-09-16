@@ -23,7 +23,7 @@ export const CallToAction: FC<CallToActionProps> = ({
       className="relative mx-20 overflow-hidden rounded-[48px] py-32"
     >
       <Image
-        className="absolute top-1/2 left-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 h-full w-full max-w-none -translate-x-1/2 -translate-y-1/2"
         src={backgroundImage}
         alt=""
         width={2347}

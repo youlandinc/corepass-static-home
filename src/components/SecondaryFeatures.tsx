@@ -1,6 +1,11 @@
 'use client'
 
-import { useId } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ComponentType,
+  ReactNode,
+  useId,
+} from 'react'
 import Image, { type ImageProps } from 'next/image'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
@@ -12,19 +17,22 @@ import BANNER_2 from '@/images/banner/banner-2.png'
 import BANNER_3 from '@/images/banner/banner-3.png'
 
 interface Feature {
-  name: React.ReactNode
-  summary: string
-  description: string
+  name: ReactNode
+  intro: string[]
   image: ImageProps['src']
-  icon: React.ComponentType
+  icon: ComponentType
+  mark: string
 }
 
 const features: Array<Feature> = [
   {
     name: 'Document Tracking',
-    summary: 'Never chase paperwork again',
-    description:
-      'Automatically track every required doc by loan type. Instantly spot what’s missing, expired, or incomplete—before it slows down your closing.',
+    mark: 'Document Tracking',
+    intro: [
+      'Never chase paperwork again',
+      'Automatically track every required doc by loan type',
+      'Instantly spot missing, expired, or incomplete items before they delay closing',
+    ],
     image: BANNER_1,
     icon: function ReportingIcon() {
       let id = useId()
@@ -56,9 +64,11 @@ const features: Array<Feature> = [
   },
   {
     name: 'Team Management',
-    summary: 'Everyone knows what to do—and when.',
-    description:
-      'Assign roles across processors, underwriters, and AEs. Keep workflows clean and scalable without extra overhead.',
+    mark: 'Team Management',
+    intro: [
+      'Assign roles across processors, underwriters, and AEs',
+      'Keep workflows clean and scalable without extra overhead',
+    ],
     image: BANNER_2,
     icon: function InventoryIcon() {
       return (
@@ -83,9 +93,11 @@ const features: Array<Feature> = [
   },
   {
     name: 'Analytics',
-    summary: 'See what’s working. Fix what’s not.',
-    description:
-      'Track loan pipeline, team output, and deal performance with built-in reporting. Spot conversion drops, bottlenecks, and market trends in real time.',
+    mark: 'Analytics',
+    intro: [
+      'Track loan pipeline, team output, and deal performance with built-in reporting',
+      'Spot conversion drops, bottlenecks, and market trends in real time',
+    ],
     image: BANNER_3,
     icon: function ContactsIcon() {
       return (
@@ -110,7 +122,7 @@ function Feature({
   isActive,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<'div'> & {
+}: ComponentPropsWithoutRef<'div'> & {
   feature: Feature
   isActive: boolean
 }) {
@@ -129,18 +141,14 @@ function Feature({
           <feature.icon />
         </svg>
       </div>
-      <h3
-        className={clsx(
-          'mt-6 text-sm font-medium',
-          isActive ? 'text-blue-600' : 'text-slate-600',
-        )}
-      >
-        {feature.name}
-      </h3>
-      <p className="mt-2 font-display text-xl text-slate-900">
-        {feature.summary}
-      </p>
-      <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
+      <h3 className={clsx('mt-6 text-[20px]')}>{feature.name}</h3>
+      <ul className={'mt-3 list-disc pl-4'}>
+        {feature.intro.map((intro, index) => (
+          <li key={`${intro}-${index}`} className={'text-[#475569]'}>
+            {intro}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
@@ -149,7 +157,7 @@ function FeaturesMobile() {
   return (
     <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
       {features.map((feature) => (
-        <div key={feature.summary}>
+        <div key={feature.mark}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 top-8 bottom-0 bg-slate-200 sm:-inset-x-6" />
@@ -178,7 +186,7 @@ function FeaturesDesktop() {
           <TabList className="grid grid-cols-3 gap-x-8">
             {features.map((feature, featureIndex) => (
               <Feature
-                key={feature.summary}
+                key={feature.mark}
                 feature={{
                   ...feature,
                   name: (
@@ -193,12 +201,12 @@ function FeaturesDesktop() {
               />
             ))}
           </TabList>
-          <TabPanels className="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
+          <TabPanels className="relative mt-20 overflow-hidden rounded-4xl bg-[#F0F4FF] px-14 py-16 xl:px-16">
             <div className="-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <TabPanel
                   static
-                  key={feature.summary}
+                  key={feature.mark}
                   className={clsx(
                     'px-5 transition duration-500 ease-in-out data-selected:not-data-focus:outline-hidden',
                     featureIndex !== selectedIndex && 'opacity-60',
@@ -235,17 +243,17 @@ export function SecondaryFeatures() {
       className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Built for how private lenders really get deals done.
-          </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Our platform respects the high-touch, fast-turn nature of private
-            lending teams.
-          </p>
-        </div>
+        <h2 className="mx-auto max-w-[1280px] font-display text-3xl leading-[1.2] tracking-tight text-slate-900 md:text-center lg:text-[48px]">
+          Lendingos Respects The High-Touch, Fast-Turn Nature Of Lending Teams.
+        </h2>
         <FeaturesMobile />
         <FeaturesDesktop />
+        <div className={'mt-30'}>
+          <p className={'text-center'}>
+            Integrations with Industry-Leading Partners
+          </p>
+          <div className={'mt-8'}></div>
+        </div>
       </Container>
     </section>
   )

@@ -79,11 +79,11 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="mx-auto max-w-[800px] font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Run your entire lending operation from one streamlined platform
+            Run Your Entire Lending Operation From One Streamlined Platform
           </h2>
           <p className="mx-auto mt-6 max-w-[700px] text-lg tracking-tight text-blue-100">
-            Corepass replaces spreadsheets, endless email chains, and manual doc
-            prep with a fast, modern system built for private lenders.
+            LendingOS replaces spreadsheets, endless email chains, and manual
+            doc prep with a fast, modern system built for private lenders.
           </p>
         </div>
         <TabGroup
