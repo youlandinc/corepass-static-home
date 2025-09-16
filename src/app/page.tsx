@@ -1,11 +1,11 @@
 import { CallToAction } from '@/components/CallToAction'
-import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
+import { PowerfulSolutions } from '@/components/PowerfulSolutions'
 import { Pricing } from '@/components/Pricing'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { HomeHero } from '@/components/HomeHero'
+import { CorepassWay } from '@/components/CorepassWay'
 import { Testimonials } from '@/components/Testimonials'
 
 export default function Home() {
@@ -13,13 +13,15 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <Hero />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        {/*<CallToAction />*/}
+        <HomeHero />
+        <PowerfulSolutions />
+        <CorepassWay />
+        {/*<SecondaryFeatures />*/}
+        <CallToAction />
         {/*<Testimonials />*/}
-        <Pricing />
+        {/*<Pricing />*/}
         {/*<Faqs />*/}
+        <Testimonials />
       </main>
       <Footer />
     </>
