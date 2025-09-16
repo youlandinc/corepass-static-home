@@ -13,7 +13,7 @@ import Image from 'next/image'
 export const CorepassWay: FC = () => {
   return (
     <section>
-      <Container className={'flex flex-col gap-12 py-40'}>
+      <Container className={'flex flex-col gap-12'}>
         <SectionHeader
           title={'AI That Works The Way You Do'}
           category={'The Corepass Way '}

@@ -4,6 +4,8 @@ import { FC, ReactNode } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/navigation'
+import { Navigation, A11y, Pagination } from 'swiper/modules'
 
 import SALES_ICON from '@/images/home/powerfullSolution/sales.svg'
 import SALES_ICON_ACTIVE from '@/images/home/powerfullSolution/sales-active.svg'
@@ -115,7 +117,7 @@ const SwipeCard: FC<SwipeCardProps> = ({
 }) => {
   return (
     <div
-      className={`group border-color-[#D2D6E1] bg-[linear-gradient(to left, red 50%, blue 50%) right] flex min-h-[964px] w-full max-w-[600px] cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border bg-size-[100%_100%] bg-position-[left] ${className}`}
+      className={`group border-color-[#D2D6E1] bg-[linear-gradient(to left, red 50%, blue 50%) right] flex min-h-[964px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border bg-size-[100%_100%] bg-position-[left] xs:w-full lg:max-w-[600px] ${className}`}
     >
       <div
         className={'relative mx-2 mt-2 overflow-hidden rounded-[48px] bg-white'}
@@ -128,6 +130,117 @@ const SwipeCard: FC<SwipeCardProps> = ({
         {description}
       </div>
     </div>
+  )
+}
+
+const SalesOsCard = () => {
+  return (
+    <SwipeCard
+      indicator={
+        <ProductIndicator
+          label={'Sales OS'}
+          icon={SALES_ICON}
+          activeIcon={SALES_ICON_ACTIVE}
+          className="bg-[#6D4FFB] group-hover:bg-white"
+          labelClassName="group-hover:text-[#6D4FFB]"
+        />
+      }
+      image={SALES_IMAGE}
+      title={
+        <div className="flex flex-col group-hover:text-white">
+          <h3 className="text-[32px]">Book More Meetings,</h3>
+          <h3 className="text-[32px]">With Less Manual Work</h3>
+        </div>
+      }
+      description={
+        <div className="flex flex-col gap-3 group-hover:text-white">
+          <p className="text-lg leading-normal">
+            AI research + outreach agent finds, enriches, and contacts leads
+            automatically.
+          </p>
+          <p className="text-lg leading-normal">
+            Book more meetings and let your team focus on closing deals—not
+            prospecting
+          </p>
+        </div>
+      }
+      className="hover:bg-[#6D4FFB]"
+    />
+  )
+}
+
+const LendingOsCard = () => {
+  return (
+    <SwipeCard
+      indicator={
+        <ProductIndicator
+          label={'Lending OS'}
+          icon={LENDING_ICON}
+          activeIcon={LENDING_ICON_ACTIVE}
+          className="bg-[#2563EB] group-hover:bg-white"
+          labelClassName="group-hover:text-[#2F416A]"
+        />
+      }
+      image={LENDING_IMAGE}
+      title={
+        <div className="flex flex-col group-hover:text-white">
+          <h3 className="text-[32px]">AI-Powered Lending OS</h3>
+        </div>
+      }
+      description={
+        <ul className={'ml-5.5 list-disc group-hover:text-white [&>*]:text-lg'}>
+          <li>
+            Handles borrower intake, document generation, pipeline tracking, and
+            pricing automation.
+          </li>
+          <li>
+            Connects to existing email, and document tools—no rip-and-replace
+            needed.
+          </li>
+          <li>
+            Automates repetitive steps while keeping underwriting decisions
+            human-controlled.
+          </li>
+        </ul>
+      }
+      className="hover:bg-[#2563EB]"
+    />
+  )
+}
+
+const KnowledgeOsCard = () => {
+  return (
+    <SwipeCard
+      indicator={
+        <ProductIndicator
+          label={'Knowledge OS'}
+          icon={KNOWLEDGE_ICON}
+          activeIcon={KNOWLEDGE_ICON_ACTIVE}
+          className="bg-[#1DAFCD] group-hover:bg-white"
+          labelClassName="group-hover:text-[#00839E] text-white"
+        />
+      }
+      image={KNOWLEDGE_IMAGE}
+      title={
+        <div className="flex flex-col group-hover:text-white">
+          <h3 className="text-[32px]">Book More Meetings,</h3>
+          <h3 className="text-[32px]">With Less Manual Work</h3>
+        </div>
+      }
+      description={
+        <div className="flex flex-col gap-3 group-hover:text-white">
+          <p className="text-lg leading-normal">
+            AI research + outreach agent finds, enriches, and contacts leads
+            automatically.
+          </p>
+          <p className="text-lg leading-normal">
+            Book more meetings and let your team focus on closing deals—not
+            prospecting
+          </p>
+        </div>
+      }
+      className="hover:bg-[#1DAFCD]"
+    />
   )
 }
 
@@ -146,138 +259,30 @@ export function PowerfulSolutions() {
             'Built for the most operationally heavy parts of your business'
           }
         />
-        <Swiper
-          spaceBetween={48}
-          // slidesPerView={2.5}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-          className={'mt-12'}
-          breakpoints={{
-            // 640: {
-            //   slidesPerView: 2,
-            //   spaceBetween: 20,
-            // },
-            // 768: {
-            //   slidesPerView: 4,
-            //   spaceBetween: 40,
-            // },
-            1024: {
-              slidesPerView: 2.5,
-              spaceBetween: 48,
-            },
-            1366: {
-              slidesPerView: 3,
-              spaceBetween: 48,
-            },
-          }}
-        >
-          <SwiperSlide className={'w-[500px]'}>
-            <SwipeCard
-              indicator={
-                <ProductIndicator
-                  label={'Sales OS'}
-                  icon={SALES_ICON}
-                  activeIcon={SALES_ICON_ACTIVE}
-                  className="bg-[#6D4FFB] group-hover:bg-white"
-                  labelClassName="group-hover:text-[#6D4FFB]"
-                />
-              }
-              image={SALES_IMAGE}
-              title={
-                <div className="flex flex-col group-hover:text-white">
-                  <h3 className="text-[32px]">Book More Meetings,</h3>
-                  <h3 className="text-[32px]">With Less Manual Work</h3>
-                </div>
-              }
-              description={
-                <div className="flex flex-col gap-3 group-hover:text-white">
-                  <p className="text-lg leading-normal">
-                    AI research + outreach agent finds, enriches, and contacts
-                    leads automatically.
-                  </p>
-                  <p className="text-lg leading-normal">
-                    Book more meetings and let your team focus on closing
-                    deals—not prospecting
-                  </p>
-                </div>
-              }
-              className="hover:bg-[#6D4FFB]"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SwipeCard
-              indicator={
-                <ProductIndicator
-                  label={'Lending OS'}
-                  icon={LENDING_ICON}
-                  activeIcon={LENDING_ICON_ACTIVE}
-                  className="bg-[#2563EB] group-hover:bg-white"
-                  labelClassName="group-hover:text-[#2F416A]"
-                />
-              }
-              image={LENDING_IMAGE}
-              title={
-                <div className="flex flex-col group-hover:text-white">
-                  <h3 className="text-[32px]">AI-Powered Lending OS</h3>
-                </div>
-              }
-              description={
-                <ul
-                  className={
-                    'ml-5.5 list-disc group-hover:text-white [&>*]:text-lg'
-                  }
-                >
-                  <li>
-                    Handles borrower intake, document generation, pipeline
-                    tracking, and pricing automation.
-                  </li>
-                  <li>
-                    Connects to existing email, and document tools—no
-                    rip-and-replace needed.
-                  </li>
-                  <li>
-                    Automates repetitive steps while keeping underwriting
-                    decisions human-controlled.
-                  </li>
-                </ul>
-              }
-              className="hover:bg-[#2563EB]"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SwipeCard
-              indicator={
-                <ProductIndicator
-                  label={'Knowledge OS'}
-                  icon={KNOWLEDGE_ICON}
-                  activeIcon={KNOWLEDGE_ICON_ACTIVE}
-                  className="bg-[#1DAFCD] group-hover:bg-white"
-                  labelClassName="group-hover:text-[#00839E] text-white"
-                />
-              }
-              image={KNOWLEDGE_IMAGE}
-              title={
-                <div className="flex flex-col group-hover:text-white">
-                  <h3 className="text-[32px]">Book More Meetings,</h3>
-                  <h3 className="text-[32px]">With Less Manual Work</h3>
-                </div>
-              }
-              description={
-                <div className="flex flex-col gap-3 group-hover:text-white">
-                  <p className="text-lg leading-normal">
-                    AI research + outreach agent finds, enriches, and contacts
-                    leads automatically.
-                  </p>
-                  <p className="text-lg leading-normal">
-                    Book more meetings and let your team focus on closing
-                    deals—not prospecting
-                  </p>
-                </div>
-              }
-              className="hover:bg-[#1DAFCD]"
-            />
-          </SwiperSlide>
-        </Swiper>
+        <div className={'xs:hidden lg:block'}>
+          <Swiper
+            spaceBetween={48}
+            slidesPerView={'auto'}
+            className={'xs:hidden!important mt-12 lg:block'}
+            navigation={true}
+            modules={[Navigation, A11y, Pagination]}
+          >
+            <SwiperSlide className={'max-w-[500px]'}>
+              <SalesOsCard />
+            </SwiperSlide>
+            <SwiperSlide className={'max-w-[500px]'}>
+              <LendingOsCard />
+            </SwiperSlide>
+            <SwiperSlide className={'max-w-[500px]'}>
+              <KnowledgeOsCard />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className={'flex-col gap-12 xs:flex lg:hidden'}>
+          <SalesOsCard />
+          <LendingOsCard />
+          <KnowledgeOsCard />
+        </div>
       </Container>
     </section>
   )

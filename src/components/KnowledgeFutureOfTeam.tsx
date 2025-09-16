@@ -2,21 +2,23 @@ import { Container } from '@/components/Container'
 import { SectionHeader } from '@/components/PowerfulSolutions'
 import { KNOWLEDGE_FUTURE_OF_TEAM } from '@/constant/Knowledge'
 
+import Image from 'next/image'
+
 export const KnowledgeFutureOfTeam = () => {
   return (
-    <Container className={'py-40'}>
+    <Container className={''}>
       <SectionHeader
         title={'The Future of Team Intelligence'}
         subtitle={
           'Organize knowledge, integrate systems, and uncover insights instantly'
         }
       />
-      <div className={'flex flex-row flex-wrap gap-[2.5] pt-20'}>
+      <div className={'flex w-full flex-row flex-wrap gap-10 pt-20'}>
         {KNOWLEDGE_FUTURE_OF_TEAM.map((item, index) => (
           <div
             key={index}
             className={
-              'w-[calc(50%-40px)] rounded-[48px] border border-[#D2D6E1] px-12 pt-12'
+              'flex max-w-[calc(50%-40px)] flex-col rounded-[48px] border border-[#D2D6E1] bg-[rgba(217,237,246,0.20)] px-12 pt-12'
             }
           >
             <p className={'text-[clamp(20px,1.875vw,36px)]'}>{item.title}</p>
@@ -25,6 +27,9 @@ export const KnowledgeFutureOfTeam = () => {
                 <li key={j}>{text}</li>
               ))}
             </ul>
+            <div className={'relative mt-auto'}>
+              <Image src={item.img} alt={''} className={'block'} />
+            </div>
           </div>
         ))}
       </div>

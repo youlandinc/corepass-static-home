@@ -38,7 +38,7 @@ export const SaleSecondaryFeature = () => {
   return (
     <Container
       className={
-        'max-w-[1760px] rounded-[64px] bg-gradient-to-b from-[rgba(234,222,248,0.17)] via-[rgba(243,186,197,0.09)] to-[rgba(234,222,248,0.32)] py-40'
+        'max-w-[1760px] rounded-[64px] bg-gradient-to-b from-[rgba(234,222,248,0.17)] via-[rgba(243,186,197,0.09)] to-[rgba(234,222,248,0.32)]'
       }
     >
       <div className={'mx-auto max-w-[1280px] text-center'}>

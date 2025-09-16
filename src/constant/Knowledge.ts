@@ -5,6 +5,11 @@ import LENDER_AVATAR_4 from '@/images/knowledge/testimonials/lender-4.png'
 import LENDER_AVATAR_5 from '@/images/knowledge/testimonials/lender-5.png'
 import LENDER_AVATAR_6 from '@/images/knowledge/testimonials/lender-6.png'
 
+import CARD_IMAGE_1 from '@/images/knowledge/futureOfTeam/brand-1.png'
+import CARD_IMAGE_2 from '@/images/knowledge/futureOfTeam/brand-3.png'
+import CARD_IMAGE_3 from '@/images/knowledge/futureOfTeam/brand-2.png'
+import CARD_IMAGE_4 from '@/images/knowledge/futureOfTeam/brand-4.png'
+
 export const KNOWLEDGE_FUTURE_OF_TEAM = [
   {
     title: 'AI-Powered Search',
@@ -12,7 +17,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'Ask questions in plain English, like “What’s our pricing for X?”',
       'Get instant answers from docs, Slack, or PDFs — all in one place',
     ],
-    img: '',
+    img: CARD_IMAGE_1,
   },
   {
     title: 'Dynamic Vector Database ',
@@ -20,7 +25,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'Auto-ingests new files, notes, and conversations',
       'Continuously updates embeddings as your data changes',
     ],
-    img: '',
+    img: CARD_IMAGE_2,
   },
   {
     title: ' Context-Aware Research',
@@ -28,7 +33,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'AI summarizes and cross-references multiple sources for deeper insights',
       'Understand trends, risks, and opportunities in real time',
     ],
-    img: '',
+    img: CARD_IMAGE_3,
   },
   {
     title: 'Knowledge Graphs ',
@@ -36,7 +41,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'Visualize relationships between projects, people, and data points',
       'Spot patterns and dependencies instantly',
     ],
-    img: '',
+    img: CARD_IMAGE_4,
   },
 ]
 

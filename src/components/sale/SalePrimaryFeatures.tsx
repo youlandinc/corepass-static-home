@@ -104,7 +104,7 @@ const list = [
 export const SalePrimaryFeatures = () => {
   return (
     <section className={'w-full overflow-x-hidden'}>
-      <Container className={'py-40'}>
+      <Container className={''}>
         <div className={'max-w-[1280px] text-center'}>
           <h2 className={'text-5xl leading-[1.2] font-medium'}>
             Run your entire sales outreach workflow in one place

@@ -95,8 +95,8 @@ type HeaderProps = ComponentPropsWithoutRef<'header'> & {
 
 export function Header(props: HeaderProps) {
   return (
-    <header className={clsx('py-10', props.className)}>
-      <Container>
+    <header className={clsx(props.className)}>
+      <Container className={'!py-10'}>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">

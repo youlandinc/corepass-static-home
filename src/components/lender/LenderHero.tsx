@@ -11,7 +11,7 @@ import LENDER_ICON from '@/images/lender/hero/lender-icon.svg'
 
 export const LenderHero = () => {
   return (
-    <Container className="py-40 text-center">
+    <Container className="text-center">
       <div className={'relative flex flex-row justify-center gap-x-2'}>
         <Image src={LENDER_ICON} alt={''} width={29} height={29} unoptimized />
         <p className={'font-semi text-[20px]'}>LendingOS</p>

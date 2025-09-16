@@ -33,7 +33,7 @@ export const Hero: FC<HeroProps> = ({
   className,
 }) => {
   return (
-    <Container className={`py-40 text-center ${className}`}>
+    <Container className={`text-center ${className}`}>
       <div className={'flex flex-col gap-[2.5]'}>
         {category}
         <div className={'flex flex-col gap-8'}>

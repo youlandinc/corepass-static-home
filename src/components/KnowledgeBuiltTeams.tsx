@@ -22,7 +22,7 @@ const ContentCard: FC<ContentCardProps> = ({ title, subtitle, className }) => {
 
 export const KnowledgeBuiltTeams = () => {
   return (
-    <Container className={'flex flex-col gap-20 py-40'}>
+    <Container className={'flex flex-col gap-20'}>
       <SectionHeader
         title={'Built for Knowledge-Driven Teams'}
         subtitle={'Turn information into an always-ready advantage'}

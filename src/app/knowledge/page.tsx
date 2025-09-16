@@ -13,8 +13,8 @@ export default function Knowledge() {
   return (
     <>
       <Header
-        logo={<HeaderLogo />}
         btnClassName={'bg-[#1DAFCD] hover:bg-[#1DAFCD]/80'}
+        fillColor={'#202939'}
       />
       <main>
         <KnowledgeHero />
