@@ -187,7 +187,7 @@ function FeaturesMobile() {
 
 function FeaturesDesktop() {
   return (
-    <TabGroup className="hidden lg:mt-20 lg:block">
+    <TabGroup className="mt-20 hidden lg:block">
       {({ selectedIndex }) => (
         <>
           <TabList className="grid grid-cols-3 gap-x-8">
@@ -242,20 +242,20 @@ function FeaturesDesktop() {
   )
 }
 
-export function SecondaryFeatures() {
+export function LenderSecondaryFeatures() {
   return (
     <section
       id="secondary-features"
       aria-label="Features for simplifying everyday business tasks"
-      className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
+      className="py-32"
     >
       <Container>
-        <h2 className="mx-auto max-w-[1280px] font-display text-3xl leading-[1.2] tracking-tight text-slate-900 md:text-center lg:text-[48px]">
+        <h2 className="max-w-[1280px] text-center font-display text-3xl leading-[1.2] tracking-tight text-slate-900 lg:text-[48px]">
           Lendingos Respects The High-Touch, Fast-Turn Nature Of Lending Teams.
         </h2>
         <FeaturesMobile />
         <FeaturesDesktop />
-        <div className="mt-36 lg:mt-44">
+        <div className="mt-40">
           <p className="text-center font-display text-slate-900">
             Trusted by leading companies
           </p>

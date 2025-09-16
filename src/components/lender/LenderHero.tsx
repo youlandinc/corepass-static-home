@@ -1,22 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { LOGIN_URL } from '@/constant'
+
 import { Container } from '@/components/Container'
 import { BookDemo } from '@/components/BookDemoForm'
 import { HeroTailHomeLender } from '@/components/HeroTailHomeLender'
 
-import { LOGIN_URL } from '@/constant'
-
 import LENDER_ICON from '@/images/lender/hero/lender-icon.svg'
 
-import BRAND_1 from '@/images/brands/brand-1.svg'
-import BRAND_2 from '@/images/brands/brand-2.svg'
-import BRAND_3 from '@/images/brands/brand-3.svg'
-import BRAND_4 from '@/images/brands/brand-4.svg'
-import BRAND_5 from '@/images/brands/brand-5.svg'
-import BRAND_6 from '@/images/brands/brand-6.svg'
-
-export const HeroLender = () => {
+export const LenderHero = () => {
   return (
     <Container className="py-40 text-center">
       <div className={'relative flex flex-row justify-center gap-x-2'}>

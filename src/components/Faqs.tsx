@@ -10,13 +10,9 @@ interface FaqsProps {
   faqList: Array<{ q: string; a: string }>[]
 }
 
-export const Faqs: FC<FaqsProps> = ({ subtitle, faqList=[] }) => {
+export const Faqs: FC<FaqsProps> = ({ subtitle, faqList = [] }) => {
   return (
-    <section
-      id="faq"
-      aria-labelledby="faq-title"
-      className="bg-slate-50 py-20 sm:py-32"
-    >
+    <section id="faq" aria-labelledby="faq-title" className="bg-slate-50 py-32">
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
@@ -41,7 +37,7 @@ export const Faqs: FC<FaqsProps> = ({ subtitle, faqList=[] }) => {
                     <h3 className="font-display text-lg/7 text-slate-900">
                       {faq.q}
                     </h3>
-                    <p className="mt-4 text-sm text-slate-700">{faq.a}</p>
+                    <p className="mt-1 text-sm text-slate-700">{faq.a}</p>
                   </li>
                 ))}
               </ul>

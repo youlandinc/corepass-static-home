@@ -32,25 +32,25 @@ interface TestimonialsProps {
 export const Testimonials: FC<TestimonialsProps> = ({
   title,
   subtitle,
-  testimonials=[],
+  testimonials = [],
 }) => {
   return (
     <section
       id="testimonials"
       aria-label="What our customers are saying"
-      className="bg-slate-50 py-20 sm:py-32"
+      className="bg-slate-50 py-40"
     >
       <Container>
-        <div className="mx-auto max-w-[1280px] md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+        <div className="max-w-[1280px] text-center">
+          <h2 className="font-display text-3xl leading-[1.2] tracking-tight text-slate-900 sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-6 text-lg tracking-tight text-slate-700">
             {subtitle}
           </p>
         </div>
 
-        <div className="relative left-1/2 mt-20 -ml-[50vw] w-screen pt-2 lg:mt-24">
+        <div className="relative left-1/2 mt-20 -ml-[50vw] w-screen pt-2 lg:mt-16">
           <Carousel
             plugins={[
               AutoScroll({
