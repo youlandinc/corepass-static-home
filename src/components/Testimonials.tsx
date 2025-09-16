@@ -32,7 +32,7 @@ interface TestimonialsProps {
 export const Testimonials: FC<TestimonialsProps> = ({
   title,
   subtitle,
-  testimonials,
+  testimonials=[],
 }) => {
   return (
     <section

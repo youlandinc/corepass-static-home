@@ -28,7 +28,7 @@ export function Footer() {
           </Link>
           <BookDemo
             label={<span>Book a demo</span>}
-            className="bg-[#202939] text-white"
+            className="bg-black text-white hover:bg-black/80 hover:text-white"
           />
         </div>
         <div className="pt-16">
