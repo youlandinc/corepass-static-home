@@ -9,7 +9,7 @@ import BRAND_6 from '@/images/brands/brand-6.svg'
 
 export const HeroTailHomeLender = () => {
   return (
-    <div className="mt-36 lg:mt-44">
+    <div className="mt-30">
       <p className="font-display text-base text-slate-900">
         Trusted by leading companies
       </p>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { BookDemo } from '@/components/BookDemoForm'
+import { HeroTailHomeLender } from '@/components/HeroTailHomeLender'
 
 import { LOGIN_URL } from '@/constant'
 
@@ -53,46 +54,7 @@ export const HeroLender = () => {
           }
         />
       </div>
-      <div className="mt-30">
-        <p className="font-display text-base leading-[1.75] text-slate-900">
-          Trusted by leading companies
-        </p>
-        <ul
-          role="list"
-          className="mt-8 flex items-center justify-center gap-x-25 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-25 xl:gap-y-0"
-        >
-          {[
-            [
-              { name: '1 Sharpe', logo: BRAND_1 },
-              { name: 'PML', logo: BRAND_2 },
-              { name: 'YouLand', logo: BRAND_3 },
-            ],
-            [
-              { name: 'Alameda', logo: BRAND_4 },
-              { name: 'Attune', logo: BRAND_5 },
-              { name: 'Phoenix', logo: BRAND_6 },
-            ],
-          ].map((group, groupIndex) => (
-            <li key={groupIndex}>
-              <ul
-                role="list"
-                className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-25 sm:gap-y-0"
-              >
-                {group.map((company) => (
-                  <li key={company.name} className="flex">
-                    <Image
-                      src={company.logo}
-                      alt={company.name}
-                      unoptimized
-                      quality={100}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <HeroTailHomeLender />
     </Container>
   )
 }
