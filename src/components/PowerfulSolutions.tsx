@@ -1,16 +1,19 @@
 'use client'
 
 import { FC, ReactNode } from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-import SALES_ICON from '@/images/home/powerful_solutions_sales.svg'
-import SALES_ICON_ACTIVE from '@/images/home/powerful_solutions_sales_active.svg'
-import LENDING_ICON from '@/images/home/powerful_solutions_lending.svg'
-import LENDING_ICON_ACTIVE from '@/images/home/powerful_solutions_lending_active.svg'
-import KNOWLEDGE_ICON from '@/images/home/powerful_solutions_knowledge.svg'
-import KNOWLEDGE_ICON_ACTIVE from '@/images/home/powerful_solutions_knowledge_active.svg'
+import SALES_ICON from '@/images/home/powerfullSolution/sales.svg'
+import SALES_ICON_ACTIVE from '@/images/home/powerfullSolution/sales-active.svg'
+import LENDING_ICON from '@/images/home/powerfullSolution/lending.svg'
+import LENDING_ICON_ACTIVE from '@/images/home/powerfullSolution/lending-active.svg'
+import KNOWLEDGE_ICON from '@/images/home/powerfullSolution/knowledge.svg'
+import KNOWLEDGE_ICON_ACTIVE from '@/images/home/powerfullSolution/knowledge-active.svg'
+import SALES_IMAGE from '@/images/home/powerfullSolution/sales-OS.png'
+import LENDING_IMAGE from '@/images/home/powerfullSolution/lending-OS.png'
+import KNOWLEDGE_IMAGE from '@/images/home/powerfullSolution/knowledge-OS.png'
 
 import { Container } from '@/components/Container'
 
@@ -33,7 +36,7 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
       {category && (
         <p
           className={
-            'text-[clamp(14px,1.04vw,20px)] leading-[1.2] font-semibold text-blue-600 italic'
+            'text-[clamp(14px,1.04vw,20px)] leading-[1.2] font-semibold text-[#2563EB] italic'
           }
         >
           {category}
@@ -96,7 +99,7 @@ const ProductIndicator: FC<ProductIndicatorProps> = ({
 }
 
 type SwipeCardProps = {
-  image: string
+  image: StaticImageData
   title: ReactNode
   description: ReactNode
   indicator?: ReactNode
@@ -112,9 +115,13 @@ const SwipeCard: FC<SwipeCardProps> = ({
 }) => {
   return (
     <div
-      className={`group border-color-[#D2D6E1] flex min-h-[964px] w-full max-w-[600px] flex-col justify-between rounded-[48px] border ${className}`}
+      className={`group border-color-[#D2D6E1] bg-[linear-gradient(to left, red 50%, blue 50%) right] flex min-h-[964px] w-full max-w-[600px] cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border bg-size-[100%_100%] bg-position-[left] ${className}`}
     >
-      <Image src={image} alt="" quality={100} sizes="16px" unoptimized />
+      <div
+        className={'relative mx-2 mt-2 overflow-hidden rounded-[48px] bg-white'}
+      >
+        <Image src={image} alt="" quality={100} unoptimized />
+      </div>
       <div className="flex flex-col px-12 pb-18">
         {indicator}
         {title}
@@ -129,9 +136,9 @@ export function PowerfulSolutions() {
     <section
       id="features"
       aria-label="One Platform, Three Powerful Solutions"
-      className="relative overflow-hidden py-40"
+      className="overflow-hidden py-40"
     >
-      <Container className={'flex flex-col gap-12'}>
+      <Container className={'120xl:max-w-[1600px]'}>
         <SectionHeader
           category={'The Corepass AI platform'}
           title={'One Platform, Three Powerful Solutions'}
@@ -141,11 +148,30 @@ export function PowerfulSolutions() {
         />
         <Swiper
           spaceBetween={48}
-          slidesPerView={2.5}
+          // slidesPerView={2.5}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
+          className={'mt-12'}
+          breakpoints={{
+            // 640: {
+            //   slidesPerView: 2,
+            //   spaceBetween: 20,
+            // },
+            // 768: {
+            //   slidesPerView: 4,
+            //   spaceBetween: 40,
+            // },
+            1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 48,
+            },
+            1366: {
+              slidesPerView: 3,
+              spaceBetween: 48,
+            },
+          }}
         >
-          <SwiperSlide>
+          <SwiperSlide className={'w-[500px]'}>
             <SwipeCard
               indicator={
                 <ProductIndicator
@@ -156,7 +182,7 @@ export function PowerfulSolutions() {
                   labelClassName="group-hover:text-[#6D4FFB]"
                 />
               }
-              image={SALES_ICON}
+              image={SALES_IMAGE}
               title={
                 <div className="flex flex-col group-hover:text-white">
                   <h3 className="text-[32px]">Book More Meetings,</h3>
@@ -189,7 +215,7 @@ export function PowerfulSolutions() {
                   labelClassName="group-hover:text-[#2F416A]"
                 />
               }
-              image={SALES_ICON}
+              image={LENDING_IMAGE}
               title={
                 <div className="flex flex-col group-hover:text-white">
                   <h3 className="text-[32px]">AI-Powered Lending OS</h3>
@@ -229,7 +255,7 @@ export function PowerfulSolutions() {
                   labelClassName="group-hover:text-[#00839E] text-white"
                 />
               }
-              image={SALES_ICON}
+              image={KNOWLEDGE_IMAGE}
               title={
                 <div className="flex flex-col group-hover:text-white">
                   <h3 className="text-[32px]">Book More Meetings,</h3>
