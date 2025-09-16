@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import {
   Popover,
-  PopoverButton,
   PopoverBackdrop,
+  PopoverButton,
   PopoverPanel,
 } from '@headlessui/react'
 import clsx from 'clsx'
@@ -14,7 +14,7 @@ import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
-import { ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react'
+import { ComponentPropsWithoutRef, ReactNode, useState } from 'react'
 import { LOGIN_URL } from '@/constant'
 
 function MobileNavLink({
@@ -22,7 +22,7 @@ function MobileNavLink({
   children,
 }: {
   href: string
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <PopoverButton as={Link} href={href} className="block w-full p-2">

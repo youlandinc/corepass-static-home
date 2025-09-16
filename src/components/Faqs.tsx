@@ -10,7 +10,7 @@ interface FaqsProps {
   faqList: Array<{ q: string; a: string }>[]
 }
 
-export const Faqs: FC<FaqsProps> = ({ subtitle, faqList }) => {
+export const Faqs: FC<FaqsProps> = ({ subtitle, faqList=[] }) => {
   return (
     <section
       id="faq"
