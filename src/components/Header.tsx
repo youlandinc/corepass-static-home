@@ -14,7 +14,7 @@ import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
-import { ComponentPropsWithoutRef, ReactNode, useState } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { LOGIN_URL } from '@/constant'
 
 function MobileNavLink({
@@ -90,18 +90,17 @@ function MobileNavigation() {
 type HeaderProps = ComponentPropsWithoutRef<'header'> & {
   logo?: ReactNode
   btnClassName?: string
+  fillColor?: string
 }
 
 export function Header(props: HeaderProps) {
-  const [value, setValue] = useState('')
-
   return (
     <header className={clsx('py-10', props.className)}>
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
-              {props.logo || <Logo className="h-8 w-auto xs:h-6" />}
+              <Logo className="h-8 w-auto xs:h-6" fillColor={props.fillColor} />
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
               <Link href="/lenders">For Lenders</Link>

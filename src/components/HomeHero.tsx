@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Hero } from '@/components/Hero'
 
 import { LOGIN_URL } from '@/constant'
-import { HeroTailSale } from '@/components/HeroTailSale'
+import { HeroTailHomeLender } from '@/components/HeroTailHomeLender'
 
 export const HomeHero = () => {
   return (
@@ -31,7 +31,7 @@ export const HomeHero = () => {
           Try Corepass for free
         </Link>
       }
-      footer={<HeroTailSale />}
+      footer={<HeroTailHomeLender />}
     />
   )
 }

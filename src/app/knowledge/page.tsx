@@ -5,6 +5,8 @@ import { Footer } from '@/components/Footer'
 import { HeaderLogo } from '@/images/knowledge/HeaderLogo'
 import { KnowledgeFutureOfTeam } from '@/components/KnowledgeFutureOfTeam'
 import { KnowledgeBuiltTeams } from '@/components/KnowledgeBuiltTeams'
+import { Faqs } from '@/components/Faqs'
+import { KNOWLEDGE_FAQ } from '@/constant/Knowledge'
 
 export default function Knowledge() {
   return (
@@ -17,8 +19,9 @@ export default function Knowledge() {
         <KnowledgeHero />
         <KnowledgeFutureOfTeam />
         <KnowledgeBuiltTeams />
+        <Faqs subtitle={KNOWLEDGE_FAQ.subtitle} faqList={KNOWLEDGE_FAQ.list} />
       </main>
-      <Footer />
+      <Footer className={'bg-[#1DAFCD]'} />
     </>
   )
 }

@@ -7,6 +7,7 @@ import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { HomeHero } from '@/components/HomeHero'
 import { CorepassWay } from '@/components/CorepassWay'
 import { Testimonials } from '@/components/Testimonials'
+import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 
 export default function Home() {
   return (
@@ -17,11 +18,11 @@ export default function Home() {
         <PowerfulSolutions />
         <CorepassWay />
         {/*<SecondaryFeatures />*/}
-        <CallToAction />
+        {/*<CallToAction />*/}
         {/*<Testimonials />*/}
         {/*<Pricing />*/}
         {/*<Faqs />*/}
-        <Testimonials />
+        {/*<Testimonials />*/}
       </main>
       <Footer />
     </>
