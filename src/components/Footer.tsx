@@ -6,6 +6,7 @@ import { NavLink } from '@/components/NavLink'
 import { BookDemo } from './BookDemoForm'
 import { LOGIN_URL } from '@/constant'
 import { FC } from 'react'
+import clsx from 'clsx'
 
 type FooterProps = {
   className?: string
@@ -15,7 +16,10 @@ export function Footer({ className }: FooterProps) {
   return (
     <footer>
       <Container
-        className={`max-w-full rounded-tl-[60px] rounded-tr-[60px] bg-blue-500 py-40 ${className}`}
+        className={clsx(
+          `max-w-full rounded-tl-[60px] rounded-tr-[60px] py-40`,
+          className,
+        )}
       >
         <div className="flex flex-col gap-3 text-center [&>*]:text-white">
           <h2 className="text-5xl leading-[1.2]">
