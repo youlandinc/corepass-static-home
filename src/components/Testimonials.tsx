@@ -24,7 +24,7 @@ interface TestimonialsProps {
   testimonials: {
     content: string
     auth: string
-    title: string
+    title?: string
     avatar: StaticImageData
   }[]
 }

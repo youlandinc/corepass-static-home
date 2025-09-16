@@ -1,3 +1,10 @@
+import LENDER_AVATAR_1 from '@/images/knowledge/testimonials/lender-1.png'
+import LENDER_AVATAR_2 from '@/images/knowledge/testimonials/lender-2.png'
+import LENDER_AVATAR_3 from '@/images/knowledge/testimonials/lender-3.png'
+import LENDER_AVATAR_4 from '@/images/knowledge/testimonials/lender-4.png'
+import LENDER_AVATAR_5 from '@/images/knowledge/testimonials/lender-5.png'
+import LENDER_AVATAR_6 from '@/images/knowledge/testimonials/lender-6.png'
+
 export const KNOWLEDGE_FUTURE_OF_TEAM = [
   {
     title: 'AI-Powered Search',
@@ -88,5 +95,55 @@ export const KNOWLEDGE_FAQ = {
         a: 'Yes. KnowledgeOS connects with CRMs, BI tools, data warehouses, and document systems—so your team never has to switch between platforms to find what they need.',
       },
     ],
+  ],
+}
+
+export const KNOWLEDGE_TESTIMONIALS = {
+  title: 'Trusted Across Startups and Enterprises',
+  subtitle:
+    'From fast-growing startups to global enterprises, KnowledgeOS helps teams find answers faster, connect systems seamlessly, and uncover insights instantly.',
+  list: [
+    {
+      content:
+        'We replaced three disconnected knowledge tools with KnowledgeOS and cut research time in half.',
+      auth: 'James Walker',
+      title: 'VP Sales, FinTechCo',
+      avatar: LENDER_AVATAR_1,
+    },
+    {
+      content:
+        'The AI assistant surfaces insights I used to spend hours digging through Slack and docs to find.',
+      auth: 'Benjamin Hayes',
+      title: 'Head of Sales, SaaSly',
+      avatar: LENDER_AVATAR_2,
+    },
+    {
+      content:
+        'KnowledgeOS became our intelligence hub overnight — we finally have a single source of truth.',
+      auth: 'Ava Mitchell',
+      title: 'Founder, GrowthWave',
+      avatar: LENDER_AVATAR_3,
+    },
+    {
+      content:
+        'We can now see knowledge gaps, measure adoption, and actually act on insights in real time.',
+      auth: 'Chloe Bennett',
+      title: 'Managing Director, Atlas Private Lending',
+      avatar: LENDER_AVATAR_4,
+    },
+    {
+      content:
+        'KnowledgeOS gave us instant access to past decisions and context. Team alignment meetings are now shorter and more focused.',
+      auth: 'Christopher Allen',
+      title: 'Product Lead, NovaTech',
+      avatar: LENDER_AVATAR_5,
+    },
+    {
+      content:
+        'We wasted time looking for the latest versions of docs. Now everyone works from the same source and errors have dropped dramatically.',
+      auth: 'Isabella Rogers',
+      title: 'Engineering Manager, Altura Systems',
+      avatar: LENDER_AVATAR_6,
+    },
   ],
 }
