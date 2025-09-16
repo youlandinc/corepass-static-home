@@ -17,7 +17,7 @@ export function Footer({ className }: FooterProps) {
     <footer>
       <Container
         className={clsx(
-          `max-w-full rounded-tl-[60px] rounded-tr-[60px] py-40`,
+          `max-w-full rounded-tl-[60px] rounded-tr-[60px]`,
           className,
         )}
       >

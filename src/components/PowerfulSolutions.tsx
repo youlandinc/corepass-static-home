@@ -249,7 +249,7 @@ export function PowerfulSolutions() {
     <section
       id="features"
       aria-label="One Platform, Three Powerful Solutions"
-      className="overflow-hidden py-40"
+      className="overflow-hidden"
     >
       <Container className={'120xl:max-w-[1600px]'}>
         <SectionHeader

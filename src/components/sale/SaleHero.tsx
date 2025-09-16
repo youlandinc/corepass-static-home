@@ -11,7 +11,7 @@ import SALE_ICON from '@/images/sales/hero/sale-icon.svg'
 
 export const SaleHero = () => {
   return (
-    <Container className="max-w-full rounded-b-[120px] bg-gradient-to-b from-[rgba(249,250,252,0.52)] to-[rgba(233,220,247,0.52)] py-40 text-center">
+    <Container className="max-w-full rounded-b-[120px] bg-gradient-to-b from-[rgba(249,250,252,0.52)] to-[rgba(233,220,247,0.52)] text-center">
       <div className={'relative flex flex-row justify-center gap-x-2'}>
         <Image src={SALE_ICON} alt={''} width={28} height={28} unoptimized />
         <p className={'font-semi text-[20px]'}>SalesOS</p>

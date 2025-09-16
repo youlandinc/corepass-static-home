@@ -38,7 +38,7 @@ export const Testimonials: FC<TestimonialsProps> = ({
     <section
       id="testimonials"
       aria-label="What our customers are saying"
-      className="bg-slate-50 py-40"
+      className="bg-slate-50"
     >
       <Container className={'relative z-[10]'}>
         <div className="max-w-[1280px] text-center">
