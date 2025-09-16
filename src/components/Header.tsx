@@ -77,7 +77,7 @@ function MobileNavigation() {
       >
         <MobileNavLink href="/lenders">For Lenders</MobileNavLink>
         <MobileNavLink href="/sales">For Sales</MobileNavLink>
-        <MobileNavLink href="/#pricing">For Knowledge Base</MobileNavLink>
+        <MobileNavLink href="/knowledge">For Knowledge Base</MobileNavLink>
         <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
         <MobileNavLink href="/#pricing">FAQ</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
@@ -104,9 +104,9 @@ export function Header(props: HeaderProps) {
               {props.logo || <Logo className="h-8 w-auto xs:h-6" />}
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
-              <Link href="/sales">For Sales</Link>
               <Link href="/lenders">For Lenders</Link>
-              <Link href="/#pricing">For Knowledge Base</Link>
+              <Link href="/sales">For Sales</Link>
+              <Link href="/knowledge">For Knowledge Base</Link>
               <Link href="/#pricing">Pricing</Link>
               <Link href="/#pricing">FAQ</Link>
             </div>
