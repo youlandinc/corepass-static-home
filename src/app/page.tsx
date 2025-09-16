@@ -17,11 +17,11 @@ export default function Home() {
         <PowerfulSolutions />
         <CorepassWay />
         {/*<SecondaryFeatures />*/}
-        <CallToAction />
+        {/*<CallToAction />*/}
         {/*<Testimonials />*/}
         {/*<Pricing />*/}
         {/*<Faqs />*/}
-        <Testimonials />
+        {/*<Testimonials />*/}
       </main>
       <Footer />
     </>

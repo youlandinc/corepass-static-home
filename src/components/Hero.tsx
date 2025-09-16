@@ -1,4 +1,5 @@
 'use client'
+import { FC, ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,14 +14,13 @@ import BRAND_3 from '@/images/brands/brand-3.svg'
 import BRAND_4 from '@/images/brands/brand-4.svg'
 import BRAND_5 from '@/images/brands/brand-5.svg'
 import BRAND_6 from '@/images/brands/brand-6.svg'
-import { FC, ReactNode } from 'react'
 
 type HeroProps = {
   title?: ReactNode
   subtitle?: string
   action?: ReactNode
   description?: string
-  footer?: ReactNode
+  footer: boolean
 }
 
 export const Hero: FC<HeroProps> = ({
@@ -31,8 +31,8 @@ export const Hero: FC<HeroProps> = ({
   footer,
 }) => {
   return (
-    <Container className="pt-20 pb-16 text-center lg:pt-32 ">
-      {/*<h1 className="mx-auto max-w-4xl font-display text-3xl font-normal tracking-tight text-slate-900 xsm:text-4xl sm:text-6xl">
+    <Container className="pt-20 pb-16 text-center lg:pt-32">
+      <h1 className="mx-auto max-w-4xl font-display text-3xl font-normal tracking-tight text-slate-900 xsm:text-4xl sm:text-6xl">
         All-in-one{' '}
         <span className="relative text-3xl whitespace-nowrap text-blue-600 xsm:text-4xl sm:text-6xl">
           <svg
@@ -46,21 +46,20 @@ export const Hero: FC<HeroProps> = ({
           <span className="relative">origination platform</span>
         </span>{' '}
         for private lenders.
-      </h1>*/}
+      </h1>
       {title}
-      <p className="mx-auto mt-6  text-xl tracking-tight text-slate-700 leading-normal text-[#334155]">
-        {subtitle}
-        {/*From sales outreach to loan origination to enterprise knowledge —
+      <p className="mx-auto mt-6 text-xl leading-normal tracking-tight text-[#334155]">
+        From sales outreach to loan origination to enterprise knowledge —
         Corepass replaces manual, operational busywork with AI-driven automation
-        so your team can focus on growth, not grunt work.*/}
+        so your team can focus on growth, not grunt work.
       </p>
       <div className="mt-8 flex justify-center gap-x-6">
-        {/*<Link
+        <Link
           className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white"
           href={LOGIN_URL}
         >
           Try Corepass for free
-        </Link>*/}
+        </Link>
         {action}
         {/*TODO : Book a demo*/}
         <BookDemo
@@ -71,11 +70,9 @@ export const Hero: FC<HeroProps> = ({
       </div>
       <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
-          {description}
-         {/* Trusted by leading companies*/}
+          Trusted by leading companies
         </p>
-        {footer}
-        {/*<ul
+        <ul
           role="list"
           className="mt-8 flex items-center justify-center gap-x-25 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-25 xl:gap-y-0"
         >
@@ -109,7 +106,7 @@ export const Hero: FC<HeroProps> = ({
               </ul>
             </li>
           ))}
-        </ul>*/}
+        </ul>
       </div>
     </Container>
   )

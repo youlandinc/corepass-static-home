@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
+import { HeroLender } from '@/components/HeroLender'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import { CallToAction } from '@/components/CallToAction'
@@ -19,7 +19,7 @@ export default function Lenders() {
     <>
       <Header />
       <main>
-        <Hero />
+        <HeroLender />
         <PrimaryFeatures />
         <SecondaryFeatures />
         <CallToAction

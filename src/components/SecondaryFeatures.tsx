@@ -16,6 +16,13 @@ import BANNER_1 from '@/images/banner/banner-1.png'
 import BANNER_2 from '@/images/banner/banner-2.png'
 import BANNER_3 from '@/images/banner/banner-3.png'
 
+import BRAND_1 from '@/images/lender/secondaryFeatures/brand-1.svg'
+import BRAND_2 from '@/images/lender/secondaryFeatures/brand-2.svg'
+import BRAND_3 from '@/images/lender/secondaryFeatures/brand-3.svg'
+import BRAND_4 from '@/images/lender/secondaryFeatures/brand-4.svg'
+import BRAND_5 from '@/images/lender/secondaryFeatures/brand-5.svg'
+import BRAND_6 from '@/images/lender/secondaryFeatures/brand-6.svg'
+
 interface Feature {
   name: ReactNode
   intro: string[]
@@ -248,11 +255,45 @@ export function SecondaryFeatures() {
         </h2>
         <FeaturesMobile />
         <FeaturesDesktop />
-        <div className={'mt-30'}>
-          <p className={'text-center'}>
-            Integrations with Industry-Leading Partners
+        <div className="mt-36 lg:mt-44">
+          <p className="text-center font-display text-slate-900">
+            Trusted by leading companies
           </p>
-          <div className={'mt-8'}></div>
+          <ul
+            role="list"
+            className="mt-8 flex items-center justify-center gap-x-25 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-25 xl:gap-y-0"
+          >
+            {[
+              [
+                { name: 'class valuation', logo: BRAND_1 },
+                { name: 'equifax', logo: BRAND_2 },
+                { name: 'hubspot', logo: BRAND_3 },
+              ],
+              [
+                { name: 'lexisnexis', logo: BRAND_4 },
+                { name: 'dropbox', logo: BRAND_5 },
+                { name: 'wells fargo', logo: BRAND_6 },
+              ],
+            ].map((group, groupIndex) => (
+              <li key={groupIndex}>
+                <ul
+                  role="list"
+                  className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-25 sm:gap-y-0"
+                >
+                  {group.map((company) => (
+                    <li key={company.name} className="flex">
+                      <Image
+                        src={company.logo}
+                        alt={company.name}
+                        unoptimized
+                        quality={100}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </section>
