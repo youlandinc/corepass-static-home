@@ -2,13 +2,10 @@ import { FC } from 'react'
 import { Container } from '@/components/Container'
 import { SectionHeader } from '@/components/PowerfulSolutions'
 import docImage from '@/images/home/corepassWay/doc.png'
-import trendImage from '@/images/home/corepassWay/trend.png'
+import docImageClip from '@/images/home/corepassWay/doc-clip.png'
+import trendImage from '@/images/home/corepassWay/trend-clip.png'
 import iconsImage from '@/images/home/corepassWay/icons.png'
 import Image from 'next/image'
-
-// const CardContainer = () => {
-//   return
-// }
 
 export const CorepassWay: FC = () => {
   return (
@@ -24,7 +21,7 @@ export const CorepassWay: FC = () => {
         <div className={'flex gap-10 xs:flex-col lg:flex-row'}>
           <div
             className={
-              'flex flex-col justify-between gap-3 overflow-hidden rounded-[48px] border border-[#D2D6E1] xs:w-full lg:w-1/2'
+              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] xs:w-full lg:w-1/2'
             }
           >
             <div className={'px-12 pt-12'}>
@@ -55,28 +52,43 @@ export const CorepassWay: FC = () => {
               </ul>
             </div>
             <div
-              className={
-                'relative bottom-[-80px] left-[48px] overflow-hidden pt-30'
-              }
+              className={'relative overflow-hidden pl-12 xs:hidden lg:block'}
             >
               <Image
-                src={docImage}
+                src={docImageClip}
                 width={672}
                 height={758}
                 alt=""
                 quality={100}
                 unoptimized
+                className={'object-cover object-top'}
+              />
+            </div>
+            <div
+              className={
+                'relative mx-12 overflow-hidden pb-[80%] xs:block lg:hidden'
+              }
+            >
+              <Image
+                src={docImage}
+                // width={672}
+                // height={758}
+                alt=""
+                quality={100}
+                unoptimized
+                fill
+                className={'object-cover object-top'}
               />
             </div>
           </div>
           <div
             className={
-              'flex flex-col gap-10 overflow-hidden xs:w-full md:w-1/2'
+              'flex flex-col gap-10 overflow-hidden xs:w-full lg:w-1/2'
             }
           >
             <div
               className={
-                'flex flex-col gap-3 rounded-[48px] border border-[#D2D6E1] p-12'
+                'border-radius-breakpoint flex flex-col gap-3 border border-[#D2D6E1] p-12'
               }
             >
               <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
@@ -105,7 +117,7 @@ export const CorepassWay: FC = () => {
             </div>
             <div
               className={
-                'flex flex-col rounded-[48px] border border-[#D2D6E1] px-12 pt-12'
+                'border-radius-breakpoint flex flex-col border border-[#D2D6E1] px-12 pt-12'
               }
             >
               <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>

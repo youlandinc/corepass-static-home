@@ -20,7 +20,7 @@ export const CallToAction: FC<CallToActionProps> = ({
   return (
     <section
       id="get-started-today"
-      className="relative mx-20 overflow-hidden rounded-[48px] py-32"
+      className="relative overflow-hidden rounded-[48px] py-32 xs:mx-3 sm:mx-6 lg:mx-20"
     >
       <Image
         className="absolute top-1/2 left-1/2 h-full w-full max-w-none -translate-x-1/2 -translate-y-1/2"

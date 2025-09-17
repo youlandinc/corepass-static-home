@@ -45,7 +45,9 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
           {category}
         </p>
       )}
-      <h2 className={'text-[clamp(14px,2.5vw,48px)] leading-[1.2]'}>{title}</h2>
+      <h2 className={'text-[clamp(14px,2.5vw,48px)] leading-normal'}>
+        {title}
+      </h2>
       {subtitle && (
         <p
           className={
@@ -130,10 +132,12 @@ const SwipeCard: FC<SwipeCardProps> = ({
   }, [type])
   return (
     <div
-      className={`group border-color-[#D2D6E1] relative flex min-h-[964px] cursor-pointer flex-col justify-between overflow-hidden rounded-[48px] border xs:w-full lg:w-[500px]`}
+      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[964px] cursor-pointer flex-col justify-between overflow-hidden border xs:w-full lg:w-[500px]`}
     >
       <div
-        className={'relative mx-2 mt-2 overflow-hidden rounded-[48px] bg-white'}
+        className={
+          'border-radius-breakpoint relative mx-2 mt-2 overflow-hidden bg-white'
+        }
       >
         <Image src={image} alt="" quality={100} unoptimized />
       </div>
@@ -143,7 +147,7 @@ const SwipeCard: FC<SwipeCardProps> = ({
         {description}
       </div>
       <span
-        className={`transition-[transform .5s cubic-bezier(.65,0,.35,1)] absolute inset-x-0 top-[-40%] bottom-0 z-[-1] box-content scale-[0] rounded-[48px] duration-300 group-hover:scale-[1] bg-[${computedBgcolor}]`}
+        className={`transition-[transform .5s cubic-bezier(.65,0,.35,1)] border-radius-breakpoint absolute inset-x-0 top-[-40%] bottom-0 z-[-1] box-content scale-[0] duration-300 group-hover:scale-[1] bg-[${computedBgcolor}]`}
       />
     </div>
   )

@@ -49,7 +49,7 @@ export default function Lenders() {
         </section>
       </main>
 
-      <Footer />
+      <Footer className={'bg-[#122B61]'} />
     </>
   )
 }

@@ -12,10 +12,10 @@ type ContentCardProps = {
 const ContentCard: FC<ContentCardProps> = ({ title, subtitle, className }) => {
   return (
     <div
-      className={`flex flex-col gap-6 rounded-[48px] border border-[#D2D6E1] p-8 ${className}`}
+      className={`border-radius-breakpoint flex flex-col gap-6 border border-[#D2D6E1] p-8 ${className}`}
     >
-      <p className={'text-2xl'}>{title}</p>
-      <p className={'text-xl text-[#475569]'}>{subtitle}</p>
+      <p className={'text-2xl leading-normal'}>{title}</p>
+      <p className={'text-xl leading-normal text-[#475569]'}>{subtitle}</p>
     </div>
   )
 }
@@ -28,7 +28,7 @@ export const KnowledgeBuiltTeams = () => {
         subtitle={'Turn information into an always-ready advantage'}
       />
       <div className={'flex flex-col gap-8'}>
-        <div className={'flex flex-row gap-8'}>
+        <div className={'flex gap-8 xs:flex-col lg:flex-row'}>
           {KNOWLEDGE_BUILT_TEAMS.list.map((item, index) => (
             <ContentCard
               key={index}

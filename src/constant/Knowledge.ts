@@ -14,7 +14,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
   {
     title: 'AI-Powered Search',
     list: [
-      'Ask questions in plain English, like “What’s our pricing for X?”',
+      'Ask questions in plain English, like "What’s our pricing for X?"',
       'Get instant answers from docs, Slack, or PDFs — all in one place',
     ],
     img: CARD_IMAGE_1,
@@ -48,7 +48,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
 export const KNOWLEDGE_BUILT_TEAMS = {
   list: [
     {
-      title: 'AI-Powered Search',
+      title: 'Automated Updates',
       subtitle:
         'As teams upload new documents or data, the vector database refreshes automatically',
     },

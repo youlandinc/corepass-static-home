@@ -58,7 +58,7 @@ export const KnowledgeHero = () => {
           </svg>
           <p
             className={
-              'text-[clamp(14px,1.04vw,20px)] leading-[1.2] font-semibold italic'
+              'text-[clamp(14px,1.04vw,20px)] leading-[1.4] font-semibold italic'
             }
           >
             KnowledgeOS
@@ -67,10 +67,10 @@ export const KnowledgeHero = () => {
       }
       title={
         <div
-          className={`flex flex-col gap-[1.25] [&>*]:text-[clamp(32px,3.75vw,72px)] [&>*]:font-medium`}
+          className={`flex flex-col leading-[1.1] tracking-[-1.8px] [&>*]:text-[clamp(32px,3.75vw,72px)] [&>*]:font-medium`}
         >
           <h1>
-            Your
+            Your{' '}
             <span className={'text-[#1DAFCD]'}>
               AI-Powered, Always Up-to-Date
             </span>

@@ -42,35 +42,50 @@ export function Footer({ className }: FooterProps) {
             className="bg-black text-white hover:bg-black/80 hover:text-white"
           />
         </div>
-        <div className="pt-16">
+        <div className="flex flex-col gap-9 pt-40 pb-15">
           <Logo color={'white'} style={{ margin: '0 auto' }} />
-          <nav className="mt-10 text-sm" aria-label="quick links">
-            <div className="-my-1 flex justify-center gap-x-6 [&>*]:text-sm [&>*]:text-white">
-              <Link href="/lenders">For Lenders</Link>
-              <Link href="/sales">For Sales</Link>
-              <Link href="/#pricing">For Knowledge Base</Link>
-              <Link href="/#pricing">Pricing</Link>
-              <Link href="/#pricing">FAQ</Link>
+          <nav className="text-sm" aria-label="quick links">
+            <div className="flex items-center justify-center gap-6 xs:flex-col sm:flex-row [&>*]:text-white [&>a]:text-sm">
+              <div className={'flex flex-row gap-6'}>
+                <Link href="/lenders" className={'px-2 py-1'}>
+                  For Lenders
+                </Link>
+                <Link href="/sales" className={'px-2 py-1'}>
+                  For Sales
+                </Link>
+              </div>
+              <div className={'flex flex-row gap-6'}>
+                <Link href="/knowledge" className={'px-2 py-1'}>
+                  For Knowledge Base
+                </Link>
+                <Link href="/#pricing" className={'px-2 py-1'}>
+                  Pricing
+                </Link>
+                <Link href="/#pricing" className={'px-2 py-1'}>
+                  FAQ
+                </Link>
+              </div>
             </div>
           </nav>
-        </div>
-        <div className="flex items-center pt-9 pb-15 xs:flex-col xs:justify-center xs:gap-3 lg:flex-row lg:gap-6">
-          <p className="mt-0 text-sm text-[rgba(255,255,255,0.70)] md:mt-6">
-            Copyright &copy; {new Date().getFullYear()} Corepass. All rights
-            reserved.
-          </p>
-          <Link
-            className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400 md:mt-6"
-            href={'/legal/privacy-policy'}
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400 md:mt-6"
-            href={'/legal/terms-and-conditions'}
-          >
-            Terms & Conditions
-          </Link>
+          <div className={'h-[1px] w-full bg-[#D2D6E1] lg:hidden'} />
+          <div className="flex items-center xs:flex-col xs:justify-center xs:gap-3 sm:flex-row sm:gap-6">
+            <p className="mt-0 text-sm text-[rgba(255,255,255,0.70)]">
+              Copyright &copy; {new Date().getFullYear()} Corepass. All rights
+              reserved.
+            </p>
+            <Link
+              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400"
+              href={'/legal/privacy-policy'}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400"
+              href={'/legal/terms-and-conditions'}
+            >
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>
