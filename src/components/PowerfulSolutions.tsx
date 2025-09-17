@@ -1,8 +1,8 @@
 'use client'
 
-import { FC, ReactNode, useMemo } from 'react'
+import { FC, ReactNode, useMemo, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation, A11y, Pagination } from 'swiper/modules'
@@ -265,6 +265,16 @@ const KnowledgeOsCard = () => {
 }
 
 export function PowerfulSolutions() {
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+
+  const computedShowOrHidden = (show: boolean) => {
+    return show ? 'invisible opacity-0' : 'visible opacity-100'
+  }
+
+  const NavBtnDefaultStyle =
+    'absolute top-1/2 z-10 -translate-y-1/2 cursor-pointer rounded-full bg-white p-2 text-white shadow-[0_0_2px_0_rgba(17,52,227,0.10),0_10px_10px_0_rgba(17,52,227,0.10)] transition-all duration-500 hover:bg-[rgb(239,240,240)]'
+
   return (
     <section
       id="features"
@@ -282,7 +292,7 @@ export function PowerfulSolutions() {
       </Container>
       <Container
         className={
-          '!lg:pl-12 !max-w-[unset] xs:hidden lg:block 2xl:!pl-[16.6vw]'
+          '!lg:pl-12 !max-w-[unset] !pr-0 xs:hidden lg:block 2xl:!pl-[16.6vw]'
         }
       >
         <div className={'relative'}>
@@ -292,9 +302,17 @@ export function PowerfulSolutions() {
             className={'xs:hidden!important mt-12 lg:block'}
             navigation={{
               nextEl: '.custom-next',
-              prevEl: 'custom-pre',
+              prevEl: '.custom-prev',
             }}
             modules={[Navigation]}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning)
+              setIsEnd(swiper.isEnd)
+            }}
+            onAfterInit={(swiper) => {
+              setIsBeginning(swiper.isBeginning)
+              setIsEnd(swiper.isEnd)
+            }}
           >
             <SwiperSlide className={'!w-auto'}>
               <SalesOsCard />
@@ -306,13 +324,21 @@ export function PowerfulSolutions() {
               <KnowledgeOsCard />
             </SwiperSlide>
           </Swiper>
-          <button className="custom-prev absolute top-1/2 left-2 z-10 -translate-y-1/2 rounded-full bg-purple-500 p-2 text-white">
+
+          <button
+            className={clsx(
+              NavBtnDefaultStyle,
+              'custom-prev left-8',
+              computedShowOrHidden(isBeginning),
+            )}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
               viewBox="0 0 32 32"
               fill="none"
+              className={'rotate-180'}
             >
               <path
                 d="M27.7075 16.7074L18.7075 25.7074C18.5199 25.8951 18.2654 26.0005 18 26.0005C17.7346 26.0005 17.4801 25.8951 17.2925 25.7074C17.1049 25.5198 16.9994 25.2653 16.9994 24.9999C16.9994 24.7346 17.1049 24.4801 17.2925 24.2924L24.5863 16.9999H5C4.73478 16.9999 4.48043 16.8946 4.29289 16.7071C4.10536 16.5195 4 16.2652 4 15.9999C4 15.7347 4.10536 15.4804 4.29289 15.2928C4.48043 15.1053 4.73478 14.9999 5 14.9999H24.5863L17.2925 7.70745C17.1049 7.5198 16.9994 7.26531 16.9994 6.99995C16.9994 6.73458 17.1049 6.48009 17.2925 6.29245C17.4801 6.1048 17.7346 5.99939 18 5.99939C18.2654 5.99939 18.5199 6.1048 18.7075 6.29245L27.7075 15.2924C27.8005 15.3853 27.8742 15.4956 27.9246 15.617C27.9749 15.7384 28.0008 15.8685 28.0008 15.9999C28.0008 16.1314 27.9749 16.2615 27.9246 16.3829C27.8742 16.5043 27.8005 16.6146 27.7075 16.7074Z"
@@ -321,7 +347,13 @@ export function PowerfulSolutions() {
             </svg>
           </button>
 
-          <button className="custom-next absolute top-1/2 right-2 z-10 -translate-y-1/2 rounded-full bg-purple-500 p-2 text-white">
+          <button
+            className={clsx(
+              NavBtnDefaultStyle,
+              'custom-next right-8',
+              computedShowOrHidden(isEnd),
+            )}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
