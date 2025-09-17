@@ -1,15 +1,19 @@
 import { FC } from 'react'
+import Image from 'next/image'
+
 import { Container } from '@/components/Container'
 import { SectionHeader } from '@/components/PowerfulSolutions'
+
 import docImage from '@/images/home/corepassWay/doc.png'
 import docImageClip from '@/images/home/corepassWay/doc-clip.png'
 import trendImage from '@/images/home/corepassWay/trend-clip.png'
 import iconsImage from '@/images/home/corepassWay/icons.png'
-import Image from 'next/image'
+import LINEAR_IMG from '@/images/home/corepassWay/linear.png'
+import LINEAR2_IMG from '@/images/home/corepassWay/linear2.png'
 
 export const CorepassWay: FC = () => {
   return (
-    <section>
+    <section className={'relative'}>
       <Container className={'flex flex-col gap-12'}>
         <SectionHeader
           title={'AI That Works The Way You Do'}
@@ -21,7 +25,7 @@ export const CorepassWay: FC = () => {
         <div className={'flex gap-10 xs:flex-col lg:flex-row'}>
           <div
             className={
-              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] xs:w-full lg:w-1/2'
+              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] bg-white xs:w-full lg:w-1/2'
             }
           >
             <div className={'px-12 pt-12'}>
@@ -88,7 +92,7 @@ export const CorepassWay: FC = () => {
           >
             <div
               className={
-                'border-radius-breakpoint flex flex-col gap-3 border border-[#D2D6E1] p-12'
+                'border-radius-breakpoint flex flex-col gap-3 border border-[#D2D6E1] bg-white p-12'
               }
             >
               <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
@@ -117,7 +121,7 @@ export const CorepassWay: FC = () => {
             </div>
             <div
               className={
-                'border-radius-breakpoint flex flex-col border border-[#D2D6E1] px-12 pt-12'
+                'border-radius-breakpoint z-1 flex flex-col border border-[#D2D6E1] bg-white px-12 pt-12'
               }
             >
               <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
@@ -163,6 +167,34 @@ export const CorepassWay: FC = () => {
           </div>
         </div>
       </Container>
+      <div
+        className={'absolute top-[0px] left-[0px] z-[-1] h-[1953px] w-[978px]'}
+      >
+        <Image
+          src={LINEAR_IMG}
+          // width={1920}
+          // height={1150}
+          alt=""
+          quality={100}
+          unoptimized
+          fill
+          // className={'absolute top-0 left-[-95px]'}
+        />
+      </div>
+      <div
+        className={'absolute top-0 right-[-100px] z-[-1] h-[1953px] w-[978px]'}
+      >
+        <Image
+          src={LINEAR2_IMG}
+          // width={1920}
+          // height={1150}
+          alt=""
+          quality={100}
+          unoptimized
+          fill
+          // className={'absolute top-0 left-[-95px]'}
+        />
+      </div>
     </section>
   )
 }
