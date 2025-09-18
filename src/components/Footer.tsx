@@ -71,7 +71,7 @@ export function Footer({
                 <Link href="/knowledge" className={'px-2 py-1'}>
                   For Knowledge Base
                 </Link>
-                <Link href="/#faq" className={'px-2 py-1'}>
+                <Link href="/faq" className={'px-2 py-1'}>
                   FAQ
                 </Link>
               </div>
