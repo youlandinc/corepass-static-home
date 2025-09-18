@@ -1,3 +1,5 @@
+export class Globe {}
+/*
 "use client";
 
 import createGlobe, { COBEOptions } from "cobe";
@@ -126,3 +128,4 @@ export function Globe({
     </div>
   );
 }
+*/
