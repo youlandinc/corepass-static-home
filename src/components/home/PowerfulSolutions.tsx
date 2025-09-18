@@ -351,7 +351,9 @@ export function PowerfulSolutions() {
             </svg>
           </button>
         </div>
-        <div className={'flex-col gap-12 xs:flex lg:hidden'}>
+      </Container>
+      <Container className={'xs:block lg:hidden'}>
+        <div className={'flex flex-col gap-12'}>
           <SalesOsCard />
           <LendingOsCard />
           <KnowledgeOsCard />
