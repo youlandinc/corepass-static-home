@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { LOGIN_URL } from '@/constant'
+import { SALES_URL } from '@/constant'
 
 import { Container } from '@/components/Container'
 import { BookDemo } from '@/components/BookDemoForm'
@@ -34,8 +34,8 @@ export const SaleHero = () => {
         </p>
         <div className="mt-10 flex justify-center gap-x-6">
           <Link
-            className="rounded-full bg-[#8556F0] px-4 leading-10 font-semibold text-white"
-            href={LOGIN_URL}
+            className="rounded-full bg-[#8556F0] px-4 leading-10 font-semibold text-white hover:bg-[#8556F0]/90"
+            href={SALES_URL}
           >
             Try SalesOS for free
           </Link>

@@ -27,7 +27,11 @@ export default function Sales() {
         />
         <Faqs subtitle={SALES_FAQ.subtitle} faqList={SALES_FAQ.list} />
       </main>
-      <Footer imgSrc={BG_IMG} />
+      <Footer
+        imgSrc={BG_IMG}
+        btnLabel={'Get started today'}
+        btnClassName={'!text-[#4C357E]'}
+      />
     </>
   )
 }

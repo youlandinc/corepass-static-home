@@ -43,7 +43,7 @@ export function Footer({
         <div className="flex flex-row justify-center gap-6 pt-16">
           <Link
             className={clsx(
-              'rounded-full bg-white px-4 leading-10 font-semibold text-[#202939]',
+              'rounded-full bg-white px-4 leading-10 font-semibold text-[#202939] hover:bg-[white]/90',
               btnClassName,
             )}
             href={LOGIN_URL}
@@ -60,18 +60,30 @@ export function Footer({
           <nav className="text-sm" aria-label="quick links">
             <div className="flex items-center justify-center gap-6 xs:flex-col sm:flex-row [&>*]:text-white [&>a]:text-sm">
               <div className={'flex flex-row gap-6'}>
-                <Link href="/lenders" className={'px-2 py-1'}>
+                <Link
+                  href="/lenders"
+                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                >
                   For Lenders
                 </Link>
-                <Link href="/sales" className={'px-2 py-1'}>
+                <Link
+                  href="/sales"
+                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                >
                   For Sales
                 </Link>
               </div>
               <div className={'flex flex-row gap-6'}>
-                <Link href="/knowledge" className={'px-2 py-1'}>
+                <Link
+                  href="/knowledge"
+                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                >
                   For Knowledge Base
                 </Link>
-                <Link href="/faq" className={'px-2 py-1'}>
+                <Link
+                  href="/faq"
+                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                >
                   FAQ
                 </Link>
               </div>
@@ -84,13 +96,13 @@ export function Footer({
               reserved.
             </p>
             <Link
-              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400"
+              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-white"
               href={'/legal/privacy-policy'}
             >
               Privacy Policy
             </Link>
             <Link
-              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-blue-400"
+              className="mt-0 cursor-pointer text-sm text-[rgba(255,255,255,0.70)] hover:text-white"
               href={'/legal/terms-and-conditions'}
             >
               Terms & Conditions

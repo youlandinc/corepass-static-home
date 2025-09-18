@@ -119,17 +119,45 @@ export function Header(props: HeaderProps) {
               />
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
-              <Link href="/lenders">For Lenders</Link>
-              <Link href="/sales">For Sales</Link>
-              <Link href="/knowledge">For Knowledge Base</Link>
-              <Link href="/faq">FAQ</Link>
+              <Link
+                href="/lenders"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                For Lenders
+              </Link>
+              <Link
+                href="/sales"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                For Sales
+              </Link>
+              <Link
+                href="/knowledge"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                For Knowledge Base
+              </Link>
+              <Link
+                href="/faq"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                FAQ
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-x-5 lg:gap-x-8">
             <div className="[& dev]:text-sm hidden lg:block">
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
-                  <button className="cursor-pointer text-sm outline-none">
+                  <button className="cursor-pointer rounded-lg px-2 py-1 text-sm outline-none hover:bg-slate-100 hover:text-slate-900">
                     Sign in
                   </button>
                 </DropdownMenu.Trigger>

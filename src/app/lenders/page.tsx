@@ -51,7 +51,11 @@ export default function Lenders() {
         </section>
       </main>
 
-      <Footer imgSrc={BG_IMG} />
+      <Footer
+        imgSrc={BG_IMG}
+        btnLabel={'Get started today'}
+        btnClassName={'!text-[#192F67]'}
+      />
     </>
   )
 }

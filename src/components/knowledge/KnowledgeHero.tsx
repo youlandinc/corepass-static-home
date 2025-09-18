@@ -56,12 +56,6 @@ export const KnowledgeHero = () => {
             </div>
           </div>
           <div className="mt-8 flex justify-center gap-x-6">
-            <Link
-              className="rounded-full bg-[#1DAFCD] px-4 leading-10 font-semibold text-white hover:bg-[#1DAFCD]/80"
-              href={LOGIN_URL}
-            >
-              Try KnowledgeOS for free
-            </Link>
             {/*TODO : Book a demo*/}
             <BookDemo
               className={

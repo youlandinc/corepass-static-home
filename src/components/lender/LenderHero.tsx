@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { LOGIN_URL } from '@/constant'
+import { LENDING_URL, LOGIN_URL } from '@/constant'
 
 import { Container } from '@/components/Container'
 import { BookDemo } from '@/components/BookDemoForm'
@@ -47,8 +47,8 @@ export const LenderHero = () => {
         </p>
         <div className="mt-10 flex justify-center gap-x-6">
           <Link
-            className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white"
-            href={LOGIN_URL}
+            className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
+            href={LENDING_URL}
           >
             Try LendingOS for free
           </Link>
