@@ -42,10 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
-        adell.variable,
-      )}
+      className={clsx('h-full scroll-smooth antialiased', adell.variable)}
     >
       {/*<head>*/}
       {/*  <link rel="icon" href="/favicon.ico" sizes="any" />*/}

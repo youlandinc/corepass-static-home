@@ -1,76 +1,14 @@
-import Image from 'next/image'
+'use client'
+import { FC } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import AutoScroll from 'embla-carousel-auto-scroll'
 
 import { Container } from '@/components/Container'
-
-import AVATAR_1_1 from '@/images/avatars/1-1.png'
-import AVATAR_1_2 from '@/images/avatars/1-2.png'
-import AVATAR_2_1 from '@/images/avatars/2-1.png'
-import AVATAR_2_2 from '@/images/avatars/2-2.png'
-import AVATAR_3_1 from '@/images/avatars/3-1.png'
-import AVATAR_3_2 from '@/images/avatars/3-2.png'
-
-const testimonials = [
-  [
-    {
-      content:
-        'We went from managing everything in Google Sheets to tracking 60+ deals a month in Corepass. Game changer...',
-      author: {
-        name: 'Richard Jia',
-        role: 'CEO, YouLand Inc.',
-        image: AVATAR_1_1,
-      },
-    },
-    {
-      content:
-        'What stood out to me was how fast my team picked it up. No long onboarding. Just immediate improvements in how we track and close deals.',
-      author: {
-        name: 'Amy Hahn',
-        role: 'Managing Director, Atlas Private Lending',
-        image: AVATAR_1_2,
-      },
-    },
-  ],
-  [
-    {
-      content:
-        'We brought Corepass in during a period of rapid growth. It gave us the structure we needed to handle double the loan volume without burning out our team,',
-      author: {
-        name: 'Peter Pedram',
-        role: 'CEO, Private Money Lenders, LLC.',
-        image: AVATAR_2_1,
-      },
-    },
-    {
-      content:
-        'The broker portal changed everything for us. Submissions are cleaner, documents are complete, and we’re funding faster.',
-      author: {
-        name: 'Ethan Brown',
-        role: 'VP of Lending, BridgeCap',
-        image: AVATAR_2_2,
-      },
-    },
-  ],
-  [
-    {
-      content:
-        'I used to spend half my day following up on missing docs and wondering if deals were stuck. Now I just open Corepass and know exactly where things stand.',
-      author: {
-        name: 'Stephanie Renolds',
-        role: 'Loan Processor, Westside Capital',
-        image: AVATAR_3_1,
-      },
-    },
-    {
-      content:
-        'Corepass helped me stop being the bottleneck. Everyone can see what’s missing, who’s assigned, and what’s next. I finally have time to focus on strategy.',
-      author: {
-        name: 'James Williams',
-        role: 'Director, North Creek Lending',
-        image: AVATAR_3_2,
-      },
-    },
-  ],
-]
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel'
 
 function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -80,67 +18,97 @@ function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function Testimonials() {
+interface TestimonialsProps {
+  title: string
+  subtitle: string
+  testimonials: {
+    content: string
+    auth: string
+    title?: string
+    avatar: StaticImageData
+  }[]
+}
+
+export const Testimonials: FC<TestimonialsProps> = ({
+  title,
+  subtitle,
+  testimonials = [],
+}) => {
   return (
     <section
       id="testimonials"
       aria-label="What our customers are saying"
-      className="bg-slate-50 py-20 sm:py-32"
+      className="bg-slate-50"
     >
-      <Container>
-        <div className="mx-auto max-w-[602px] md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Trusted by private lenders across the country.
+      <Container className={'relative z-[10]'}>
+        <div className="max-w-[1280px] text-center">
+          <h2 className="font-display text-3xl leading-[1.2] tracking-tight text-slate-900 sm:text-4xl">
+            {title}
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            From fast-growing originators to established lending firms, Corepass
-            gives teams the tools they need to scale cleanly and close faster.
+          <p className="mt-6 text-lg tracking-tight text-slate-700">
+            {subtitle}
           </p>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
-        >
-          {testimonials.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-                {column.map((testimonial, testimonialIndex) => (
-                  <li key={testimonialIndex}>
-                    <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
-                      <QuoteIcon className="absolute top-6 left-6 fill-slate-100" />
-                      <blockquote className="relative">
-                        <p className="text-lg tracking-tight text-slate-900">
-                          {testimonial.content}
-                        </p>
-                      </blockquote>
-                      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                        <div>
-                          <div className="font-display text-base text-slate-900">
-                            {testimonial.author.name}
-                          </div>
-                          <div className="mt-1 text-sm text-slate-500">
-                            {testimonial.author.role}
-                          </div>
+
+        <div className="relative left-1/2 mt-20 -ml-[50vw] w-screen pt-2 lg:mt-16">
+          <Carousel
+            plugins={[
+              AutoScroll({
+                playOnInit: true,
+                stopOnMouseEnter: true,
+                stopOnInteraction: false,
+                stopOnFocusIn: false,
+                startDelay: 0,
+                speed: 1,
+              }),
+            ]}
+            opts={{
+              align: 'start',
+              loop: true,
+              watchDrag: false,
+            }}
+            className="relative w-[95%] max-w-full scale-[1.1]"
+          >
+            <CarouselContent className="-ml-8">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem
+                  key={`${testimonial.content}-${index}`}
+                  className="basis-96 pl-8 lg:basis-125"
+                >
+                  <figure className="group relative h-auto transform rounded-[24px] border border-[#D2D6E1] bg-white p-6 transition-all duration-500 hover:bg-gradient-to-br hover:from-white hover:to-slate-50 lg:rounded-[48px]">
+                    <QuoteIcon className="absolute top-6 left-6 fill-slate-100 transition-all duration-300 group-hover:fill-slate-200" />
+                    <blockquote className="relative">
+                      <p className="text-lg tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-slate-800">
+                        {testimonial.content}
+                      </p>
+                    </blockquote>
+                    <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6 transition-colors duration-300 group-hover:border-slate-200">
+                      <div>
+                        <div className="font-display text-base text-slate-900 transition-colors duration-300 group-hover:text-slate-800">
+                          {testimonial.auth}
                         </div>
-                        <div className="overflow-hidden rounded-full bg-slate-50">
-                          <Image
-                            className="h-14 w-14 object-cover"
-                            src={testimonial.author.image}
-                            unoptimized
-                            alt=""
-                            width={56}
-                            quality={100}
-                            height={56}
-                          />
+                        <div className="mt-1 text-sm text-slate-500 transition-colors duration-300 group-hover:text-slate-600">
+                          {testimonial.title}
                         </div>
-                      </figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+                      </div>
+                      <div className="overflow-hidden rounded-full bg-slate-50 transition-all duration-300 group-hover:bg-white">
+                        <Image
+                          className="h-14 w-14 object-cover"
+                          src={testimonial.avatar}
+                          unoptimized
+                          alt=""
+                          width={56}
+                          quality={100}
+                          height={56}
+                        />
+                      </div>
+                    </figcaption>
+                  </figure>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
       </Container>
     </section>
   )

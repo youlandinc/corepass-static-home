@@ -1,8 +1,17 @@
 'use client'
+import { useState } from 'react'
+import Link from 'next/link'
 
-import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import { toast } from 'sonner'
+
+import { cn } from '@/lib/utils'
+import { _askForDemo } from '@/request'
+
+import { PatternFormat } from 'react-number-format'
 
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -22,12 +31,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { PatternFormat } from 'react-number-format'
-import { _askForDemo } from '@/request'
-import { useState } from 'react'
-import { toast } from 'sonner'
-import { cn } from '@/lib/utils'
-import Link from 'next/link'
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
@@ -122,7 +125,7 @@ export function BookDemo({ label = <>Book a demo</>, className = '' }) {
     >
       <DialogTrigger
         className={cn(
-          'group inline-flex items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 hover:text-slate-100 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-800 active:text-blue-100',
+          'group inline-flex items-center justify-center rounded-full bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 hover:text-slate-100 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-800 active:text-blue-100',
           className,
         )}
       >
