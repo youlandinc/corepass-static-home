@@ -32,7 +32,7 @@ export const HomeHero = () => {
         </div>
         <div className="mt-8 flex justify-center gap-x-6">
           <Link
-            className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white"
+            className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
             href={LOGIN_URL}
           >
             Try Corepass for free
