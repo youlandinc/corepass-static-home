@@ -97,7 +97,7 @@ const SwipeCard: FC<SwipeCardProps> = ({
   return (
     <div
       onClick={() => router.push(path)}
-      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[870px] cursor-pointer flex-col justify-between overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
+      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[870px] cursor-pointer flex-col justify-between gap-14 overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
     >
       <div
         className={
