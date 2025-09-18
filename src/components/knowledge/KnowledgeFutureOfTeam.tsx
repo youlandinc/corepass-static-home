@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { SectionHeader } from '@/components/PowerfulSolutions'
+import { SectionHeader } from '@/components/SectionHeader'
 import { KNOWLEDGE_FUTURE_OF_TEAM } from '@/constant/Knowledge'
 
 import Image from 'next/image'

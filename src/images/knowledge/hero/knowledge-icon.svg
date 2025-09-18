@@ -1,20 +1,4 @@
-import Link from 'next/link'
-import { LOGIN_URL } from '@/constant'
-import BRAND_1 from '@/images/brands/brand-1.svg'
-import BRAND_2 from '@/images/brands/brand-2.svg'
-import BRAND_3 from '@/images/brands/brand-3.svg'
-import BRAND_4 from '@/images/brands/brand-4.svg'
-import BRAND_5 from '@/images/brands/brand-5.svg'
-import BRAND_6 from '@/images/brands/brand-6.svg'
-import Image from 'next/image'
-import { Hero } from '@/components/Hero'
-
-export const KnowledgeHero = () => {
-  return (
-    <Hero
-      category={
-        <div className={'mx-auto flex flex-row items-center gap-[10px]'}>
-          <svg
+<svg
             xmlns="http://www.w3.org/2000/svg"
             width="29"
             height="28"
@@ -56,43 +40,3 @@ export const KnowledgeHero = () => {
               fill="#00839E"
             />
           </svg>
-          <p
-            className={
-              'text-[clamp(14px,1.04vw,20px)] leading-[1.4] font-semibold italic'
-            }
-          >
-            KnowledgeOS
-          </p>
-        </div>
-      }
-      title={
-        <div
-          className={`flex flex-col leading-[1.1] tracking-[-1.8px] [&>*]:text-[clamp(32px,3.75vw,72px)] [&>*]:font-medium`}
-        >
-          <h1>
-            Your{' '}
-            <span className={'text-[#1DAFCD]'}>
-              AI-Powered, Always Up-to-Date
-            </span>
-            <br />
-            Company Brain
-          </h1>
-        </div>
-      }
-      subtitle={
-        'KnowledgeOS centralizes company documents, conversations, and data sources into one searchable, AI-powered platform — automatically updating as new information flows in.'
-      }
-      action={
-        <Link
-          className="rounded-full bg-[#1DAFCD] px-4 leading-10 font-semibold text-white hover:bg-[#1DAFCD]/80"
-          href={LOGIN_URL}
-        >
-          Try KnowledgeOS for free
-        </Link>
-      }
-      className={
-        'border-r-amber-20000 rounded-br-[120px] rounded-bl-[120px] border'
-      }
-    />
-  )
-}

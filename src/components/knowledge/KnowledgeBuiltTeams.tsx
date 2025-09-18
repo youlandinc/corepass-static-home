@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { Container } from '@/components/Container'
-import { SectionHeader } from '@/components/PowerfulSolutions'
+import { SectionHeader } from '@/components/SectionHeader'
 import { KNOWLEDGE_BUILT_TEAMS } from '@/constant/Knowledge'
 import { LinearGradientCircle } from '@/components/LinearGradientCircle'
 import clsx from 'clsx'

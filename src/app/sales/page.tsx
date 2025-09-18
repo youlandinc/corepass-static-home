@@ -10,11 +10,13 @@ import { Footer } from '@/components/Footer'
 
 import { SALES_FAQ, SALES_TESTIMONIALS } from '@/constant/Sales'
 
+import BG_IMG from '@/images/sales/footer/sales-footer.svg'
+
 export default function Sales() {
   return (
     <>
       <Header className={'bg-slate-50'} />
-      <main className={'bg-slate-50'}>
+      <main>
         <SaleHero />
         <SalePrimaryFeatures />
         <SaleSecondaryFeature />
@@ -25,7 +27,7 @@ export default function Sales() {
         />
         <Faqs subtitle={SALES_FAQ.subtitle} faqList={SALES_FAQ.list} />
       </main>
-      <Footer />
+      <Footer imgSrc={BG_IMG} />
     </>
   )
 }

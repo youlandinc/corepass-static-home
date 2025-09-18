@@ -17,6 +17,8 @@ import {
   LENDERS_TESTIMONIALS,
 } from '@/constant/Lenders'
 
+import BG_IMG from '@/images/lender/footer/lending-footer.svg'
+
 export default function Lenders() {
   return (
     <>
@@ -49,7 +51,7 @@ export default function Lenders() {
         </section>
       </main>
 
-      <Footer className={'bg-[#122B61]'} />
+      <Footer imgSrc={BG_IMG} />
     </>
   )
 }

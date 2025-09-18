@@ -122,19 +122,23 @@ export const SalePrimaryFeatures = () => {
               key={`${section.title}-${index}`}
               className={'relative z-[10] flex flex-col gap-y-[160px]'}
             >
-              <div className={'flex flex-row items-center gap-x-[60px]'}>
+              <div
+                className={clsx(
+                  'flex flex-col-reverse items-center gap-x-[60px] gap-y-6 xs:flex-col xl:flex-row',
+                )}
+              >
                 <div
                   className={clsx(
-                    index % 2 === 0 ? 'order-first' : 'order-last',
-                    'relative w-[40.625%] shrink-0',
+                    index % 2 === 0 ? 'xl:order-first' : 'xl:order-last',
+                    'relative shrink-0 xs:order-first xs:w-full xl:w-[40.625%]',
                   )}
                 >
-                  <Image src={section.image} alt={''} />
+                  <Image src={section.image} alt={''} objectFit={'cover'} />
                 </div>
                 <div
                   className={clsx(
                     index % 2 === 0 ? 'order-last' : 'order-first',
-                    'w-[53.125%] shrink-0',
+                    'shrink-0 xs:w-full xl:w-[53.125%]',
                   )}
                 >
                   <h3 className={'text-[40px] leading-[1.2] font-medium'}>

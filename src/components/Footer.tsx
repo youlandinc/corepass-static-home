@@ -1,36 +1,38 @@
 import Link from 'next/link'
+import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
-import { NavLink } from '@/components/NavLink'
 import { BookDemo } from './BookDemoForm'
 import { LOGIN_URL } from '@/constant'
-import { FC } from 'react'
-import clsx from 'clsx'
+
+import Image from 'next/image'
 
 type FooterProps = {
   className?: string
+  imgSrc?: string
+  title?: string
 }
 
-export function Footer({ className }: FooterProps) {
+export function Footer({ className, imgSrc, title }: FooterProps) {
   return (
     <footer>
       <Container
         className={clsx(
-          `max-w-full rounded-tl-[60px] rounded-tr-[60px]`,
+          `relative max-w-full overflow-hidden rounded-tl-[60px] rounded-tr-[60px]`,
           className,
         )}
       >
         <div className="flex flex-col gap-3 text-center [&>*]:text-white">
           <h2 className="text-5xl leading-[1.2]">
-            Run your operations with AI
+            {title || 'Run your operations with AI'}
           </h2>
           <p className="text-xl leading-normal">
             Automate repetitive work with Corepass so your team can focus on
             strategy and growth.
           </p>
         </div>
-        <div className="flex flex-row justify-center gap-6 pt-16 pb-12">
+        <div className="flex flex-row justify-center gap-6 pt-16">
           <Link
             className="rounded-full bg-white px-4 leading-10 font-semibold text-[#202939]"
             href={LOGIN_URL}
@@ -58,10 +60,7 @@ export function Footer({ className }: FooterProps) {
                 <Link href="/knowledge" className={'px-2 py-1'}>
                   For Knowledge Base
                 </Link>
-                <Link href="/#pricing" className={'px-2 py-1'}>
-                  Pricing
-                </Link>
-                <Link href="/#pricing" className={'px-2 py-1'}>
+                <Link href="/#faq" className={'px-2 py-1'}>
                   FAQ
                 </Link>
               </div>
@@ -87,6 +86,13 @@ export function Footer({ className }: FooterProps) {
             </Link>
           </div>
         </div>
+        <Image
+          src={imgSrc || ''}
+          alt={''}
+          fill
+          className={'absolute inset-0 z-[-1]'}
+          objectFit={'cover'}
+        />
       </Container>
     </footer>
   )

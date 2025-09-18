@@ -78,8 +78,7 @@ function MobileNavigation() {
         <MobileNavLink href="/lenders">For Lenders</MobileNavLink>
         <MobileNavLink href="/sales">For Sales</MobileNavLink>
         <MobileNavLink href="/knowledge">For Knowledge Base</MobileNavLink>
-        <MobileNavLink href="/#pricing">Pricing</MobileNavLink>
-        <MobileNavLink href="/#pricing">FAQ</MobileNavLink>
+        <MobileNavLink href="/#faq">FAQ</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
         <MobileNavLink href={LOGIN_URL}>Sign in</MobileNavLink>
       </PopoverPanel>
@@ -109,8 +108,7 @@ export function Header(props: HeaderProps) {
               <Link href="/lenders">For Lenders</Link>
               <Link href="/sales">For Sales</Link>
               <Link href="/knowledge">For Knowledge Base</Link>
-              <Link href="/#pricing">Pricing</Link>
-              <Link href="/#pricing">FAQ</Link>
+              <Link href="/#faq">FAQ</Link>
             </div>
           </div>
           <div className="flex items-center gap-x-5 lg:gap-x-8">

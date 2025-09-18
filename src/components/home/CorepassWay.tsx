@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
-import { SectionHeader } from '@/components/PowerfulSolutions'
+import { SectionHeader } from '@/components/SectionHeader'
 
 import docImage from '@/images/home/corepassWay/doc.png'
 import docImageClip from '@/images/home/corepassWay/doc-clip.png'
@@ -13,7 +13,7 @@ import LINEAR2_IMG from '@/images/home/corepassWay/linear2.png'
 
 export const CorepassWay: FC = () => {
   return (
-    <section className={'relative'}>
+    <section className={'relative overflow-hidden'}>
       <Container className={'flex flex-col gap-12'}>
         <SectionHeader
           title={'AI That Works The Way You Do'}
@@ -22,10 +22,10 @@ export const CorepassWay: FC = () => {
             'Our system centralizes your data, automates repetitive work, and adapts to your workflows—so your team can focus on closing deals, not juggling tools.'
           }
         />
-        <div className={'flex gap-10 xs:flex-col lg:flex-row'}>
+        <div className={'flex gap-10 xs:flex-col xl:flex-row'}>
           <div
             className={
-              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] bg-white xs:w-full lg:w-1/2'
+              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] bg-white xs:w-full xl:w-1/2'
             }
           >
             <div className={'px-12 pt-12'}>
@@ -56,7 +56,7 @@ export const CorepassWay: FC = () => {
               </ul>
             </div>
             <div
-              className={'relative overflow-hidden pl-12 xs:hidden lg:block'}
+              className={'relative overflow-hidden pl-12 xs:hidden xl:block'}
             >
               <Image
                 src={docImageClip}
@@ -70,7 +70,7 @@ export const CorepassWay: FC = () => {
             </div>
             <div
               className={
-                'relative mx-12 overflow-hidden pb-[80%] xs:block lg:hidden'
+                'relative mx-12 overflow-hidden pb-[80%] xs:block xl:hidden'
               }
             >
               <Image
@@ -87,7 +87,7 @@ export const CorepassWay: FC = () => {
           </div>
           <div
             className={
-              'flex flex-col gap-10 overflow-hidden xs:w-full lg:w-1/2'
+              'flex flex-col gap-10 overflow-hidden xs:w-full xl:w-1/2'
             }
           >
             <div

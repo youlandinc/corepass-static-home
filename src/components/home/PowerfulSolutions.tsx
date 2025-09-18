@@ -2,10 +2,11 @@
 
 import { FC, ReactNode, useMemo, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { Navigation, A11y, Pagination } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
+import { useRouter } from 'next/navigation'
 
 import SALES_ICON from '@/images/home/powerfullSolution/sales.svg'
 import SALES_ICON_ACTIVE from '@/images/home/powerfullSolution/sales-active.svg'
@@ -16,51 +17,10 @@ import KNOWLEDGE_ICON_ACTIVE from '@/images/home/powerfullSolution/knowledge-act
 import SALES_IMAGE from '@/images/home/powerfullSolution/sales-OS.png'
 import LENDING_IMAGE from '@/images/home/powerfullSolution/lending-OS.png'
 import KNOWLEDGE_IMAGE from '@/images/home/powerfullSolution/knowledge-OS.png'
-import ARROW_ICON from '@/images/home/powerfullSolution/arrow.svg'
 
 import { Container } from '@/components/Container'
 import clsx from 'clsx'
-
-type SectionHeaderProps = {
-  category?: string
-  title: string
-  subtitle?: string
-}
-export const SectionHeader: FC<SectionHeaderProps> = ({
-  category,
-  title,
-  subtitle,
-}) => {
-  return (
-    <div
-      className={
-        'mx-auto flex max-w-[900px] flex-col gap-6 120xl:max-w-[1200px] [&>*]:text-center'
-      }
-    >
-      {category && (
-        <p
-          className={
-            'text-[clamp(14px,1.04vw,20px)] leading-[1.2] font-semibold text-[#2563EB] italic'
-          }
-        >
-          {category}
-        </p>
-      )}
-      <h2 className={'text-[clamp(14px,2.5vw,48px)] leading-normal'}>
-        {title}
-      </h2>
-      {subtitle && (
-        <p
-          className={
-            'text-[clamp(14px,1.05vw,20px)] leading-normal text-[#202939]'
-          }
-        >
-          {subtitle}
-        </p>
-      )}
-    </div>
-  )
-}
+import { SectionHeader } from '@/components/SectionHeader'
 
 type ProductIndicatorProps = {
   label: string
@@ -111,6 +71,7 @@ type SwipeCardProps = {
   indicator?: ReactNode
   className?: string
   type: 'sales' | 'lending' | 'knowledge'
+  path: string
 }
 
 const SwipeCard: FC<SwipeCardProps> = ({
@@ -120,6 +81,7 @@ const SwipeCard: FC<SwipeCardProps> = ({
   indicator,
   className,
   type,
+  path,
 }) => {
   const computedBgcolor = useMemo(() => {
     switch (type) {
@@ -131,8 +93,10 @@ const SwipeCard: FC<SwipeCardProps> = ({
         return '#1DAFCD'
     }
   }, [type])
+  const router = useRouter()
   return (
     <div
+      onClick={() => router.push(path)}
       className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[964px] cursor-pointer flex-col justify-between overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
     >
       <div
@@ -157,6 +121,7 @@ const SwipeCard: FC<SwipeCardProps> = ({
 const SalesOsCard = () => {
   return (
     <SwipeCard
+      path={'/sales'}
       indicator={
         <ProductIndicator
           label={'Sales OS'}
@@ -193,6 +158,7 @@ const SalesOsCard = () => {
 const LendingOsCard = () => {
   return (
     <SwipeCard
+      path={'/lenders'}
       type={'lending'}
       indicator={
         <ProductIndicator
@@ -232,6 +198,7 @@ const LendingOsCard = () => {
 const KnowledgeOsCard = () => {
   return (
     <SwipeCard
+      path={'/knowledge'}
       type={'knowledge'}
       indicator={
         <ProductIndicator
@@ -292,7 +259,7 @@ export function PowerfulSolutions() {
       </Container>
       <Container
         className={
-          '!lg:pl-12 !max-w-[unset] !pr-0 xs:hidden lg:block 2xl:!pl-[16.6vw]'
+          '!lg:pl-12 !max-w-[unset] !pt-0 !pr-0 xs:hidden lg:block 2xl:!pl-[16.6vw]'
         }
       >
         <div className={'relative'}>
@@ -310,6 +277,11 @@ export function PowerfulSolutions() {
               setIsEnd(swiper.isEnd)
             }}
             onAfterInit={(swiper) => {
+              setIsBeginning(swiper.isBeginning)
+              setIsEnd(swiper.isEnd)
+            }}
+            onResize={(swiper) => {
+              // 窗口缩放时，重新计算
               setIsBeginning(swiper.isBeginning)
               setIsEnd(swiper.isEnd)
             }}
