@@ -12,7 +12,12 @@ export const HeroContainer: FC<PropsWithChildren<HeroContainerProps>> = ({
   className,
 }) => {
   return (
-    <div className={clsx('relative', className)}>
+    <div
+      className={clsx(
+        'relative lg:rounded-br-[120px] lg:rounded-bl-[120px]',
+        className,
+      )}
+    >
       <Image
         src={bgSrc || ''}
         alt={''}

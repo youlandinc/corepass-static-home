@@ -17,9 +17,10 @@ export default function Home() {
         <section className={'relative overflow-hidden'}>
           <Header />
           <HomeHero />
+          <PowerfulSolutions />
           <div
             className={
-              'absolute top-0 left-[50%] z-[-1] h-[567px] w-[1280px] translate-x-[-640px]'
+              'absolute top-[120px] left-[50%] z-[-1] h-[567px] w-[1280px] translate-x-[-640px]'
             }
           >
             <svg
@@ -100,7 +101,7 @@ export default function Home() {
               // preserveAspectRatio={'xMidYMid meet'}
               fill="none"
               className={
-                'absolute top-[30%] left-[55%] z-[-1] animate-[spin_20s_linear_reverse_infinite]'
+                'absolute top-[30%] left-[50%] z-[-1] animate-[spin_20s_linear_reverse_infinite]'
               }
             >
               <g filter="url(#filter0_g_530_5924)">
@@ -165,7 +166,6 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        <PowerfulSolutions />
         <CorepassWay />
         <CallToAction
           title={HOME_CALL.title}
@@ -177,7 +177,7 @@ export default function Home() {
           }
         />
 
-        <section className={'relative z-[1] w-full overflow-hidden'}>
+        <section id={'123'} className={'relative z-[1] w-full overflow-hidden'}>
           <Testimonials
             title={HOME_TESTIMONIALS.title}
             subtitle={HOME_TESTIMONIALS.subtitle}

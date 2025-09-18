@@ -14,11 +14,8 @@ import BG_IMG from '@/images/sales/hero/sales-bg.svg'
 
 export const SaleHero = () => {
   return (
-    <HeroContainer
-      bgSrc={BG_IMG}
-      className={'overflow-hidden lg:rounded-br-[120px] lg:rounded-bl-[120px]'}
-    >
-      <Container className="max-w-full rounded-b-[120px] text-center">
+    <HeroContainer bgSrc={BG_IMG} className={'overflow-hidden'}>
+      <Container className="max-w-full text-center">
         <div className={'relative flex flex-row justify-center gap-x-2'}>
           <Image src={SALE_ICON} alt={''} width={28} height={28} unoptimized />
           <p className={'font-semi text-[20px] font-semibold italic'}>

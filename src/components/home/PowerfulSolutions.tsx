@@ -97,16 +97,16 @@ const SwipeCard: FC<SwipeCardProps> = ({
   return (
     <div
       onClick={() => router.push(path)}
-      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[964px] cursor-pointer flex-col justify-between overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
+      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[870px] cursor-pointer flex-col justify-between overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
     >
       <div
         className={
-          'border-radius-breakpoint relative z-10 mx-2 mt-2 overflow-hidden'
+          'border-radius-breakpoint relative z-10 mx-2 mt-2 overflow-hidden bg-white'
         }
       >
         <Image src={image} alt="" quality={100} unoptimized />
       </div>
-      <div className="z-10 flex flex-col px-12 pb-12">
+      <div className="z-10 flex flex-col gap-6 px-12 pb-12">
         {indicator}
         {title}
         {description}
@@ -124,7 +124,7 @@ const SalesOsCard = () => {
       path={'/sales'}
       indicator={
         <ProductIndicator
-          label={'Sales OS'}
+          label={'SalesOS'}
           icon={SALES_ICON}
           activeIcon={SALES_ICON_ACTIVE}
           className="bg-[#6D4FFB] group-hover:bg-white"
@@ -145,7 +145,7 @@ const SalesOsCard = () => {
             AI research + outreach agent finds, enriches, and contacts leads
             automatically.
           </p>
-          <p className="text-lg leading-normal">
+          <p className="text-lg leading-normal text-[#636A7C] group-hover:text-white">
             Book more meetings and let your team focus on closing deals—not
             prospecting
           </p>
@@ -162,7 +162,7 @@ const LendingOsCard = () => {
       type={'lending'}
       indicator={
         <ProductIndicator
-          label={'Lending OS'}
+          label={'LendingOS'}
           icon={LENDING_ICON}
           activeIcon={LENDING_ICON_ACTIVE}
           className="bg-[#2563EB] group-hover:bg-white"
@@ -176,7 +176,11 @@ const LendingOsCard = () => {
         </div>
       }
       description={
-        <ul className={'ml-5.5 list-disc group-hover:text-white [&>*]:text-lg'}>
+        <ul
+          className={
+            'ml-5.5 flex list-disc flex-col gap-3 group-hover:text-white [&>*]:text-lg [&>*]:leading-normal'
+          }
+        >
           <li>
             Handles borrower intake, document generation, pipeline tracking, and
             pricing automation.
@@ -202,7 +206,7 @@ const KnowledgeOsCard = () => {
       type={'knowledge'}
       indicator={
         <ProductIndicator
-          label={'Knowledge OS'}
+          label={'KnowledgeOS'}
           icon={KNOWLEDGE_ICON}
           activeIcon={KNOWLEDGE_ICON_ACTIVE}
           className="bg-[#1DAFCD] group-hover:bg-white"
@@ -212,20 +216,27 @@ const KnowledgeOsCard = () => {
       image={KNOWLEDGE_IMAGE}
       title={
         <div className="flex flex-col group-hover:text-white">
-          <h3 className="text-[32px]">Your AI-Powered Company Brain</h3>
+          <h3 className="text-[32px]">AI-Powered Company Brain</h3>
         </div>
       }
       description={
-        <div className="flex flex-col gap-3 group-hover:text-white">
-          <p className="text-lg leading-normal">
-            AI research + outreach agent finds, enriches, and contacts leads
-            automatically.
-          </p>
-          <p className="text-lg leading-normal">
-            Book more meetings and let your team focus on closing deals—not
-            prospecting
-          </p>
-        </div>
+        <ul
+          className={
+            'ml-5.5 flex list-disc flex-col gap-3 leading-normal group-hover:text-white [&>*]:text-lg [&>*]:leading-normal'
+          }
+        >
+          <li>
+            Centralizes documents, Slack threads, and notes into one searchable
+            hub.
+          </li>
+          <li>
+            Syncs with Dropbox, Google Drive, and Notion in real time — no
+            manual updates.
+          </li>
+          <li>
+            AI keeps knowledge summarized, indexed, and always up to date.
+          </li>
+        </ul>
       }
     />
   )

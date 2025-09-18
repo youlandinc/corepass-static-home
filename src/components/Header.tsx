@@ -8,6 +8,7 @@ import {
   PopoverPanel,
 } from '@headlessui/react'
 import clsx from 'clsx'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
@@ -15,7 +16,11 @@ import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
 import { ComponentPropsWithoutRef, ReactNode } from 'react'
-import { LOGIN_URL } from '@/constant'
+import { LOGIN_URL, SALES_URL, LENDING_URL } from '@/constant'
+
+import SALES_ICON from '@/images/header/salesOS.svg'
+import LENDERS_ICON from '@/images/header/lendersOS.svg'
+import Image from 'next/image'
 
 function MobileNavLink({
   href,
@@ -78,9 +83,18 @@ function MobileNavigation() {
         <MobileNavLink href="/lenders">For Lenders</MobileNavLink>
         <MobileNavLink href="/sales">For Sales</MobileNavLink>
         <MobileNavLink href="/knowledge">For Knowledge Base</MobileNavLink>
-        <MobileNavLink href="/#faq">FAQ</MobileNavLink>
+        <MobileNavLink href="/faq">FAQ</MobileNavLink>
         <hr className="m-2 border-slate-300/40" />
-        <MobileNavLink href={LOGIN_URL}>Sign in</MobileNavLink>
+        <MobileNavLink href={''}>
+          <span onClick={() => window.open(SALES_URL, '_blank')}>
+            Sign in to SalesOS
+          </span>
+        </MobileNavLink>
+        <MobileNavLink href={''}>
+          <span onClick={() => window.open(LENDING_URL, '_blank')}>
+            Sign in to LendingOS
+          </span>
+        </MobileNavLink>
       </PopoverPanel>
     </Popover>
   )
@@ -108,12 +122,52 @@ export function Header(props: HeaderProps) {
               <Link href="/lenders">For Lenders</Link>
               <Link href="/sales">For Sales</Link>
               <Link href="/knowledge">For Knowledge Base</Link>
-              <Link href="/#faq">FAQ</Link>
+              <Link href="/faq">FAQ</Link>
             </div>
           </div>
           <div className="flex items-center gap-x-5 lg:gap-x-8">
             <div className="[& dev]:text-sm hidden lg:block">
-              <NavLink href={LOGIN_URL}>Sign in</NavLink>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
+                  <button className="cursor-pointer text-sm outline-none">
+                    Sign in
+                  </button>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Portal>
+                  <DropdownMenu.Content
+                    className="data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade min-w-[180px] rounded-md bg-white px-3 py-2 shadow-[0_0_2px_0_rgba(17,52,227,0.10),0_10px_10px_0_rgba(17,52,227,0.10)] will-change-[opacity,transform] data-[side=bottom]:animate-out"
+                    sideOffset={12}
+                    align={'end'}
+                  >
+                    <DropdownMenu.Item
+                      className={
+                        'flex cursor-pointer flex-row items-center gap-1 rounded-[4px] p-1 outline-none hover:bg-[#F0F4FF]'
+                      }
+                      onClick={() => {
+                        window.open(SALES_URL, '_target')
+                      }}
+                    >
+                      <Image src={SALES_ICON} alt={''} />
+                      SalesOS
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Separator
+                      className={'my-3 h-[1px] w-full bg-[#F0F4FF]'}
+                    />
+                    <DropdownMenu.Item
+                      className={
+                        'rounded-1 flex cursor-pointer flex-row items-center gap-1 rounded-[4px] p-1 outline-none hover:bg-[#F0F4FF]'
+                      }
+                      onClick={() => {
+                        window.open(LENDING_URL, '_target')
+                      }}
+                    >
+                      <Image src={LENDERS_ICON} alt={''} />
+                      LendingOS
+                    </DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Portal>
+              </DropdownMenu.Root>
+              {/*<NavLink href={LOGIN_URL}>Sign in</NavLink>*/}
             </div>
             <BookDemo
               label={

@@ -32,7 +32,11 @@ export default function Knowledge() {
         </section>
         <Faqs subtitle={KNOWLEDGE_FAQ.subtitle} faqList={KNOWLEDGE_FAQ.list} />
       </main>
-      <Footer imgSrc={BG_IMG} />
+      <Footer
+        imgSrc={BG_IMG}
+        btnLabel={'Get started today'}
+        btnClassName={'!text-[#23AFCF]'}
+      />
     </>
   )
 }

@@ -8,23 +8,29 @@ import backgroundImage from '@/images/background-faqs.jpg'
 interface FaqsProps {
   subtitle?: string
   faqList: Array<{ q: string; a: string }>[]
+  title?: string
 }
 
-export const Faqs: FC<FaqsProps> = ({ subtitle, faqList = [] }) => {
+export const Faqs: FC<FaqsProps> = ({ subtitle, faqList = [], title }) => {
   return (
     <section id="faq" aria-labelledby="faq-title" className="bg-slate-50 py-32">
       <Container className={'!py-0'}>
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2
-            id="faq-title"
-            className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
-          >
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            {subtitle}
-          </p>
+          {title && (
+            <h2
+              id="faq-title"
+              className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            >
+              {title || 'Frequently Asked Questions'}
+            </h2>
+          )}
+          {subtitle && (
+            <p className="mt-4 text-lg tracking-tight text-slate-700">
+              {subtitle}
+            </p>
+          )}
         </div>
+
         <ul
           role="list"
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"

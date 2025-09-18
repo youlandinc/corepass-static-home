@@ -9,7 +9,7 @@ import { Container } from '@/components/Container'
 export const HomeHero = () => {
   return (
     <section>
-      <Container className={`relative text-center`}>
+      <Container className={`!rounded-0 relative text-center`}>
         <div className={'flex flex-col gap-2.5'}>
           <div className={'flex flex-col gap-8'}>
             <div

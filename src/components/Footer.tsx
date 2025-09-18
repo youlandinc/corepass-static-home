@@ -12,9 +12,17 @@ type FooterProps = {
   className?: string
   imgSrc?: string
   title?: string
+  btnLabel?: string
+  btnClassName?: string
 }
 
-export function Footer({ className, imgSrc, title }: FooterProps) {
+export function Footer({
+  className,
+  imgSrc,
+  title,
+  btnClassName,
+  btnLabel,
+}: FooterProps) {
   return (
     <footer>
       <Container
@@ -34,10 +42,13 @@ export function Footer({ className, imgSrc, title }: FooterProps) {
         </div>
         <div className="flex flex-row justify-center gap-6 pt-16">
           <Link
-            className="rounded-full bg-white px-4 leading-10 font-semibold text-[#202939]"
+            className={clsx(
+              'rounded-full bg-white px-4 leading-10 font-semibold text-[#202939]',
+              btnClassName,
+            )}
             href={LOGIN_URL}
           >
-            Try Corepass for free
+            {btnLabel || 'Try Corepass for free'}
           </Link>
           <BookDemo
             label={<span>Book a demo</span>}

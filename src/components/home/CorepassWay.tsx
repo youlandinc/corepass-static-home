@@ -25,23 +25,23 @@ export const CorepassWay: FC = () => {
         <div className={'flex gap-10 xs:flex-col xl:flex-row'}>
           <div
             className={
-              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] bg-white xs:w-full xl:w-1/2'
+              'border-radius-breakpoint flex flex-col justify-between gap-14 overflow-hidden border border-[#D2D6E1] bg-white xs:w-full xl:w-[55%]'
             }
           >
             <div className={'px-12 pt-12'}>
-              <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
+              <h4 className={'text-[clamp(20px,1.67vw,32px)] leading-normal'}>
                 Centralize Everything in One Place
               </h4>
               <p
                 className={
-                  'text-[clamp(14px,0.9375,18px)] leading-normal text-[#636A7C]'
+                  'pt-9 pb-3 text-[clamp(14px,0.9375,18px)] leading-normal text-[#636A7C]'
                 }
               >
                 AI thrives on centralized data—Corepass makes it effortless.
               </p>
               <ul
                 className={
-                  'ml-5.5 list-disc text-[clamp(14px,0.9375,18px)] text-[#636A7C]'
+                  'ml-5.5 flex list-disc flex-col gap-3 text-[clamp(14px,0.9375,18px)] text-[#636A7C]'
                 }
               >
                 <li>
@@ -95,9 +95,8 @@ export const CorepassWay: FC = () => {
                 'border-radius-breakpoint flex flex-col gap-3 border border-[#D2D6E1] bg-white p-12'
               }
             >
-              <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
-                Automate the Busywork,
-                <br /> Keep Control of the Rest
+              <h4 className={'text-[clamp(20px,1.67vw,32px)] leading-normal'}>
+                Automate the Busywork,Keep Control of the Rest
               </h4>
               <div className={'flex flex-col gap-3 pt-8 pb-12'}>
                 <p className={'text-[clamp(14px,0.9375,18px)] text-[#636A7C]'}>
@@ -124,7 +123,7 @@ export const CorepassWay: FC = () => {
                 'border-radius-breakpoint z-1 flex flex-col border border-[#D2D6E1] bg-white px-12 pt-12'
               }
             >
-              <h4 className={'text-[clamp(20px,1.875vw,36px)] leading-normal'}>
+              <h4 className={'text-[clamp(20px,1.67vw,32px)] leading-normal'}>
                 AI That Learns and Adapts
               </h4>
               <div className={'flex flex-col gap-3 pt-8 pb-12'}>
@@ -146,21 +145,14 @@ export const CorepassWay: FC = () => {
                   </li>
                 </ul>
               </div>
-              <div
-                className={
-                  'relative z-[-1] mb-[clamp(-65px,-3.385vw,-30px)] overflow-hidden pb-[55.83%]'
-                }
-              >
+              <div className={'relative z-[-1] mx-auto'}>
                 <Image
-                  className="absolute top-[100px] max-w-none"
                   src={trendImage}
                   alt=""
-                  // width={1112}
-                  // height={642}
+                  width={532}
+                  height={234}
                   quality={100}
                   unoptimized
-                  fill
-                  // objectFit={'cover'}
                 />
               </div>
             </div>

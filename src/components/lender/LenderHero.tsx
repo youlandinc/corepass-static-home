@@ -13,7 +13,7 @@ import BG_IMG from '@/images/lender/hero/lending-bg.svg'
 
 export const LenderHero = () => {
   return (
-    <HeroContainer bgSrc={BG_IMG}>
+    <HeroContainer bgSrc={BG_IMG} className={'!rounded-0'}>
       <Container className="text-center">
         <div className={'relative flex flex-row justify-center gap-x-2'}>
           <Image
