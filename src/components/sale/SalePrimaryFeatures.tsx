@@ -105,11 +105,11 @@ export const SalePrimaryFeatures = () => {
   return (
     <section className={'w-full overflow-x-hidden'}>
       <Container className={''}>
-        <div className={'max-w-[1280px] text-center'}>
+        <div className={'mx-auto max-w-[900px] text-center'}>
           <h2 className={'text-5xl leading-[1.2] font-medium'}>
             Run your entire sales outreach workflow in one place
           </h2>
-          <p className={'mt-6'}>
+          <p className={'mt-6 leading-normal'}>
             SalesOS replaces manual prospecting, disconnected data enrichment
             tools, and fragmented outreach software with a single AI-driven
             platform.

@@ -25,7 +25,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'Auto-ingests new files, notes, and conversations',
       'Continuously updates embeddings as your data changes',
     ],
-    img: CARD_IMAGE_2,
+    img: CARD_IMAGE_3,
   },
   {
     title: ' Context-Aware Research',
@@ -33,7 +33,7 @@ export const KNOWLEDGE_FUTURE_OF_TEAM = [
       'AI summarizes and cross-references multiple sources for deeper insights',
       'Understand trends, risks, and opportunities in real time',
     ],
-    img: CARD_IMAGE_3,
+    img: CARD_IMAGE_2,
   },
   {
     title: 'Knowledge Graphs ',

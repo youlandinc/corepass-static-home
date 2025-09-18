@@ -37,7 +37,7 @@ export const SaleHero = () => {
             className="rounded-full bg-[#8556F0] px-4 leading-10 font-semibold text-white"
             href={LOGIN_URL}
           >
-            Try LendingOS for free
+            Try SalesOS for free
           </Link>
           <BookDemo
             className={
