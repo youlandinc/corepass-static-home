@@ -22,8 +22,7 @@ export const HeroContainer: FC<PropsWithChildren<HeroContainerProps>> = ({
         src={bgSrc || ''}
         alt={''}
         fill
-        className={'absolute inset-0 z-[-1]'}
-        objectFit={'cover'}
+        className={'absolute inset-0 z-[-1] object-cover'}
       />
       {children}
     </div>

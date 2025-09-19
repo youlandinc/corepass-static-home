@@ -68,7 +68,7 @@ export const SaleSecondaryFeature = () => {
             </div>
 
             <div className={'relative mt-auto overflow-hidden'}>
-              <Image src={section.image} alt={''} objectFit={'cover'} />
+              <Image src={section.image} alt={''} className={'object-cover'} />
             </div>
           </li>
         ))}
