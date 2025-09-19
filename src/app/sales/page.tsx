@@ -11,11 +11,18 @@ import { Footer } from '@/components/Footer'
 import { SALES_FAQ, SALES_TESTIMONIALS } from '@/constant/Sales'
 
 import BG_IMG from '@/images/sales/footer/sales-footer.svg'
+import { Button } from '@/components/Button'
+import { SALES_URL } from '@/constant'
 
 export default function Sales() {
   return (
     <>
-      <Header className={'bg-slate-50'} />
+      <title>SalesOS | AI-Powered Sales Automation – Corepass</title>
+      <Header
+        className={'bg-slate-50'}
+        fillColor={'#202939'}
+        btnClassName={'bg-[#8556F0]'}
+      />
       <main>
         <SaleHero />
         <SalePrimaryFeatures />
@@ -29,8 +36,17 @@ export default function Sales() {
       </main>
       <Footer
         imgSrc={BG_IMG}
-        btnLabel={'Get started today'}
-        btnClassName={'!text-[#4C357E]'}
+        action={
+          <Button
+            href={SALES_URL}
+            target={'_blank'}
+            className={
+              'bg-white font-semibold !text-[#4C357E] hover:!bg-[white]/90'
+            }
+          >
+            Get started today
+          </Button>
+        }
       />
     </>
   )

@@ -49,6 +49,7 @@ export const LenderHero = () => {
           <Link
             className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
             href={LENDING_URL}
+            target={'_blank'}
           >
             Try LendingOS for free
           </Link>
