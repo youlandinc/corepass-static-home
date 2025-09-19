@@ -4,7 +4,6 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { BookDemo } from './BookDemoForm'
-import { LOGIN_URL } from '@/constant'
 
 import Image from 'next/image'
 
@@ -56,26 +55,31 @@ export function Footer({
           />
         </div>
         <div className="flex flex-col gap-9 pt-40 pb-15">
-          <Logo color={'white'} style={{ margin: '0 auto' }} />
+          <Link href={'/'}>
+            <Logo color={'white'} style={{ margin: '0 auto' }} />
+          </Link>
           <nav className="text-sm" aria-label="quick links">
             <div className="flex items-center justify-center gap-6 xs:flex-col sm:flex-row [&>*]:text-white [&>a]:text-sm">
               <div className={'flex flex-row gap-6'}>
                 <Link
-                  href="/lenders"
+                  href={'/lenders'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                  scroll
                 >
                   For Lenders
                 </Link>
                 <Link
-                  href="/sales"
+                  href={'/sales'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                  scroll
                 >
                   For Sales
                 </Link>
               </div>
               <div className={'flex flex-row gap-6'}>
                 <Link
-                  href="/knowledge"
+                  scroll
+                  href={'/knowledge'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
                 >
                   For Knowledge Base
@@ -113,8 +117,7 @@ export function Footer({
           src={imgSrc || ''}
           alt={''}
           fill
-          className={'absolute inset-0 z-[-1]'}
-          objectFit={'cover'}
+          className={'absolute inset-0 z-[-1] object-cover'}
         />
       </Container>
     </footer>

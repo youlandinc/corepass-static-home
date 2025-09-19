@@ -133,7 +133,11 @@ export const SalePrimaryFeatures = () => {
                     'relative shrink-0 xs:order-first xs:w-full xl:w-[40.625%]',
                   )}
                 >
-                  <Image src={section.image} alt={''} objectFit={'cover'} />
+                  <Image
+                    src={section.image}
+                    alt={''}
+                    className={'object-cover'}
+                  />
                 </div>
                 <div
                   className={clsx(
