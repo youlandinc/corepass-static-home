@@ -122,20 +122,20 @@ export function Header(props: HeaderProps) {
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
               <Link
-                href="/lenders"
-                className={
-                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
-                }
-              >
-                LendingOS
-              </Link>
-              <Link
                 href="/sales"
                 className={
                   'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
                 }
               >
                 SalesOS
+              </Link>
+              <Link
+                href="/lenders"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                LendingOS
               </Link>
               <Link
                 href="/knowledge"
