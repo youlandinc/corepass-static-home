@@ -265,7 +265,7 @@ export function PowerfulSolutions() {
       </Container>
       <Container
         className={
-          '!max-w-[unset] !pt-0 !pr-0 xs:hidden lg:block lg:!pl-[clamp(24px,calc((calc(100vw-0px)-calc((calc(((min((100vw-0px),1440px))-312px)/12)*12+(24px*12))))/2),320px)] lg:pl-12'
+          '!max-w-[unset] !pt-0 !pr-0 xs:hidden lg:block lg:!pl-[clamp(24px,calc((calc(100vw-0px)-calc((calc(((min((100vw-0px),1440px))-312px)/12)*12+(24px*12))))/2),16.6vw)] lg:pl-12'
         }
       >
         <div className={'relative'}>
