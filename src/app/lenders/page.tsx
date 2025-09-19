@@ -45,7 +45,7 @@ export default function Lenders() {
               className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
               href={LOGIN_URL}
             >
-              Try Corepass for free
+              Try LendingOS for free
             </Link>
           }
         />
@@ -66,6 +66,7 @@ export default function Lenders() {
         action={
           <Button
             href={LOGIN_URL}
+            target={'_blank'}
             className={
               'bg-white font-semibold !text-[#192F67] hover:!bg-[white]/90'
             }
