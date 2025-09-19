@@ -42,6 +42,7 @@ export default function Lenders() {
           subtitle={LENDERS_CALL.subtitle}
           action={
             <Link
+              target={'_blank'}
               className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
               href={LOGIN_URL}
             >
