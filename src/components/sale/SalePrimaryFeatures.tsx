@@ -107,7 +107,7 @@ export const SalePrimaryFeatures = () => {
       <Container className={''}>
         <div className={'mx-auto max-w-[900px] text-center'}>
           <h2 className={'text-5xl leading-[1.2] font-medium'}>
-            Run your entire sales outreach workflow in one place
+            Run Your Entire Sales Outreach Workflow In One Place
           </h2>
           <p className={'mt-6 leading-normal'}>
             SalesOS replaces manual prospecting, disconnected data enrichment

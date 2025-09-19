@@ -9,10 +9,13 @@ import { Button } from '@/components/Button'
 import { HOME_CALL, HOME_TESTIMONIALS } from '@/constant/Home'
 
 import BG_IMG from '@/images/home/footer/home-footer.svg'
+import { LOGIN_URL } from '@/constant'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <>
+      <title>Corepass | AI That Powers Growth & Scale</title>
       <main>
         <section className={'relative overflow-hidden'}>
           <Header />
@@ -171,9 +174,13 @@ export default function Home() {
           title={HOME_CALL.title}
           subtitle={HOME_CALL.subtitle}
           action={
-            <Button color={'blue'} variant={'solid'}>
+            <Link
+              className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
+              href={LOGIN_URL}
+              target={'_blank'}
+            >
               Try Corepass for free
-            </Button>
+            </Link>
           }
         />
 
@@ -185,7 +192,21 @@ export default function Home() {
           />
         </section>
       </main>
-      <Footer imgSrc={BG_IMG} title={'Run Your Business Smarter With AI'} />
+      <Footer
+        imgSrc={BG_IMG}
+        title={'Run Your Business Smarter With AI'}
+        action={
+          <Button
+            href={LOGIN_URL}
+            target={'_blank'}
+            className={
+              'bg-white font-semibold !text-[#202939] hover:!bg-[white]/90'
+            }
+          >
+            Try Corepass for free
+          </Button>
+        }
+      />
     </>
   )
 }

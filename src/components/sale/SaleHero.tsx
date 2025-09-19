@@ -36,6 +36,7 @@ export const SaleHero = () => {
           <Link
             className="rounded-full bg-[#8556F0] px-4 leading-10 font-semibold text-white hover:bg-[#8556F0]/90"
             href={SALES_URL}
+            target={'_blank'}
           >
             Try SalesOS for free
           </Link>
@@ -45,7 +46,7 @@ export const SaleHero = () => {
             }
           />
         </div>
-        <HeroTailSale />
+        {/*<HeroTailSale />*/}
       </Container>
     </HeroContainer>
   )

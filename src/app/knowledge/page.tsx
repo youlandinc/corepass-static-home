@@ -9,10 +9,13 @@ import { Faqs } from '@/components/Faqs'
 import { KNOWLEDGE_FAQ, KNOWLEDGE_TESTIMONIALS } from '@/constant/Knowledge'
 
 import BG_IMG from '@/images/knowledge/footer/Knowledge-footer.svg'
+import { LOGIN_URL } from '@/constant'
+import { Button } from '@/components/Button'
 
 export default function Knowledge() {
   return (
     <>
+      <title>KnowledgeOS | AI Company Knowledge Hub – Corepass</title>
       <Header
         btnClassName={'bg-[#1DAFCD] hover:bg-[#1DAFCD]/80'}
         fillColor={'#202939'}
@@ -32,11 +35,7 @@ export default function Knowledge() {
         </section>
         <Faqs subtitle={KNOWLEDGE_FAQ.subtitle} faqList={KNOWLEDGE_FAQ.list} />
       </main>
-      <Footer
-        imgSrc={BG_IMG}
-        btnLabel={'Get started today'}
-        btnClassName={'!text-[#23AFCF]'}
-      />
+      <Footer imgSrc={BG_IMG} />
     </>
   )
 }

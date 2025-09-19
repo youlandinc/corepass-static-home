@@ -83,25 +83,20 @@ const SwipeCard: FC<SwipeCardProps> = ({
   type,
   path,
 }) => {
-  const computedBgcolor = useMemo(() => {
-    switch (type) {
-      case 'sales':
-        return '#6D4FFB'
-      case 'lending':
-        return '#2563EB'
-      case 'knowledge':
-        return '#1DAFCD'
-    }
-  }, [type])
   const router = useRouter()
   return (
     <div
       onClick={() => router.push(path)}
-      className={`group border-color-[#D2D6E1] border-radius-breakpoint relative flex min-h-[870px] cursor-pointer flex-col justify-between gap-14 overflow-hidden border bg-white xs:w-full lg:w-[500px]`}
+      className={clsx(
+        `group border-color-[#D2D6E1] border-radius-breakpoint flex min-h-[870px] cursor-pointer flex-col justify-between gap-14 overflow-hidden border bg-white transition-all duration-400 xs:w-full lg:w-[500px]`,
+        type === 'sales' && 'hover:bg-[#6D4FFB]',
+        type === 'lending' && 'hover:bg-[#2563EB]',
+        type === 'knowledge' && 'hover:bg-[#1DAFCD]',
+      )}
     >
       <div
         className={
-          'border-radius-breakpoint relative z-10 mx-2 mt-2 overflow-hidden bg-white'
+          'border-radius-breakpoint relative z-10 mx-2 mt-2 overflow-hidden bg-white transition-colors duration-400'
         }
       >
         <Image src={image} alt="" quality={100} unoptimized />
@@ -111,9 +106,9 @@ const SwipeCard: FC<SwipeCardProps> = ({
         {title}
         {description}
       </div>
-      <span
+      {/*  <span
         className={`transition-[transform .5s cubic-bezier(.65,0,.35,1)] border-radius-breakpoint absolute inset-x-0 top-[-40%] bottom-0 box-content scale-[0] duration-300 group-hover:scale-[1] bg-[${computedBgcolor}]`}
-      />
+      />*/}
     </div>
   )
 }
@@ -270,7 +265,7 @@ export function PowerfulSolutions() {
       </Container>
       <Container
         className={
-          '!lg:pl-12 !max-w-[unset] !pt-0 !pr-0 xs:hidden lg:block 2xl:!pl-[16.6vw]'
+          '!max-w-[unset] !pt-0 !pr-0 xs:hidden lg:block lg:!pl-[clamp(24px,calc((calc(100vw-0px)-calc((calc(((min((100vw-0px),1440px))-312px)/12)*12+(24px*12))))/2),16.6vw)] lg:pl-12'
         }
       >
         <div className={'relative'}>

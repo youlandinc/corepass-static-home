@@ -6,22 +6,16 @@ import { Logo } from '@/components/Logo'
 import { BookDemo } from './BookDemoForm'
 
 import Image from 'next/image'
+import { ReactNode } from 'react'
 
 type FooterProps = {
   className?: string
   imgSrc?: string
   title?: string
-  btnLabel?: string
-  btnClassName?: string
+  action?: ReactNode
 }
 
-export function Footer({
-  className,
-  imgSrc,
-  title,
-  btnClassName,
-  btnLabel,
-}: FooterProps) {
+export function Footer({ className, imgSrc, action }: FooterProps) {
   return (
     <footer>
       <Container
@@ -32,7 +26,7 @@ export function Footer({
       >
         <div className="flex flex-col gap-3 text-center [&>*]:text-white">
           <h2 className="text-5xl leading-[1.2]">
-            {title || 'Run your operations with AI'}
+            Run Your Business Smarter With AI
           </h2>
           <p className="text-xl leading-normal">
             Automate repetitive work with Corepass so your team can focus on
@@ -40,18 +34,10 @@ export function Footer({
           </p>
         </div>
         <div className="flex flex-row justify-center gap-6 pt-16">
-          <Link
-            className={clsx(
-              'rounded-full bg-white px-4 leading-10 font-semibold text-[#202939] hover:bg-[white]/90',
-              btnClassName,
-            )}
-            href={LOGIN_URL}
-          >
-            {btnLabel || 'Try Corepass for free'}
-          </Link>
+          {action}
           <BookDemo
             label={<span>Book a demo</span>}
-            className="bg-black text-white hover:bg-black/80 hover:text-white"
+            className="active:text-white' cursor-pointer bg-black text-white hover:bg-black/80 hover:text-white focus:outline-hidden focus-visible:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-black/80"
           />
         </div>
         <div className="flex flex-col gap-9 pt-40 pb-15">
@@ -66,14 +52,14 @@ export function Footer({
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
                   scroll
                 >
-                  For Lenders
+                  LendingOS
                 </Link>
                 <Link
                   href={'/sales'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
                   scroll
                 >
-                  For Sales
+                  SalesOS
                 </Link>
               </div>
               <div className={'flex flex-row gap-6'}>
@@ -82,14 +68,14 @@ export function Footer({
                   href={'/knowledge'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
                 >
-                  For Knowledge Base
+                  KnowledgeOS
                 </Link>
-                <Link
-                  href="/faq"
-                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
-                >
-                  FAQ
-                </Link>
+                {/*<Link*/}
+                {/*  href="/faq"*/}
+                {/*  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}*/}
+                {/*>*/}
+                {/*  FAQ*/}
+                {/*</Link>*/}
               </div>
             </div>
           </nav>

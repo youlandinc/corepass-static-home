@@ -33,6 +33,7 @@ export const HomeHero = () => {
           <Link
             className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
             href={LOGIN_URL}
+            target={'_blank'}
           >
             Try Corepass for free
           </Link>
