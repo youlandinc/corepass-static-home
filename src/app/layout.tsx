@@ -8,8 +8,8 @@ import Head from 'next/head'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Corepass',
-    default: 'Loan Origination Platform for Private Lenders | Corepass',
+    template: '%s - Corepass',
+    default: 'Loan Origination Platform for Private Lenders ',
   },
   description:
     'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',

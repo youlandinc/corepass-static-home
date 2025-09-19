@@ -11,11 +11,17 @@ import { KNOWLEDGE_FAQ, KNOWLEDGE_TESTIMONIALS } from '@/constant/Knowledge'
 import BG_IMG from '@/images/knowledge/footer/Knowledge-footer.svg'
 import { LOGIN_URL } from '@/constant'
 import { Button } from '@/components/Button'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'KnowledgeOS | AI Company Knowledge Hub',
+  description:
+    'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
+}
 
 export default function Knowledge() {
   return (
     <>
-      <title>KnowledgeOS | AI Company Knowledge Hub – Corepass</title>
       <Header
         btnClassName={'bg-[#1DAFCD] hover:bg-[#1DAFCD]/80'}
         fillColor={'#202939'}

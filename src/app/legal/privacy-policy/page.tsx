@@ -7,10 +7,8 @@ import { Button } from '@/components/Button'
 import { LOGIN_URL } from '@/constant'
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s | Corepass',
-    default: 'Privacy Policy | Corepass',
-  },
+  title: 'Privacy Policy ',
+
   description:
     'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
 }

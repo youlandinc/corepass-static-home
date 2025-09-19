@@ -20,11 +20,15 @@ import {
 import BG_IMG from '@/images/lender/footer/lending-footer.svg'
 import { LOGIN_URL } from '@/constant'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'LendingOS | AI Lending & Underwriting Software',
+}
 
 export default function Lenders() {
   return (
     <>
-      <title>LendingOS | AI Lending & Underwriting Software – Corepass</title>
       <Header />
       <main>
         <LenderHero />
