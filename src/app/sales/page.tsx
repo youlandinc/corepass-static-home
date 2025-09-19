@@ -13,11 +13,15 @@ import { SALES_FAQ, SALES_TESTIMONIALS } from '@/constant/Sales'
 import BG_IMG from '@/images/sales/footer/sales-footer.svg'
 import { Button } from '@/components/Button'
 import { SALES_URL } from '@/constant'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'SalesOS | AI-Powered Sales Automation',
+}
 
 export default function Sales() {
   return (
     <>
-      <title>SalesOS | AI-Powered Sales Automation – Corepass</title>
       <Header
         className={'bg-slate-50'}
         fillColor={'#202939'}

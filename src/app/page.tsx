@@ -11,11 +11,15 @@ import { HOME_CALL, HOME_TESTIMONIALS } from '@/constant/Home'
 import BG_IMG from '@/images/home/footer/home-footer.svg'
 import { LOGIN_URL } from '@/constant'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Corepass | AI That Powers Growth & Scale',
+}
 
 export default function Home() {
   return (
     <>
-      <title>Corepass | AI That Powers Growth & Scale</title>
       <main>
         <section className={'relative overflow-hidden'}>
           <Header />
