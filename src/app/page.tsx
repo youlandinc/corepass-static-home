@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { CallToAction } from '@/components/CallToAction'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -6,13 +8,11 @@ import { HomeHero } from '@/components/home/HomeHero'
 import { CorepassWay } from '@/components/home/CorepassWay'
 import { Testimonials } from '@/components/Testimonials'
 import { Button } from '@/components/Button'
+import { HoverMenu } from '@/components/HoverMenu'
+
 import { HOME_CALL, HOME_TESTIMONIALS } from '@/constant/Home'
 
 import BG_IMG from '@/images/home/footer/home-footer.svg'
-import { LOGIN_URL } from '@/constant'
-import Link from 'next/link'
-import { Metadata } from 'next'
-import { HoverMenu } from '@/components/HoverMenu'
 
 export const metadata: Metadata = {
   title: 'Corepass | AI That Powers Growth & Scale',
