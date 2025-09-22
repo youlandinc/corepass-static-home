@@ -45,8 +45,15 @@ export function Footer({ className, imgSrc, action }: FooterProps) {
             <Logo color={'white'} style={{ margin: '0 auto' }} />
           </Link>
           <nav className="text-sm" aria-label="quick links">
-            <div className="flex items-center justify-center gap-6 xs:flex-col sm:flex-row [&>*]:text-white [&>a]:text-sm">
+            <div className="flex flex-col items-center justify-center gap-6 md:flex-row [&>*]:text-white [&>a]:text-sm">
               <div className={'flex flex-row gap-6'}>
+                <Link
+                  href={'/'}
+                  className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
+                  scroll
+                >
+                  Home
+                </Link>
                 <Link
                   href={'/lenders'}
                   className={'px-2 py-1 hover:text-[rgba(255,255,255,0.70)]'}
