@@ -96,7 +96,7 @@ export const CorepassWay: FC = () => {
               }
             >
               <h4 className={'text-[clamp(20px,1.67vw,32px)] leading-normal'}>
-                Automate the Busywork,Keep Control of the Rest
+                Automate the Busywork, Keep Control of the Rest
               </h4>
               <div className={'flex flex-col gap-3 pt-8 pb-12'}>
                 <p className={'text-[clamp(14px,0.9375,18px)] text-[#636A7C]'}>
