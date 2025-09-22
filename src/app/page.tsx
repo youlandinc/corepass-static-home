@@ -12,6 +12,7 @@ import BG_IMG from '@/images/home/footer/home-footer.svg'
 import { LOGIN_URL } from '@/constant'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { HoverMenu } from '@/components/HoverMenu'
 
 export const metadata: Metadata = {
   title: 'Corepass | AI That Powers Growth & Scale',
@@ -178,13 +179,13 @@ export default function Home() {
           title={HOME_CALL.title}
           subtitle={HOME_CALL.subtitle}
           action={
-            <Link
-              className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
-              href={LOGIN_URL}
-              target={'_blank'}
-            >
-              Try Corepass for free
-            </Link>
+            <HoverMenu
+              triggerElement={
+                <button className="cursor-pointer rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90">
+                  Try Corepass for free
+                </button>
+              }
+            />
           }
         />
 
@@ -200,15 +201,17 @@ export default function Home() {
         imgSrc={BG_IMG}
         title={'Run Your Business Smarter With AI'}
         action={
-          <Button
-            href={LOGIN_URL}
-            target={'_blank'}
-            className={
-              'bg-white font-semibold !text-[#202939] hover:!bg-[white]/90'
+          <HoverMenu
+            triggerElement={
+              <Button
+                className={
+                  'cursor-pointer bg-white font-semibold !text-[#202939] hover:!bg-[white]/90'
+                }
+              >
+                Try Corepass for free
+              </Button>
             }
-          >
-            Try Corepass for free
-          </Button>
+          />
         }
       />
     </>
