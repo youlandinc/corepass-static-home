@@ -43,7 +43,7 @@ export const SaleSecondaryFeature = () => {
     >
       <div className={'mx-auto max-w-[1280px] text-center'}>
         <h2 className={'text-5xl leading-[1.2] font-medium'}>
-          Built for high-velocity sales teams
+          Built For High-Velocity Sales Teams
         </h2>
         <p className={'mt-6'}>More conversations, less busywork</p>
       </div>
@@ -68,7 +68,7 @@ export const SaleSecondaryFeature = () => {
             </div>
 
             <div className={'relative mt-auto overflow-hidden'}>
-              <Image src={section.image} alt={''} objectFit={'cover'} />
+              <Image src={section.image} alt={''} className={'object-cover'} />
             </div>
           </li>
         ))}

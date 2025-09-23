@@ -9,18 +9,20 @@ import {
 } from '@headlessui/react'
 import clsx from 'clsx'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import * as HoverCard from '@radix-ui/react-hover-card'
 
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
 
 import { BookDemo } from '@/components/BookDemoForm'
-import { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ReactNode, useState } from 'react'
 import { LOGIN_URL, SALES_URL, LENDING_URL } from '@/constant'
 
 import SALES_ICON from '@/images/header/salesOS.svg'
 import LENDERS_ICON from '@/images/header/lendersOS.svg'
 import Image from 'next/image'
+import { HoverMenu } from '@/components/HoverMenu'
 
 function MobileNavLink({
   href,
@@ -80,10 +82,11 @@ function MobileNavigation() {
         transition
         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 data-closed:scale-95 data-closed:opacity-0 data-enter:duration-150 data-enter:ease-out data-leave:duration-100 data-leave:ease-in [&>*]:text-sm"
       >
-        <MobileNavLink href="/lenders">For Lenders</MobileNavLink>
-        <MobileNavLink href="/sales">For Sales</MobileNavLink>
-        <MobileNavLink href="/knowledge">For Knowledge Base</MobileNavLink>
-        <MobileNavLink href="/faq">FAQ</MobileNavLink>
+        <MobileNavLink href="/">Home</MobileNavLink>
+        <MobileNavLink href="/lenders">LendingOS</MobileNavLink>
+        <MobileNavLink href="/sales">SalesOS</MobileNavLink>
+        <MobileNavLink href="/knowledge">KnowledgeOS</MobileNavLink>
+        {/*<MobileNavLink href="/faq">FAQ</MobileNavLink>*/}
         <hr className="m-2 border-slate-300/40" />
         <MobileNavLink href={''}>
           <span onClick={() => window.open(SALES_URL, '_blank')}>
@@ -107,6 +110,7 @@ type HeaderProps = ComponentPropsWithoutRef<'header'> & {
 }
 
 export function Header(props: HeaderProps) {
+  const [open, setOpen] = useState(false)
   return (
     <header className={clsx(props.className)}>
       <Container className={'!py-10'}>
@@ -120,12 +124,12 @@ export function Header(props: HeaderProps) {
             </Link>
             <div className="hidden lg:flex lg:gap-x-6 [&>*]:text-sm">
               <Link
-                href="/lenders"
+                href="/"
                 className={
                   'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
                 }
               >
-                For Lenders
+                Home
               </Link>
               <Link
                 href="/sales"
@@ -133,7 +137,15 @@ export function Header(props: HeaderProps) {
                   'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
                 }
               >
-                For Sales
+                SalesOS
+              </Link>
+              <Link
+                href="/lenders"
+                className={
+                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
+                }
+              >
+                LendingOS
               </Link>
               <Link
                 href="/knowledge"
@@ -141,60 +153,27 @@ export function Header(props: HeaderProps) {
                   'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
                 }
               >
-                For Knowledge Base
+                KnowledgeOS
               </Link>
-              <Link
-                href="/faq"
-                className={
-                  'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'
-                }
-              >
-                FAQ
-              </Link>
+              {/*<Link*/}
+              {/*  href="/faq"*/}
+              {/*  className={*/}
+              {/*    'inline-block cursor-pointer rounded-lg px-2 py-1 text-sm hover:bg-slate-100 hover:text-slate-900'*/}
+              {/*  }*/}
+              {/*>*/}
+              {/*  FAQ*/}
+              {/*</Link>*/}
             </div>
           </div>
           <div className="flex items-center gap-x-5 lg:gap-x-8">
             <div className="[& dev]:text-sm hidden lg:block">
-              <DropdownMenu.Root>
-                <DropdownMenu.Trigger asChild>
+              <HoverMenu
+                triggerElement={
                   <button className="cursor-pointer rounded-lg px-2 py-1 text-sm outline-none hover:bg-slate-100 hover:text-slate-900">
                     Sign in
                   </button>
-                </DropdownMenu.Trigger>
-                <DropdownMenu.Portal>
-                  <DropdownMenu.Content
-                    className="data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade min-w-[180px] rounded-md bg-white px-3 py-2 shadow-[0_0_2px_0_rgba(17,52,227,0.10),0_10px_10px_0_rgba(17,52,227,0.10)] will-change-[opacity,transform] data-[side=bottom]:animate-out"
-                    sideOffset={12}
-                    align={'end'}
-                  >
-                    <DropdownMenu.Item
-                      className={
-                        'flex cursor-pointer flex-row items-center gap-1 rounded-[4px] p-1 outline-none hover:bg-[#F0F4FF]'
-                      }
-                      onClick={() => {
-                        window.open(SALES_URL, '_target')
-                      }}
-                    >
-                      <Image src={SALES_ICON} alt={''} />
-                      SalesOS
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Separator
-                      className={'my-3 h-[1px] w-full bg-[#F0F4FF]'}
-                    />
-                    <DropdownMenu.Item
-                      className={
-                        'rounded-1 flex cursor-pointer flex-row items-center gap-1 rounded-[4px] p-1 outline-none hover:bg-[#F0F4FF]'
-                      }
-                      onClick={() => {
-                        window.open(LENDING_URL, '_target')
-                      }}
-                    >
-                      <Image src={LENDERS_ICON} alt={''} />
-                      LendingOS
-                    </DropdownMenu.Item>
-                  </DropdownMenu.Content>
-                </DropdownMenu.Portal>
-              </DropdownMenu.Root>
+                }
+              />
               {/*<NavLink href={LOGIN_URL}>Sign in</NavLink>*/}
             </div>
             <BookDemo

@@ -1,10 +1,10 @@
-'use client'
 import Link from 'next/link'
 
 import { LOGIN_URL } from '@/constant'
 import { HeroTailHomeLender } from '@/components/HeroTailHomeLender'
 import { BookDemo } from '@/components/BookDemoForm'
 import { Container } from '@/components/Container'
+import { HoverMenu } from '@/components/HoverMenu'
 
 export const HomeHero = () => {
   return (
@@ -31,12 +31,13 @@ export const HomeHero = () => {
           </div>
         </div>
         <div className="mt-8 flex justify-center gap-x-6">
-          <Link
-            className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
-            href={LOGIN_URL}
-          >
-            Try Corepass for free
-          </Link>
+          <HoverMenu
+            triggerElement={
+              <button className="cursor-pointer rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90">
+                Try Corepass for free
+              </button>
+            }
+          />
           {/*TODO : Book a demo*/}
           <BookDemo
             className={

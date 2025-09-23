@@ -9,6 +9,15 @@ import { Faqs } from '@/components/Faqs'
 import { KNOWLEDGE_FAQ, KNOWLEDGE_TESTIMONIALS } from '@/constant/Knowledge'
 
 import BG_IMG from '@/images/knowledge/footer/Knowledge-footer.svg'
+import { LOGIN_URL } from '@/constant'
+import { Button } from '@/components/Button'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'KnowledgeOS | AI Company Knowledge Hub',
+  description:
+    'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
+}
 
 export default function Knowledge() {
   return (
@@ -32,11 +41,7 @@ export default function Knowledge() {
         </section>
         <Faqs subtitle={KNOWLEDGE_FAQ.subtitle} faqList={KNOWLEDGE_FAQ.list} />
       </main>
-      <Footer
-        imgSrc={BG_IMG}
-        btnLabel={'Get started today'}
-        btnClassName={'!text-[#23AFCF]'}
-      />
+      <Footer imgSrc={BG_IMG} />
     </>
   )
 }

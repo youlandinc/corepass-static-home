@@ -2,11 +2,14 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Banner } from '@/components/Banner'
 import type { Metadata } from 'next'
+import BG_IMG from '@/images/home/footer/home-footer.svg'
+import { Button } from '@/components/Button'
+import { LOGIN_URL } from '@/constant'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Corepass',
-    default: 'Terms of Use | Corepass',
+    template: '%s - Corepass',
+    default: 'Terms of Use',
   },
   description:
     'Corepass is an all-in-one loan-origination platform that helps private and hard-money lenders close deals faster, cut costs, and scale without adding staff.',
@@ -579,7 +582,21 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer
+        imgSrc={BG_IMG}
+        title={'Run Your Business Smarter With AI'}
+        action={
+          <Button
+            href={LOGIN_URL}
+            target={'_blank'}
+            className={
+              'bg-white font-semibold !text-[#202939] hover:!bg-[white]/90'
+            }
+          >
+            Try Corepass for free
+          </Button>
+        }
+      />
     </>
   )
 }

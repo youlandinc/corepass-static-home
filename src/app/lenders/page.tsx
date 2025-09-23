@@ -18,6 +18,13 @@ import {
 } from '@/constant/Lenders'
 
 import BG_IMG from '@/images/lender/footer/lending-footer.svg'
+import { LOGIN_URL } from '@/constant'
+import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'LendingOS | AI Lending & Underwriting Software',
+}
 
 export default function Lenders() {
   return (
@@ -34,9 +41,13 @@ export default function Lenders() {
           title={LENDERS_CALL.title}
           subtitle={LENDERS_CALL.subtitle}
           action={
-            <Button color={'blue'} variant={'solid'}>
-              Try Corepass for free
-            </Button>
+            <Link
+              target={'_blank'}
+              className="rounded-full bg-blue-600 px-4 leading-10 font-semibold text-white hover:bg-blue-600/90"
+              href={LOGIN_URL}
+            >
+              Try LendingOS for free
+            </Link>
           }
         />
 
@@ -53,8 +64,17 @@ export default function Lenders() {
 
       <Footer
         imgSrc={BG_IMG}
-        btnLabel={'Get started today'}
-        btnClassName={'!text-[#192F67]'}
+        action={
+          <Button
+            href={LOGIN_URL}
+            target={'_blank'}
+            className={
+              'bg-white font-semibold !text-[#192F67] hover:!bg-[white]/90'
+            }
+          >
+            Get started today
+          </Button>
+        }
       />
     </>
   )

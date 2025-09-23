@@ -107,7 +107,7 @@ export const SalePrimaryFeatures = () => {
       <Container className={''}>
         <div className={'mx-auto max-w-[900px] text-center'}>
           <h2 className={'text-5xl leading-[1.2] font-medium'}>
-            Run your entire sales outreach workflow in one place
+            Run Your Entire Sales Outreach Workflow In One Place
           </h2>
           <p className={'mt-6 leading-normal'}>
             SalesOS replaces manual prospecting, disconnected data enrichment
@@ -133,7 +133,11 @@ export const SalePrimaryFeatures = () => {
                     'relative shrink-0 xs:order-first xs:w-full xl:w-[40.625%]',
                   )}
                 >
-                  <Image src={section.image} alt={''} objectFit={'cover'} />
+                  <Image
+                    src={section.image}
+                    alt={''}
+                    className={'object-cover'}
+                  />
                 </div>
                 <div
                   className={clsx(
